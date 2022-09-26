@@ -34,13 +34,17 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div className="border-b flex justify-between px-6 py-3">
-          <h1>
-            <a href="/" className="block font-bold text-lg">
-              Boarganise
-            </a>
-          </h1>
-          Welcome back, Geoff
+        <div className="border-b">
+          <div className="max-w-[1440px] mx-auto">
+            <div className="flex px-3 py-3 justify-between">
+              <h1>
+                <a href="/" className="block font-bold text-lg">
+                  Boarganise
+                </a>
+              </h1>
+              Welcome back, Geoff
+            </div>
+          </div>
         </div>
         <main className="p-6">
           <Outlet />
