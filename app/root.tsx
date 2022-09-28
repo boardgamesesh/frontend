@@ -35,7 +35,7 @@ export default function App() {
       </head>
       <body>
         <div className="border-b">
-          <div className="max-w-[1440px] mx-auto">
+          <div className="max-w-[1024px] mx-auto">
             <div className="flex px-3 py-3 justify-between">
               <h1>
                 <a href="/" className="block font-bold text-lg">
