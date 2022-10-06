@@ -13,7 +13,7 @@ export default function Index() {
         </header>
         <ul className="flex flex-wrap gap-3">
           <li>
-            <Link to="/sessions/new">
+            <Link to="/session/new">
               <Card className="border-violet-800 bg-violet-700 hover:bg-gradient-to-br from-violet-700 to-violet-900 text-white hover:drop-shadow-lg">
                 <span className="text-2xl grow">New session</span>
                 <span className="text-7xl self-end text-violet-600">
@@ -107,7 +107,7 @@ export default function Index() {
                     </ul>
                   </div>
                 </div>
-                <Link to="/sessions/1234567">
+                <Link to="/session/1234567">
                   <div className="border border-slate-200  bg-white px-3 py-2 rounded text-center hover:box-shadow hover:bg-slate-200">
                     Details
                   </div>
