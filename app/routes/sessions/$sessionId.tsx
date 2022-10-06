@@ -1,50 +1,20 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node";
 
-import { BsPlayFill, BsPauseFill } from "react-icons/bs";
 import { FaDirections } from "react-icons/fa";
 import { MdCall, MdOutlineAdd, MdOutlineWarningAmber } from "react-icons/md";
 import { Card } from "~/components/card";
+import { useState } from "react";
 
 export const loader: LoaderFunction = async ({ params }) => {
   return params.sessionId;
-};
-
-const Timer = () => {
-  return (
-    <div className="p-3 rounded bg-slate-100">
-      <div className="flex flex-row gap-3">
-        <span className="text-slate-700 text-8xl grow">0:00</span>
-        <ul className="flex flex-col gap-2">
-          <li className="grow">
-            <button
-              type="button"
-              className="flex items-center justify-center gap-2 border border-green-500 bg-white px-3 py-2 rounded w-full hover:drop-shadow hover:bg-green-100"
-            >
-              <BsPlayFill />
-              Start
-            </button>
-          </li>
-          <li className="grow">
-            <button
-              type="button"
-              className="flex items-center justify-center gap-2 border border-slate-500 bg-white px-3 py-2 rounded w-full hover:drop-shadow hover:bg-slate-200"
-            >
-              <BsPauseFill />
-              Pause
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
 };
 
 const Session = () => {
   const sessionId = useLoaderData();
 
   return (
-    <div className="flex flex-col gap-5 px-3 max-w-[1024px] mx-auto">
+    <>
       <h1 className="text-3xl font-bold text-slate-700">Session</h1>
       <div className="flex flex-col gap-6">
         <section className="flex flex-col gap-3">
@@ -112,7 +82,7 @@ const Session = () => {
               </span>
             </li>
           </ul>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="flex flex-col gap-3">
             <div className="p-3 rounded bg-slate-100">
               <div className="flex gap-3">
                 <div className="flex flex-col gap-2">
@@ -125,10 +95,17 @@ const Session = () => {
                       alt="Rising Sun boardgame box art"
                       className="max-w-[80px] max-h-[80px]"
                     />
-                    <p>
-                      Lead your clan to victory through negotiation, combat,
-                      monsters and favors from Kami.
-                    </p>
+                    <div className="flex flex-col gap-2">
+                      <p>
+                        Lead your clan to victory through negotiation, combat,
+                        monsters and favors from Kami.
+                      </p>
+                      <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
+                        <Link to="/game/12345/preparing?session=1234567">
+                          Start playing
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -146,10 +123,17 @@ const Session = () => {
                         alt="Terraforming mars boardgame box art"
                         className="max-w-[80px] max-h-[80px]"
                       />
-                      <p>
-                        Compete with rival CEOs to make Mars habitable and build
-                        your corporate empire.
-                      </p>
+                      <div className="flex flex-col gap-2">
+                        <p>
+                          Compete with rival CEOs to make Mars habitable and
+                          build your corporate empire.
+                        </p>
+                        <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
+                          <Link to="/game/preparing?session=1234567">
+                            Start playing
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -166,7 +150,7 @@ const Session = () => {
           </div>
         </section>
       </div>
-    </div>
+    </>
   );
 };
 

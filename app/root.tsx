@@ -47,7 +47,9 @@ export default function App() {
           </div>
         </div>
         <main className="p-6">
-          <Outlet />
+          <div className="flex flex-col gap-5 px-3 max-w-[1024px] mx-auto">
+            <Outlet />
+          </div>
         </main>
         <ScrollRestoration />
         <Scripts />
