@@ -139,7 +139,7 @@ const Session = () => {
                 </div>
               </div>
             </div>
-            <Link to="/session/new-game">
+            <Link to="/session/pick-boardgame">
               <Card className="border-violet-800 bg-violet-700 hover:bg-gradient-to-br from-violet-700 to-violet-900 text-white hover:drop-shadow-lg w-full max-h-[150px]">
                 <span className="text-2xl grow">Pick boardgame</span>
                 <span className="text-7xl self-end text-violet-600">
