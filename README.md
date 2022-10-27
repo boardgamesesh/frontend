@@ -1,4 +1,4 @@
-# Boarganise App
+# BoardGameSesh App
 
 ## Install
 
