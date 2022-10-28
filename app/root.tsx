@@ -22,7 +22,7 @@ export const links: LinksFunction = () => [
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Boarganise",
+  title: "Boardgame Sesh",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -39,7 +39,7 @@ export default function App() {
             <div className="flex px-3 py-3 justify-between">
               <h1>
                 <a href="/" className="block font-bold text-lg">
-                  Boarganise
+                  BGS
                 </a>
               </h1>
               Welcome back, Geoff
