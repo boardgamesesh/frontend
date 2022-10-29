@@ -1,6 +1,4 @@
 import { Link } from "@remix-run/react";
-import { TbArrowRightTail } from "react-icons/tb";
-import { GiRollingDices } from "react-icons/gi";
 
 import { Card } from "../components/card";
 
@@ -8,26 +6,13 @@ export default function Index() {
   return (
     <div className="flex flex-col gap-4">
       <section>
-        <header className="pb-3 sr-only">
-          <h2 className="text-3xl">Sessions</h2>
+        <header className="pb-3">
+          <h2 className="text-3xl">Upcoming sessions</h2>
         </header>
-        <ul className="flex flex-wrap gap-3">
-          <li>
-            <Link to="/session/new">
-              <Card className="border-violet-800 bg-violet-700 hover:bg-gradient-to-br from-violet-700 to-violet-900 text-white hover:drop-shadow-lg">
-                <span className="text-2xl grow">New session</span>
-                <span className="text-7xl self-end text-violet-600">
-                  <TbArrowRightTail />
-                </span>
-              </Card>
-            </Link>
-          </li>
+        <ul className="flex flex-col flex-wrap gap-3">
           <li>
             <article>
-              <Card className="bg-white">
-                <span className="text-7xl text-slate-600 p-5 bg-slate-100 w-full flex justify-center rounded-lg">
-                  <GiRollingDices />
-                </span>
+              <Card className="flex flex-row">
                 <div className="grow flex flex-col gap-3">
                   <div>02/10/22 @ 9:00 - 17:00</div>
                   <ul className="flex flex-wrap gap-1">
@@ -76,10 +61,7 @@ export default function Index() {
           </li>
           <li>
             <article>
-              <Card className="bg-white">
-                <span className="text-7xl text-slate-600 p-5 bg-slate-100 w-full flex justify-center rounded-lg">
-                  <GiRollingDices />
-                </span>
+              <Card className="flex flex-row">
                 <div className="grow flex flex-col gap-3">
                   <div>12/06/22 @ 9:00 - 17:00</div>
                   <div>
