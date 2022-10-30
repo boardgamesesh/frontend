@@ -8,7 +8,7 @@ import { Card } from "~/components/card";
 export default function Index() {
   return (
     <div className="flex flex-col ">
-      <section className="grid grid-cols-[1fr_2fr] gap-3">
+      <section className="grid lg:grid-cols-[1fr_2fr] gap-3">
         <Card className="flex flex-col divide-y p-0 bg-slate-50">
           <header className="p-3 flex justify-between">
             <div>
@@ -17,7 +17,13 @@ export default function Index() {
             </div>
             <div>
               <Link to="/session/1234567">
-                <span className={button({ intent: "tertiary", size: "small" })}>
+                <span
+                  className={button({
+                    intent: "secondary",
+                    mood: "neutral",
+                    size: "small",
+                  })}
+                >
                   Details
                 </span>
               </Link>
@@ -56,7 +62,7 @@ export default function Index() {
             <li className="w-full">
               <a
                 href="tel:0411757997"
-                className={button({ intent: "tertiary" })}
+                className={button({ intent: "secondary" })}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -67,7 +73,7 @@ export default function Index() {
             <li className="w-full">
               <a
                 href="https://www.google.com/maps/dir//1+Fleming+Dr,+Campbelltown+NSW+2560/@-34.0658335,150.78311,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x6b12ee335124753d:0x9ac89184e66355f0!2m2!1d150.7852987!2d-34.0658335!3e0"
-                className={button({ intent: "tertiary" })}
+                className={button({ intent: "secondary" })}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -78,40 +84,52 @@ export default function Index() {
           </ul>
         </Card>
         <Card>
-          <header className="border-b pb-2 flex justify-between">
+          <header className="pb-2 flex justify-between">
             <h2 className="font-bold">Upcoming sessions</h2>
             <Link to="/">
-              <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 hover:bg-blue-500 hover:text-white rounded">
+              <span className={button({ intent: "tertiary", size: "xsmall" })}>
                 All sessions
               </span>
             </Link>
           </header>
-          <ul className="divide-y">
-            <li className="py-2 flex items-center justify-between">
+          <ul className="divide-y border-t">
+            <li className="py-2 flex flex-col md:flex-row md:items-center md:justify-between">
               <p>02/10/22 @ 9:00 - 17:00</p>
-              <ul className="flex gap-3">
-                <li>
+              <ul className="flex w-full md:w-auto gap-2">
+                <li className="w-full md:w-auto">
                   <Button intent="secondary" mood="negative" size="small">
                     Absent
                   </Button>
                 </li>
-                <li>
+                <li className="w-full md:w-auto">
                   <Button size="small">Attending</Button>
                 </li>
               </ul>
             </li>
-            <li className="py-2 flex justify-between">
+            <li className="py-2 flex flex-col md:flex-row md:items-center md:justify-between">
               <p>02/10/22 @ 9:00 - 17:00</p>
               <Link to="/session/1234567">
-                <div className="border border-slate-200  bg-white px-2 py-1 rounded text-center hover:box-shadow hover:bg-slate-200 text-sm">
+                <div
+                  className={button({
+                    intent: "secondary",
+                    mood: "neutral",
+                    size: "small",
+                  })}
+                >
                   Details
                 </div>
               </Link>
             </li>
-            <li className="py-2 flex justify-between">
+            <li className="py-2 flex flex-col md:flex-row md:items-center md:justify-between">
               <p>02/10/22 @ 9:00 - 17:00</p>
               <Link to="/session/1234567">
-                <div className="border border-slate-200  bg-white px-2 py-1 rounded text-center hover:box-shadow hover:bg-slate-200 text-sm">
+                <div
+                  className={button({
+                    intent: "secondary",
+                    mood: "neutral",
+                    size: "small",
+                  })}
+                >
                   Details
                 </div>
               </Link>
