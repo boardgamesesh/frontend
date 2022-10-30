@@ -39,10 +39,13 @@ export default function App() {
         <div className="border-b">
           <div className="max-w-[1024px] mx-auto">
             <div className="flex px-3 py-3 justify-between items-center">
-              <Link to="/">
-                <span className="block font-bold text-lg">BGS</span>
+              <Link to="/" className="block font-bold text-lg">
+                BGS
               </Link>
               <ul className="flex gap-3 text-sm">
+                <li>
+                  <Link to="/manage">Manage</Link>
+                </li>
                 <li>
                   <Link to="/settings">Settings</Link>
                 </li>
