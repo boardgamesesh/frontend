@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Timer from "~/components/Timer";
+import Timer from "~/components/timer";
 
 const Playing = () => {
   const [activePlayer, setActivePlayer] = useState<string>();
