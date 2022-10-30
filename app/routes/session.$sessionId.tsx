@@ -3,7 +3,7 @@ import type { LoaderFunction } from "@remix-run/node";
 
 import { FaDirections } from "react-icons/fa";
 import { MdCall, MdOutlineAdd, MdOutlineWarningAmber } from "react-icons/md";
-import { Card } from "~/components/Card";
+import { Card } from "~/components/card";
 
 export const loader: LoaderFunction = async ({ params }) => {
   return params.sessionId;

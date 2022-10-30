@@ -1,9 +1,9 @@
 import { Link } from "@remix-run/react";
 import { FaDirections } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
-import { Button, button } from "~/components/Button";
+import { Button, button } from "~/components/button";
 
-import { Card } from "~/components/Card";
+import { Card } from "~/components/card";
 
 export default function Index() {
   return (
