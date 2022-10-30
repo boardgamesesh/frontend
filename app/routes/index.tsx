@@ -1,8 +1,9 @@
 import { Link } from "@remix-run/react";
 import { FaDirections } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
+import { Button, button } from "~/components/Button";
 
-import { Card } from "../components/card";
+import { Card } from "~/components/Card";
 
 export default function Index() {
   return (
@@ -16,9 +17,9 @@ export default function Index() {
             </div>
             <div>
               <Link to="/session/1234567">
-                <div className="border border-slate-200  bg-white px-2 py-1 rounded text-center hover:box-shadow hover:bg-slate-200 text-sm">
+                <span className={button({ intent: "tertiary", size: "small" })}>
                   Details
-                </div>
+                </span>
               </Link>
             </div>
           </header>
@@ -55,7 +56,7 @@ export default function Index() {
             <li className="w-full">
               <a
                 href="tel:0411757997"
-                className="flex items-center justify-center gap-2 px-3 py-2 border border-slate-300 bg-white rounded text-center hover:box-shadow hover:bg-slate-200 text-sm"
+                className={button({ intent: "tertiary" })}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -66,7 +67,7 @@ export default function Index() {
             <li className="w-full">
               <a
                 href="https://www.google.com/maps/dir//1+Fleming+Dr,+Campbelltown+NSW+2560/@-34.0658335,150.78311,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x6b12ee335124753d:0x9ac89184e66355f0!2m2!1d150.7852987!2d-34.0658335!3e0"
-                className="flex items-center justify-center gap-2 px-3 py-2 border border-slate-300 bg-white rounded text-center hover:box-shadow hover:bg-slate-200 text-sm"
+                className={button({ intent: "tertiary" })}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -90,20 +91,12 @@ export default function Index() {
               <p>02/10/22 @ 9:00 - 17:00</p>
               <ul className="flex gap-3">
                 <li>
-                  <button
-                    type="button"
-                    className="border border-red-500 bg-white px-2 py-1 rounded w-full hover:drop-shadow hover:bg-red-100 text-sm"
-                  >
+                  <Button intent="secondary" mood="negative" size="small">
                     Absent
-                  </button>
+                  </Button>
                 </li>
                 <li>
-                  <button
-                    type="button"
-                    className="border border-green-500 bg-white px-2 py-1 rounded w-full hover:drop-shadow hover:bg-green-100 text-sm"
-                  >
-                    Attending
-                  </button>
+                  <Button size="small">Attending</Button>
                 </li>
               </ul>
             </li>
