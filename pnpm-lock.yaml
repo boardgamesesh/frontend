@@ -24,6 +24,7 @@ specifiers:
   react-icons: ^4.6.0
   remix-flat-routes: ^0.4.4
   tailwindcss: ^3.2.1
+  tslib: ^2.4.0
   typescript: ^4.8.4
 
 dependencies:
@@ -39,6 +40,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
+  tslib: 2.4.0
 
 devDependencies:
   '@remix-run/dev': 1.7.4_uroeops6y5plvzrhwx7fnuiija
