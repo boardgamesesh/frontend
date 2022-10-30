@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { FaDirections } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
-import { Button, button } from "~/components/button";
+import { Button, button } from "~/components/Button";
 
 import { Card } from "~/components/card";
 
