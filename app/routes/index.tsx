@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { BsChevronRight } from "react-icons/bs";
 import { FaDirections, FaPlay } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import { Button, button } from "~/components/Button";
@@ -7,9 +8,9 @@ import { Card } from "~/components/card";
 
 export default function Index() {
   return (
-    <div className="space-y-5">
+    <div className="space-y-8">
       <div className="p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
-        <h3 className="text-xl flex-1 text-purple-700 font-bold">
+        <h3 className="text-2xl flex-1 text-purple-700 font-bold">
           You haven't got any sessions running!
         </h3>
         <div>
@@ -93,24 +94,100 @@ export default function Index() {
             </li>
           </ul>
         </Card>
-        <Card>
-          <header className="pb-3 flex justify-between">
+        <Card className="flex flex-col">
+          <header className="pb-2 flex justify-between border-b">
             <h2 className="font-bold">Upcoming sessions</h2>
-            <Link to="/">
-              <span className={button({ intent: "tertiary", size: "xsmall" })}>
-                All sessions
-              </span>
-            </Link>
           </header>
-          <ul className="divide-y border-t">
+          {/* <div className="mt-3 p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
+            <span className="text-lg flex-1 text-purple-700 font-bold">
+              Accept some invites (3)
+            </span>
+            <Button size="small" className="w-fit">
+              Setup a Sesh
+            </Button>
+          </div> */}
+          <ul className="divide-y flex flex-col flex-grow">
+            <li>
+              <Link
+                to="/session/1234567"
+                className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+              >
+                <div className="flex-grow md:flex-grow-0">
+                  02/10/22 @ 12:00 - 17:00
+                </div>
+                <BsChevronRight />
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/session/1234567"
+                className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+              >
+                <div className="flex-grow md:flex-grow-0">
+                  02/10/22 @ 12:00 - 17:00 (Host)
+                </div>
+                <BsChevronRight />
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/session/1234567"
+                className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+              >
+                <div className="flex-grow md:flex-grow-0">
+                  02/10/22 @ 12:00 - 17:00
+                </div>
+                <BsChevronRight />
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/session/1234567"
+                className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+              >
+                <div className="flex-grow md:flex-grow-0">
+                  02/10/22 @ 12:00 - 17:00
+                </div>
+                <BsChevronRight />
+              </Link>
+            </li>
+          </ul>
+          <ul className="flex">
+            <li>
+              <Link to="/">
+                <span
+                  className={button({ intent: "tertiary", size: "xsmall" })}
+                >
+                  See all
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/">
+                <span
+                  className={button({ intent: "tertiary", size: "xsmall" })}
+                >
+                  Manage
+                </span>
+              </Link>
+            </li>
+          </ul>
+        </Card>
+      </section>
+      <section>
+        <Card>
+          <header className="pb-2 flex justify-between border-b">
+            <h2 className="font-bold">Invites</h2>
+          </header>
+          <ul className="divide-y">
             <li className="py-2 flex flex-row flex-wrap items-center justify-between">
               <div className="flex-grow sm:flex-grow-0">
-                02/10/22 @ 12:00 - 17:00
+                02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
               </div>
               <ul className="flex w-full sm:w-auto gap-2">
                 <li className="w-full sm:w-auto">
                   <Button intent="secondary" mood="negative" size="small">
-                    Absent
+                    Nope
                   </Button>
                 </li>
                 <li className="w-full md:w-auto">
@@ -119,78 +196,53 @@ export default function Index() {
               </ul>
             </li>
             <li className="py-2 flex flex-row flex-wrap items-center justify-between">
-              <div className="flex-grow md:flex-grow-0">
-                02/10/22 @ 12:00 - 17:00
+              <div className="flex-grow sm:flex-grow-0">
+                02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
               </div>
-              <ul className="flex gap-2">
-                <li>
-                  <Link
-                    to="/session/1234567"
-                    className={button({
-                      intent: "tertiary",
-                      size: "small",
-                    })}
-                  >
-                    Details
-                  </Link>
+              <ul className="flex w-full sm:w-auto gap-2">
+                <li className="w-full sm:w-auto">
+                  <Button intent="secondary" mood="negative" size="small">
+                    Nope
+                  </Button>
                 </li>
-                <li>
-                  <Link
-                    to="/session/1234567"
-                    className={button({
-                      intent: "tertiary",
-                      size: "small",
-                    })}
-                  >
-                    Edit
-                  </Link>
+                <li className="w-full md:w-auto">
+                  <Button size="small">Going</Button>
                 </li>
               </ul>
             </li>
             <li className="py-2 flex flex-row flex-wrap items-center justify-between">
-              <div className="flex-grow md:flex-grow-0">
-                02/10/22 @ 12:00 - 17:00
+              <div className="flex-grow sm:flex-grow-0">
+                02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
               </div>
-              <Link
-                to="/session/1234567"
-                className={button({
-                  intent: "tertiary",
-                  size: "small",
-                })}
-              >
-                Details
-              </Link>
-            </li>
-            <li className="py-2 flex flex-row flex-wrap items-center justify-between">
-              <div className="flex-grow md:flex-grow-0">
-                02/10/22 @ 12:00 - 17:00
-              </div>
-              <Link
-                to="/session/1234567"
-                className={button({
-                  intent: "tertiary",
-                  size: "small",
-                })}
-              >
-                Details
-              </Link>
+              <ul className="flex w-full sm:w-auto gap-2">
+                <li className="w-full sm:w-auto">
+                  <Button intent="secondary" mood="negative" size="small">
+                    Nope
+                  </Button>
+                </li>
+                <li className="w-full md:w-auto">
+                  <Button size="small">Going</Button>
+                </li>
+              </ul>
             </li>
           </ul>
         </Card>
       </section>
       <section>
-        <Card className="space-y-2">
-          <header className="flex justify-between">
+        <Card>
+          <header className="pb-2 flex justify-between border-b">
             <h2 className="font-bold">Past games</h2>
           </header>
           <table className="w-full">
-            <thead className="[&>th]:p-1 border-b">
-              <th className="text-left">Boardgame</th>
-              <th className="text-left">Avg. turn time</th>
-              <th className="text-left">Play length</th>
-              <th className="text-left">Score</th>
-              <th className="text-left">Result</th>
-              <th></th>
+            <thead className="border-b text-sm">
+              <tr>
+                <th className="px-1 py-2 text-left">Boardgame</th>
+                <th className="px-1 py-2 text-left">Avg. turn time</th>
+                <th className="px-1 py-2 text-left">Play length</th>
+                <th className="px-1 py-2 text-left">Score</th>
+                <th className="px-1 py-2 text-left">Result</th>
+                <th></th>
+              </tr>
             </thead>
             <tbody>
               <tr className="odd:bg-slate-50">
@@ -203,12 +255,12 @@ export default function Index() {
                 </td>
               </tr>
               <tr className="text-sm odd:bg-slate-50">
-                <td>Rising Sun</td>
-                <td>10 min</td>
-                <td>240 min</td>
-                <td>100 pts</td>
-                <td className="p-2 text-green-500">Win</td>
-                <td>
+                <td className="p-1">Rising Sun</td>
+                <td className="p-1">10 min</td>
+                <td className="p-1">240 min</td>
+                <td className="p-1">100 pts</td>
+                <td className="p-1 text-green-500">Win</td>
+                <td className="p-1">
                   <Link
                     to="/"
                     className={button({
@@ -221,12 +273,12 @@ export default function Index() {
                 </td>
               </tr>
               <tr className="text-sm odd:bg-slate-50">
-                <td>Teraforming Mars</td>
-                <td>10 min</td>
-                <td>240 min</td>
-                <td>30 pts</td>
-                <td className="p-2 text-red-500">Loss</td>
-                <td>
+                <td className="p-1">Teraforming Mars</td>
+                <td className="p-1">10 min</td>
+                <td className="p-1">240 min</td>
+                <td className="p-1">30 pts</td>
+                <td className="p-1 text-red-500">Loss</td>
+                <td className="p-1">
                   <Link
                     to="/"
                     className={button({
