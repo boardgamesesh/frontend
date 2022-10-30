@@ -8,12 +8,12 @@ import { Card } from "~/components/card";
 export default function Index() {
   return (
     <div className="flex flex-col ">
-      <section className="grid lg:grid-cols-[1fr_2fr] gap-3">
+      <section className="grid md:grid-cols-[1fr_2fr] gap-3">
         <Card className="flex flex-col divide-y p-0 bg-slate-50">
           <header className="p-3 flex justify-between">
             <div>
               <h2 className="font-bold">Today</h2>
-              <span className="text-2xl">9:00 - 17:00</span>
+              <span className="text-2xl">12:00 - 17:00</span>
             </div>
             <div>
               <Link to="/session/1234567">
@@ -93,21 +93,25 @@ export default function Index() {
             </Link>
           </header>
           <ul className="divide-y border-t">
-            <li className="py-2 flex flex-col md:flex-row md:items-center md:justify-between">
-              <p>02/10/22 @ 9:00 - 17:00</p>
-              <ul className="flex w-full md:w-auto gap-2">
-                <li className="w-full md:w-auto">
+            <li className="py-2 flex flex-row flex-wrap items-center justify-between">
+              <div className="flex-grow sm:flex-grow-0">
+                02/10/22 @ 12:00 - 17:00
+              </div>
+              <ul className="flex w-full sm:w-auto gap-2">
+                <li className="w-full sm:w-auto">
                   <Button intent="secondary" mood="negative" size="small">
                     Absent
                   </Button>
                 </li>
                 <li className="w-full md:w-auto">
-                  <Button size="small">Attending</Button>
+                  <Button size="small">Going</Button>
                 </li>
               </ul>
             </li>
-            <li className="py-2 flex flex-col md:flex-row md:items-center md:justify-between">
-              <p>02/10/22 @ 9:00 - 17:00</p>
+            <li className="py-2 flex flex-row flex-wrap items-center justify-between">
+              <div className="flex-grow md:flex-grow-0">
+                02/10/22 @ 12:00 - 17:00
+              </div>
               <Link to="/session/1234567">
                 <div
                   className={button({
@@ -120,8 +124,10 @@ export default function Index() {
                 </div>
               </Link>
             </li>
-            <li className="py-2 flex flex-col md:flex-row md:items-center md:justify-between">
-              <p>02/10/22 @ 9:00 - 17:00</p>
+            <li className="py-2 flex flex-row flex-wrap items-center justify-between">
+              <div className="flex-grow md:flex-grow-0">
+                02/10/22 @ 12:00 - 17:00
+              </div>
               <Link to="/session/1234567">
                 <div
                   className={button({
