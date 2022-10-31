@@ -3,6 +3,7 @@ import tailwind from "./tailwind.css";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -37,13 +38,21 @@ export default function App() {
       <body>
         <div className="border-b">
           <div className="max-w-[1024px] mx-auto">
-            <div className="flex px-3 py-3 justify-between">
-              <h1>
-                <a href="/" className="block font-bold text-lg">
-                  BGS
-                </a>
-              </h1>
-              Welcome back, Geoff
+            <div className="flex px-3 py-3 justify-between items-center">
+              <Link to="/" className="block font-bold text-lg">
+                BGS
+              </Link>
+              <ul className="flex gap-3 text-sm">
+                <li>
+                  <Link to="/manage">Manage</Link>
+                </li>
+                <li>
+                  <Link to="/settings">Settings</Link>
+                </li>
+                <li>
+                  <Link to="/logout">Logout</Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

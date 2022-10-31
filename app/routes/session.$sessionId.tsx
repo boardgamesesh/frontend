@@ -4,7 +4,6 @@ import type { LoaderFunction } from "@remix-run/node";
 import { FaDirections } from "react-icons/fa";
 import { MdCall, MdOutlineAdd, MdOutlineWarningAmber } from "react-icons/md";
 import { Card } from "~/components/card";
-import { useState } from "react";
 
 export const loader: LoaderFunction = async ({ params }) => {
   return params.sessionId;
@@ -30,7 +29,7 @@ const Session = () => {
               <div className="grid grid-cols-[3fr_1fr_1fr] gap-3 min-h-full">
                 <div className="flex flex-col gap-1">
                   <h2 className="font-bold">Getting there</h2>
-                  <div className="h-card flex flex gap-[0.25rem]">
+                  <div className="h-card flex gap-[0.25rem]">
                     <span className="p-street-address">1 Fleming Dr,</span>
                     <span className="p-locality">Campbelltown</span>
                     <span className="p-region" title="New South Wales">

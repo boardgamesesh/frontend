@@ -1,4 +1,17 @@
+import { cva } from "class-variance-authority";
 import type { ReactNode } from "react";
+
+const cardStyles = cva("border-slate-200 rounded-xl p-5 bg-white", {
+  variants: {
+    bordered: {
+      true: "border border-solid",
+      false: "",
+    },
+  },
+  defaultVariants: {
+    bordered: true,
+  },
+});
 
 export const Card = ({
   children,
@@ -7,14 +20,5 @@ export const Card = ({
   children: ReactNode;
   className?: string;
 }) => {
-  return (
-    <div
-      className={
-        `flex flex-col gap-3 border border-solid border-slate-200 rounded-md p-2 h-[300px] w-[250px] ` +
-        className
-      }
-    >
-      {children}
-    </div>
-  );
+  return <div className={cardStyles({ class: className })}>{children}</div>;
 };
