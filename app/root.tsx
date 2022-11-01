@@ -11,8 +11,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Logo from "./components/logomark";
 
 export const links: LinksFunction = () => [
+  {
+    rel: "icon",
+    href: "/favicon.svg",
+    type: "image/svg",
+  },
   { rel: "stylesheet", href: tailwind },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   { rel: "preconnect", href: "https://fonts.gstatic.com" },
@@ -40,7 +46,7 @@ export default function App() {
           <div className="max-w-[1024px] mx-auto">
             <div className="flex px-3 py-3 justify-between items-center">
               <Link to="/" className="block font-bold text-lg">
-                BGS
+                <Logo />
               </Link>
               <ul className="flex gap-3 text-sm">
                 <li>
