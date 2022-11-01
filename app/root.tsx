@@ -11,7 +11,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Logo from "./components/logo";
+import Logo from "./components/logomark";
 
 export const links: LinksFunction = () => [
   {
