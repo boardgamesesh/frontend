@@ -58,6 +58,9 @@ export default function App() {
                 <li>
                   <Link to="/logout">Logout</Link>
                 </li>
+                <li>
+                  <Link to="/login">login</Link>
+                </li>
               </ul>
             </div>
           </div>
