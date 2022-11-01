@@ -14,6 +14,11 @@ import {
 import Logo from "./components/logo";
 
 export const links: LinksFunction = () => [
+  {
+    rel: "icon",
+    href: "/favicon.svg",
+    type: "image/svg",
+  },
   { rel: "stylesheet", href: tailwind },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   { rel: "preconnect", href: "https://fonts.gstatic.com" },
