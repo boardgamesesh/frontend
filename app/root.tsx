@@ -11,6 +11,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Logo from "./components/logo";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: tailwind },
@@ -40,7 +41,7 @@ export default function App() {
           <div className="max-w-[1024px] mx-auto">
             <div className="flex px-3 py-3 justify-between items-center">
               <Link to="/" className="block font-bold text-lg">
-                BGS
+                <Logo />
               </Link>
               <ul className="flex gap-3 text-sm">
                 <li>
