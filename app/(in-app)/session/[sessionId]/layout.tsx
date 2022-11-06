@@ -6,7 +6,7 @@ export default function SessionLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { slug: string };
+  params: { sessionId: string };
 }) {
   return (
     <>
