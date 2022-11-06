@@ -1,24 +1,23 @@
-import { Link } from "@remix-run/react";
+import { Button, button } from "@components/Button";
 import { BsChevronRight } from "react-icons/bs";
 import { FaDirections, FaPlay } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
-import { Button, button } from "~/components/Button";
+import { Card } from "@components/card";
+import Link from "next/link";
 
-import { Card } from "~/components/card";
-
-export default function Index() {
+export default function Page() {
   return (
     <div className="space-y-8">
       <div className="p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
         <h3 className="text-2xl flex-1 text-purple-700 font-bold">
-          You haven't got any sessions running!
+          You haven&lsquo;t got any sessions running!
         </h3>
         <div>
           <Button className="w-fit">Setup a Sesh</Button>
         </div>
       </div>
       <section className="grid md:grid-cols-[1fr_2fr] gap-3">
-        <Card className="flex flex-col divide-y p-0 bg-slate-50">
+        <div className="border-slate-200 rounded-xl flex flex-col divide-y p-2 bg-slate-50">
           <div className="flex flex-col flex-grow p-5 gap-4">
             <header className="flex justify-between">
               <div>
@@ -27,7 +26,7 @@ export default function Index() {
               </div>
               <div>
                 <Link
-                  to="/session/1234567"
+                  href="/session/1234567"
                   className={button({
                     size: "small",
                   })}
@@ -69,7 +68,7 @@ export default function Index() {
               </li>
             </ul>
           </div>
-          <ul className="flex gap-3 p-5">
+          <ul className="flex gap-3 p-3">
             <li className="w-full">
               <a
                 href="tel:0411757997"
@@ -93,23 +92,23 @@ export default function Index() {
               </a>
             </li>
           </ul>
-        </Card>
+        </div>
         <Card className="flex flex-col">
           <header className="pb-2 flex justify-between border-b">
             <h2 className="font-bold">Upcoming sessions</h2>
           </header>
           {/* <div className="mt-3 p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
-            <span className="text-lg flex-1 text-purple-700 font-bold">
-              Accept some invites (3)
-            </span>
-            <Button size="small" className="w-fit">
-              Setup a Sesh
-            </Button>
-          </div> */}
+          <span className="text-lg flex-1 text-purple-700 font-bold">
+            Accept some invites (3)
+          </span>
+          <Button size="small" className="w-fit">
+            Setup a Sesh
+          </Button>
+        </div> */}
           <ul className="divide-y flex flex-col flex-grow">
             <li>
               <Link
-                to="/session/1234567"
+                href="/session/1234567"
                 className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
               >
                 <div className="flex-grow md:flex-grow-0">
@@ -120,7 +119,7 @@ export default function Index() {
             </li>
             <li>
               <Link
-                to="/session/1234567"
+                href="/session/1234567"
                 className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
               >
                 <div className="flex-grow md:flex-grow-0">
@@ -131,7 +130,7 @@ export default function Index() {
             </li>
             <li>
               <Link
-                to="/session/1234567"
+                href="/session/1234567"
                 className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
               >
                 <div className="flex-grow md:flex-grow-0">
@@ -142,7 +141,7 @@ export default function Index() {
             </li>
             <li>
               <Link
-                to="/session/1234567"
+                href="/session/1234567"
                 className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
               >
                 <div className="flex-grow md:flex-grow-0">
@@ -154,7 +153,7 @@ export default function Index() {
           </ul>
           <ul className="flex">
             <li>
-              <Link to="/">
+              <Link href="/">
                 <span
                   className={button({ intent: "tertiary", size: "xsmall" })}
                 >
@@ -163,7 +162,7 @@ export default function Index() {
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link href="/">
                 <span
                   className={button({ intent: "tertiary", size: "xsmall" })}
                 >
@@ -262,7 +261,7 @@ export default function Index() {
                 <td className="p-1 text-green-500">Win</td>
                 <td className="p-1">
                   <Link
-                    to="/"
+                    href="/"
                     className={button({
                       intent: "tertiary",
                       size: "small",
@@ -280,7 +279,7 @@ export default function Index() {
                 <td className="p-1 text-red-500">Loss</td>
                 <td className="p-1">
                   <Link
-                    to="/"
+                    href="/"
                     className={button({
                       intent: "tertiary",
                       size: "small",

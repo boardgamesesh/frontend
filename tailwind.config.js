@@ -1,21 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-
-const plugin = require("tailwindcss/plugin");
-
 module.exports = {
-  content: ["./app/**/*.{ts,tsx,js,jsx}"],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Noto Sans", "arial", "sans-serif"],
-      },
-    },
+    extend: {},
   },
-  plugins: [
-    plugin(function ({ addBase }) {
-      addBase({
-        html: { fontSize: "18px" },
-      });
-    }),
-  ],
+  plugins: [],
 };
