@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/game/*:match", "destination": "/game/*:match/preparing" }
+    { "source": "/game/:match*", "destination": "/game/:match*/preparing" }
   ]
 }
