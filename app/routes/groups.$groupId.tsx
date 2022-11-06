@@ -18,10 +18,10 @@ const Group = () => {
           <h2>Members</h2>
           <ul className="flex flex-wrap gap-3">
             <li>
-              <Link to="/member/geoff">Geoff</Link>
+              <Link to="/app/member/geoff">Geoff</Link>
             </li>
             <li>
-              <Link to="/member/119">119</Link>
+              <Link to="/app/member/119">119</Link>
             </li>
           </ul>
         </section>
@@ -29,35 +29,35 @@ const Group = () => {
           <h2>Sessions</h2>
           <ul className="flex flex-wrap gap-3">
             <li className="min-w-[250px]">
-              <Link to="/session/1234567">
+              <Link to="/app/session/1234567">
                 <div className="flex flex-column border border-solid border-slate-200 rounded-md p-5 hover:drop-shadow bg-white">
                   Date: 12/06/22
                 </div>
               </Link>
             </li>
             <li className="min-w-[250px]">
-              <Link to="/session/1234567">
+              <Link to="/app/session/1234567">
                 <div className="flex flex-column border border-solid border-slate-200 rounded-md p-5 hover:drop-shadow bg-white">
                   Date: 12/06/22
                 </div>
               </Link>
             </li>
             <li className="min-w-[250px]">
-              <Link to="/session/12345679">
+              <Link to="/app/session/12345679">
                 <div className="flex flex-column border border-solid border-slate-200 rounded-md p-5 hover:drop-shadow bg-white">
                   Date: 12/06/22
                 </div>
               </Link>
             </li>
             <li className="min-w-[250px]">
-              <Link to="/session/123456">
+              <Link to="/app/session/123456">
                 <div className="flex flex-column border border-solid border-slate-200 rounded-md p-5 hover:drop-shadow bg-white">
                   Date: 12/06/22
                 </div>
               </Link>
             </li>
             <li className="min-w-[250px]">
-              <Link to="/session/12345674">
+              <Link to="/app/session/12345674">
                 <div className="flex flex-column border border-solid border-slate-200 rounded-md p-5 hover:drop-shadow bg-white">
                   Date: 12/06/22
                 </div>

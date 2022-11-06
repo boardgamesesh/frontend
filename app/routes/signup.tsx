@@ -41,7 +41,7 @@ export default function SignUp() {
     <div className="p-7 bg-purple-50 rounded-xl flex flex-col gap-5">
       <h3 className="text-2xl flex-1 text-purple-700 font-bold">Sign up</h3>
       <div>
-        <Link to="/" className={button()}>
+        <Link to="/app/" className={button()}>
           Dashboard
         </Link>
       </div>
