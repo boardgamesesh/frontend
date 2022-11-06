@@ -8,7 +8,7 @@ export default function Landing() {
         Welcome to Boardgame Sesh!
       </h3>
       <div>
-        <Link to="/app/signup" className={button()}>
+        <Link to="/signup" className={button()}>
           Sign up
         </Link>
       </div>

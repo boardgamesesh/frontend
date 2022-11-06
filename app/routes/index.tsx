@@ -154,7 +154,7 @@ export default function Index() {
           </ul>
           <ul className="flex">
             <li>
-              <Link to="/app/">
+              <Link to="/">
                 <span
                   className={button({ intent: "tertiary", size: "xsmall" })}
                 >
@@ -163,7 +163,7 @@ export default function Index() {
               </Link>
             </li>
             <li>
-              <Link to="/app/">
+              <Link to="/">
                 <span
                   className={button({ intent: "tertiary", size: "xsmall" })}
                 >

@@ -100,7 +100,7 @@ const Session = () => {
                         monsters and favors from Kami.
                       </p>
                       <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
-                        <Link to="/app/game/12345/preparing?session=1234567">
+                        <Link to="/game/12345/preparing?session=1234567">
                           Start playing
                         </Link>
                       </div>
@@ -128,7 +128,7 @@ const Session = () => {
                           build your corporate empire.
                         </p>
                         <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
-                          <Link to="/app/game/preparing?session=1234567">
+                          <Link to="/game/preparing?session=1234567">
                             Start playing
                           </Link>
                         </div>
@@ -138,7 +138,7 @@ const Session = () => {
                 </div>
               </div>
             </div>
-            <Link to="/app/session/pick-boardgame">
+            <Link to="/session/pick-boardgame">
               <Card className="border-violet-800 bg-violet-700 hover:bg-gradient-to-br from-violet-700 to-violet-900 text-white hover:drop-shadow-lg w-full max-h-[150px]">
                 <span className="text-2xl grow">Pick boardgame</span>
                 <span className="text-7xl self-end text-violet-600">
