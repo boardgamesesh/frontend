@@ -1,24 +1,12 @@
-import { cva } from "class-variance-authority";
-import type { ReactNode } from "react";
+import { ReactNode } from "react";
+import { card, CardVariants } from "./card.css";
 
-const cardStyles = cva("border-slate-200 rounded-xl p-5 bg-white", {
-  variants: {
-    bordered: {
-      true: "border border-solid",
-      false: "",
-    },
-  },
-  defaultVariants: {
-    bordered: true,
-  },
-});
-
-export const Card = ({
-  children,
-  className,
-}: {
+type CardTypes = CardVariants & {
   children: ReactNode;
-  className?: string;
-}) => {
-  return <div className={cardStyles({ class: className })}>{children}</div>;
 };
+
+export const Card = ({ intent, bordered, ...props }: CardTypes) => (
+  <div className={card({ intent, bordered })} {...props} />
+);
+
+export const cardStyle = card;

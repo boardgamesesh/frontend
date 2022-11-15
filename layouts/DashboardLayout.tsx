@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { sprinklesTailwind } from "@styles/sprinkles.css";
+import { Logo } from "@components/Logo";
 
 export default function RootLayout({
   children,
@@ -6,13 +8,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main>
-      <Link href="/dashboard">Dashboard</Link>
-      <Link href="/game/1234">Game</Link>
-      <Link href="/session/1234">Session</Link>
-      <div className="flex flex-col gap-5 px-3 max-w-[1024px] mx-auto">
-        {children}
-      </div>
-    </main>
+    <>
+      <header>
+        <Logo />
+        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/game/1234">Game</Link>
+        <Link href="/session/1234">Session</Link>
+      </header>
+      <main>
+        <div
+          className={sprinklesTailwind({
+            display: "flex",
+            flexDirection: "column",
+            gap: "size-5",
+            marginX: "size-auto",
+          })}
+        >
+          {children}
+        </div>
+      </main>
+    </>
   );
 }

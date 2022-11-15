@@ -2,7 +2,7 @@ import { Button, buttonStyle } from "@components/Button";
 import { BsChevronRight } from "react-icons/bs";
 import { FaDirections, FaPlay } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
-import { Card } from "@components/Card/card";
+import { Card } from "@components/Card/Card";
 import Link from "next/link";
 import DashboardLayout from "@layouts/DashboardLayout";
 
