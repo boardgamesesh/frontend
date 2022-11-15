@@ -1,11 +1,12 @@
-import { Card } from "@components/card";
+import { Card } from "@components/Card/card";
+import DashboardLayout from "@layouts/DashboardLayout";
 import Link from "next/link";
 import { FaDirections } from "react-icons/fa";
 import { MdCall, MdOutlineWarningAmber, MdOutlineAdd } from "react-icons/md";
 
 export default function Page() {
   return (
-    <>
+    <DashboardLayout>
       <h1 className="text-3xl font-bold text-slate-700">Session</h1>
       <div className="flex flex-col gap-6">
         <section className="flex flex-col gap-3">
@@ -92,7 +93,7 @@ export default function Page() {
                         monsters and favors from Kami.
                       </p>
                       <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
-                        <Link href="/game/1234567/preparing">
+                        <Link href="/game/1234567?session=1234">
                           Start playing
                         </Link>
                       </div>
@@ -120,7 +121,7 @@ export default function Page() {
                           build your corporate empire.
                         </p>
                         <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
-                          <Link href="/game/1234567/preparing">
+                          <Link href="/game/1234567?session=1234">
                             Start playing
                           </Link>
                         </div>
@@ -141,6 +142,6 @@ export default function Page() {
           </div>
         </section>
       </div>
-    </>
+    </DashboardLayout>
   );
 }
