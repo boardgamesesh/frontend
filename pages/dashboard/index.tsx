@@ -99,7 +99,7 @@ export default function Page() {
               </li>
             </ul>
           </div>
-          <Card className="flex flex-col">
+          <Card>
             <header className="pb-2 flex justify-between border-b">
               <h2 className="font-bold">Upcoming sessions</h2>
             </header>

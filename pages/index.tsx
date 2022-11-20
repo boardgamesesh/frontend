@@ -11,8 +11,8 @@ export default function Page() {
           Welcome to Boardgame Sesh!
         </h3>
         <div>
-          <Link href="/login" className={buttonStyle()}>
-            Login
+          <Link href="/signup" className={buttonStyle()}>
+            Sign up
           </Link>
         </div>
       </Card>

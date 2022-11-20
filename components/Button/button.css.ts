@@ -18,36 +18,36 @@ export const button = recipe({
     intent: {
       primary: sprinklesTailwind({
         background: {
-          default: "violet-5",
-          hover: "violet-6",
+          default: "violet500",
+          hover: "violet600",
         },
-        borderColor: "violet-5",
+        borderColor: "violet500",
         borderWidth: "border-size-1",
       }),
       secondary: sprinklesTailwind({
         background: {
           default: "white",
-          hover: "violet-6",
+          hover: "violet600",
         },
         color: {
           hover: "white",
         },
-        borderColor: "violet-5",
+        borderColor: "violet500",
         borderWidth: "border-size-1",
       }),
       tertiary: sprinklesTailwind({
         color: {
-          default: "violet-5",
+          default: "violet500",
         },
         background: {
-          hover: "violet-1",
+          hover: "violet100",
         },
       }),
     },
     mood: {
-      neutral: sprinklesTailwind({ background: "gray-5" }),
-      positive: sprinklesTailwind({ background: "green-5" }),
-      negative: sprinklesTailwind({ background: "red-5" }),
+      neutral: sprinklesTailwind({ background: "slate500" }),
+      positive: sprinklesTailwind({ background: "green500" }),
+      negative: sprinklesTailwind({ background: "red500" }),
     },
     size: {
       xsmall: sprinklesTailwind({
@@ -75,21 +75,21 @@ export const button = recipe({
         intent: "secondary",
         mood: "neutral",
       },
-      style: sprinklesTailwind({ borderColor: "gray-5" }),
+      style: sprinklesTailwind({ borderColor: "slate500" }),
     },
     {
       variants: {
         intent: "secondary",
         mood: "positive",
       },
-      style: sprinklesTailwind({ borderColor: "green-5" }),
+      style: sprinklesTailwind({ borderColor: "green500" }),
     },
     {
       variants: {
         intent: "secondary",
         mood: "negative",
       },
-      style: sprinklesTailwind({ borderColor: "red-5" }),
+      style: sprinklesTailwind({ borderColor: "red500", background: "white" }),
     },
   ],
 

@@ -3,7 +3,7 @@ import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
 export const card = recipe({
   base: sprinklesTailwind({
-    borderColor: "gray-2",
+    borderColor: "slate200",
     borderRadius: "radius-3",
     padding: "size-5",
   }),
@@ -14,7 +14,7 @@ export const card = recipe({
         background: "white",
       }),
       highlight: sprinklesTailwind({
-        background: "violet-1",
+        background: "violet100",
       }),
     },
     bordered: {
@@ -27,7 +27,7 @@ export const card = recipe({
   compoundVariants: [
     {
       variants: { intent: "highlight", bordered: true },
-      style: sprinklesTailwind({ borderColor: "violet-5" }),
+      style: sprinklesTailwind({ borderColor: "violet500" }),
     },
   ],
 
