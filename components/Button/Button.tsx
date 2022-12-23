@@ -1,13 +1,24 @@
 import { ReactNode } from "react";
-import { button, ButtonVariants } from "./button.css";
+import clsx from "clsx";
+import styles from "./Button.module.css";
 
-type ButtonTypes = ButtonVariants & {
+export const Button = ({
+  children,
+  intent,
+  onClick,
+}: {
   children: ReactNode;
-  onClick?: () => void;
-};
-
-export const Button = ({ intent, size, mood, ...props }: ButtonTypes) => (
-  <button className={button({ intent, mood, size })} {...props} />
+  onClick: () => void;
+  intent?: string;
+  size?: string;
+  mood?: string;
+}) => (
+  <button
+    onClick={onClick}
+    className={clsx(styles.base, {
+      [styles.highlight]: intent === "highlight",
+    })}
+  >
+    {children}
+  </button>
 );
-
-export const buttonStyle = button;

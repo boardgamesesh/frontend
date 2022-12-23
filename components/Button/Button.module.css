@@ -1,0 +1,24 @@
+.base {
+  padding: 8px 16px;
+  background-color: var(--violet-600);
+  color: #fff;
+  border: 1px solid var(--violet-700);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.base:hover {
+  background-color: var(--violet-700);
+}
+
+/* Sizes */
+
+.small {
+  font-size: 0.725em;
+  padding: 3px 6px;
+}
+
+.large {
+  font-size: 1.125em;
+  padding: 3px 6px;
+}

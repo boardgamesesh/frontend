@@ -1,26 +1,27 @@
-import { Button, buttonStyle } from "@components/Button";
 import { BsChevronRight } from "react-icons/bs";
 import { FaDirections, FaPlay } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
-import { Card } from "@components/Card/Card";
 import Link from "next/link";
 import DashboardLayout from "@layouts/DashboardLayout";
+
+import { Card } from "@components/Card";
+import { Button } from "@components/Button";
 
 export default function Page() {
   return (
     <DashboardLayout>
       <div className="space-y-8">
-        <div className="p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
+        <Card variant="highlight">
           <h3 className="text-2xl flex-1 text-purple-700 font-bold">
             You haven&lsquo;t got any sessions running!
           </h3>
           <div>
             <Button>Setup a Sesh</Button>
           </div>
-        </div>
+        </Card>
         <section className="grid md:grid-cols-[1fr_2fr] gap-3">
-          <div className="border-slate-200 rounded-xl flex flex-col divide-y p-2 bg-slate-50">
-            <div className="flex flex-col flex-grow p-5 gap-4">
+          <div className="border-slate-200 rounded-xl flex flex-col bg-slate-50">
+            <div className="flex flex-col flex-grow gap-4  p-5">
               <header className="flex justify-between">
                 <div>
                   <h2 className="font-bold">Today</h2>
@@ -29,9 +30,7 @@ export default function Page() {
                 <div>
                   <Link
                     href="/session/1234567"
-                    className={buttonStyle({
-                      size: "small",
-                    })}
+                    className="flex items-center gap-2 justify-center text-white px-2 py-1 rounded bg-violet-500 lg:w-fit"
                   >
                     <FaPlay className="text-xs" />
                     Play
@@ -70,13 +69,11 @@ export default function Page() {
                 </li>
               </ul>
             </div>
-            <ul className="flex gap-3 p-3">
+            <ul className="flex gap-3 p-5 bg-slate-100 rounded-b-xl">
               <li className="w-full">
                 <a
                   href="tel:0411757997"
-                  className={buttonStyle({
-                    intent: "secondary",
-                  })}
+                  className="flex items-center gap-2 bg-white border border-slate-300 rounded py-3 justify-center"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -87,9 +84,7 @@ export default function Page() {
               <li className="w-full">
                 <a
                   href="https://www.google.com/maps/dir//1+Fleming+Dr,+Campbelltown+NSW+2560/@-34.0658335,150.78311,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x6b12ee335124753d:0x9ac89184e66355f0!2m2!1d150.7852987!2d-34.0658335!3e0"
-                  className={buttonStyle({
-                    intent: "secondary",
-                  })}
+                  className="flex items-center gap-2 bg-white border border-slate-300 rounded py-3 justify-center"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -99,18 +94,16 @@ export default function Page() {
               </li>
             </ul>
           </div>
-          <Card>
+          <div className="p-5 bg-white">
             <header className="pb-2 flex justify-between border-b">
               <h2 className="font-bold">Upcoming sessions</h2>
             </header>
-            {/* <div className="mt-3 p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
-          <span className="text-lg flex-1 text-purple-700 font-bold">
-            Accept some invites (3)
-          </span>
-          <Button size="small" className="w-fit">
-            Setup a Sesh
-          </Button>
-        </div> */}
+            <div className="mt-3 p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
+              <span className="text-lg flex-1 text-purple-700 font-bold">
+                Accept some invites (3)
+              </span>
+              <Button>Setup a Sesh</Button>
+            </div>
             <ul className="divide-y flex flex-col flex-grow">
               <li>
                 <Link
@@ -160,33 +153,19 @@ export default function Page() {
             <ul className="flex">
               <li>
                 <Link href="/">
-                  <span
-                    className={buttonStyle({
-                      intent: "tertiary",
-                      size: "xsmall",
-                    })}
-                  >
-                    See all
-                  </span>
+                  <span className="">See all</span>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <span
-                    className={buttonStyle({
-                      intent: "tertiary",
-                      size: "xsmall",
-                    })}
-                  >
-                    Manage
-                  </span>
+                  <span className="">Manage</span>
                 </Link>
               </li>
             </ul>
-          </Card>
+          </div>
         </section>
         <section>
-          <Card>
+          <div>
             <header className="pb-2 flex justify-between border-b">
               <h2 className="font-bold">Invites</h2>
             </header>
@@ -237,10 +216,10 @@ export default function Page() {
                 </ul>
               </li>
             </ul>
-          </Card>
+          </div>
         </section>
         <section>
-          <Card>
+          <div>
             <header className="pb-2 flex justify-between border-b">
               <h2 className="font-bold">Past games</h2>
             </header>
@@ -272,13 +251,7 @@ export default function Page() {
                   <td className="p-1">100 pts</td>
                   <td className="p-1 text-green-500">Win</td>
                   <td className="p-1">
-                    <Link
-                      href="/"
-                      className={buttonStyle({
-                        intent: "tertiary",
-                        size: "small",
-                      })}
-                    >
+                    <Link href="/" className="">
                       Details
                     </Link>
                   </td>
@@ -290,20 +263,14 @@ export default function Page() {
                   <td className="p-1">30 pts</td>
                   <td className="p-1 text-red-500">Loss</td>
                   <td className="p-1">
-                    <Link
-                      href="/"
-                      className={buttonStyle({
-                        intent: "tertiary",
-                        size: "small",
-                      })}
-                    >
+                    <Link href="/" className="">
                       Details
                     </Link>
                   </td>
                 </tr>
               </tbody>
             </table>
-          </Card>
+          </div>
         </section>
       </div>
     </DashboardLayout>

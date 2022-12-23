@@ -1,12 +1,25 @@
 import { ReactNode } from "react";
-import { card, CardVariants } from "./card.css";
+import styles from "./Card.module.css";
+import clsx from "clsx";
 
-type CardTypes = CardVariants & {
+export const Card = ({
+  children,
+  variant,
+  className,
+}: {
   children: ReactNode;
-};
-
-export const Card = ({ intent, bordered, ...props }: CardTypes) => (
-  <div className={card({ intent, bordered })} {...props} />
+  variant?: string;
+  className?: string;
+}) => (
+  <div
+    className={clsx(
+      styles.base,
+      {
+        [styles.highlight]: variant === "highlight",
+      },
+      className
+    )}
+  >
+    {children}
+  </div>
 );
-
-export const cardStyle = card;

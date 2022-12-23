@@ -42,7 +42,7 @@ export default function Page() {
   useEffect(() => {
     signIn();
     console.info("userData", userData);
-  }, [signIn]);
+  }, [signIn, userData]);
 
   if (loading) return "Loading...";
 
