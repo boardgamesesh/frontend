@@ -1,24 +1,49 @@
-.base {
-  padding: 8px 16px;
-  background-color: var(--violet-600);
-  color: #fff;
-  border: 1px solid var(--violet-700);
-  border-radius: 3px;
-  cursor: pointer;
-}
+@layer components {
+  .base {
+    padding: 8px 16px;
+    background-color: var(--violet-600);
+    color: #fff;
+    border: 1px solid var(--violet-700);
+    border-radius: 3px;
+    cursor: pointer;
+  }
 
-.base:hover {
-  background-color: var(--violet-700);
-}
+  .base:hover {
+    background-color: var(--violet-700);
+  }
 
-/* Sizes */
+  /* Intents */
 
-.small {
-  font-size: 0.725em;
-  padding: 3px 6px;
-}
+  .secondary {
+    color: var(--violet-600);
+    background-color: var(--white);
+  }
 
-.large {
-  font-size: 1.125em;
-  padding: 3px 6px;
+  .secondary:hover {
+    color: var(--white);
+  }
+
+  /* Moods */
+
+  .secondary.negative {
+    border-color: red;
+    color: red;
+  }
+
+  .secondary.negative:hover {
+    background-color: red;
+    color: white;
+  }
+
+  /* Sizes */
+
+  .small {
+    font-size: 0.725em;
+    padding: 3px 6px;
+  }
+
+  .large {
+    font-size: 1.125em;
+    padding: 3px 6px;
+  }
 }

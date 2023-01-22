@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@components/Logo";
+import { Container } from "@components/Container";
 
 export default function RootLayout({
   children,
@@ -9,13 +10,19 @@ export default function RootLayout({
   return (
     <>
       <header>
-        <Logo />
-        <Link href="/dashboard">Dashboard</Link>
-        <Link href="/game/1234">Game</Link>
-        <Link href="/session/1234">Session</Link>
+        <Container>
+          <div className="flex gap-2">
+            <Link href="/dashboard">
+              <Logo />
+            </Link>
+            <Link href="/dashboard">Dashboard</Link>
+            <Link href="/game/1234">Game</Link>
+            <Link href="/session/1234">Session</Link>
+          </div>
+        </Container>
       </header>
       <main>
-        <div className="lg:max-w-lg">{children}</div>
+        <Container>{children}</Container>
       </main>
     </>
   );

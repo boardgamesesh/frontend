@@ -8,7 +8,7 @@ export const Card = ({
   className,
 }: {
   children: ReactNode;
-  variant?: string;
+  variant?: "highlight" | "section";
   className?: string;
 }) => (
   <div
@@ -16,6 +16,7 @@ export const Card = ({
       styles.base,
       {
         [styles.highlight]: variant === "highlight",
+        [styles.section]: variant === "section",
       },
       className
     )}

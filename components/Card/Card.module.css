@@ -1,10 +1,17 @@
-.base {
-  padding: 8px;
-  background-color: #ffffff;
-  border-radius: 3px;
-}
+@layer components {
+  .base {
+    padding: 8px;
+    background-color: #ffffff;
+    border-radius: 3px;
+  }
 
-.highlight {
-  color: #4c1d95;
-  background-color: #c4b5fd;
+  .highlight {
+    color: var(--violet-700);
+    background-color: var(--violet-100);
+  }
+
+  .section {
+    border: 1px solid var(--slate-200);
+    background-color: var(--slate-50);
+  }
 }

@@ -16,11 +16,11 @@ export default function Page() {
             You haven&lsquo;t got any sessions running!
           </h3>
           <div>
-            <Button>Setup a Sesh</Button>
+            <Button onClick={() => {}}>Setup a Sesh</Button>
           </div>
         </Card>
         <section className="grid md:grid-cols-[1fr_2fr] gap-3">
-          <div className="border-slate-200 rounded-xl flex flex-col bg-slate-50">
+          <Card variant="section">
             <div className="flex flex-col flex-grow gap-4  p-5">
               <header className="flex justify-between">
                 <div>
@@ -69,7 +69,7 @@ export default function Page() {
                 </li>
               </ul>
             </div>
-            <ul className="flex gap-3 p-5 bg-slate-100 rounded-b-xl">
+            <ul className="flex gap-16">
               <li className="w-full">
                 <a
                   href="tel:0411757997"
@@ -93,17 +93,20 @@ export default function Page() {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="p-5 bg-white">
+          </Card>
+          <Card className="p-5 bg-white">
             <header className="pb-2 flex justify-between border-b">
               <h2 className="font-bold">Upcoming sessions</h2>
             </header>
-            <div className="mt-3 p-7 bg-purple-50 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center">
-              <span className="text-lg flex-1 text-purple-700 font-bold">
+            <Card
+              variant="highlight"
+              className="mt-3 p-7 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center"
+            >
+              <span className="text-lg flex-1 font-bold">
                 Accept some invites (3)
               </span>
-              <Button>Setup a Sesh</Button>
-            </div>
+              <Button onClick={() => {}}>Setup a Sesh</Button>
+            </Card>
             <ul className="divide-y flex flex-col flex-grow">
               <li>
                 <Link
@@ -162,7 +165,7 @@ export default function Page() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </Card>
         </section>
         <section>
           <div>
@@ -176,12 +179,19 @@ export default function Page() {
                 </div>
                 <ul className="flex w-full sm:w-auto gap-2">
                   <li className="w-full sm:w-auto">
-                    <Button intent="secondary" mood="negative" size="small">
+                    <Button
+                      onClick={() => {}}
+                      intent="secondary"
+                      mood="negative"
+                      size="small"
+                    >
                       Nope
                     </Button>
                   </li>
                   <li className="w-full md:w-auto">
-                    <Button size="small">Going</Button>
+                    <Button onClick={() => {}} intent="secondary" size="small">
+                      Going
+                    </Button>
                   </li>
                 </ul>
               </li>
@@ -191,12 +201,19 @@ export default function Page() {
                 </div>
                 <ul className="flex w-full sm:w-auto gap-2">
                   <li className="w-full sm:w-auto">
-                    <Button intent="secondary" mood="negative" size="small">
+                    <Button
+                      onClick={() => {}}
+                      intent="secondary"
+                      mood="negative"
+                      size="small"
+                    >
                       Nope
                     </Button>
                   </li>
                   <li className="w-full md:w-auto">
-                    <Button size="small">Going</Button>
+                    <Button onClick={() => {}} intent="secondary" size="small">
+                      Going
+                    </Button>
                   </li>
                 </ul>
               </li>
@@ -206,12 +223,19 @@ export default function Page() {
                 </div>
                 <ul className="flex w-full sm:w-auto gap-2">
                   <li className="w-full sm:w-auto">
-                    <Button intent="secondary" mood="negative" size="small">
+                    <Button
+                      onClick={() => {}}
+                      intent="secondary"
+                      mood="negative"
+                      size="small"
+                    >
                       Nope
                     </Button>
                   </li>
                   <li className="w-full md:w-auto">
-                    <Button size="small">Going</Button>
+                    <Button onClick={() => {}} intent="secondary" size="small">
+                      Going
+                    </Button>
                   </li>
                 </ul>
               </li>

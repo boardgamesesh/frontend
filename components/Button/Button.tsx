@@ -5,6 +5,8 @@ import styles from "./Button.module.css";
 export const Button = ({
   children,
   intent,
+  size,
+  mood,
   onClick,
 }: {
   children: ReactNode;
@@ -16,7 +18,10 @@ export const Button = ({
   <button
     onClick={onClick}
     className={clsx(styles.base, {
-      [styles.highlight]: intent === "highlight",
+      [styles.secondary]: intent === "secondary",
+      [styles.negative]: mood === "negative",
+      [styles.small]: size === "small",
+      [styles.large]: size === "large",
     })}
   >
     {children}
