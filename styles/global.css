@@ -2,3 +2,47 @@
 
 @import "node_modules/modern-normalize/modern-normalize.css";
 @import "./tokens/colours.css";
+@import "./tokens/sizes.css";
+@import "./tokens/space.css";
+
+* {
+  --font-size: var(--size-16);
+  --gap: var(--space-8);
+  --colour-interactive: var(--violet-600);
+}
+
+@layer base {
+  html {
+    font-size: 100%;
+  }
+}
+
+@layer utilities {
+  .flex {
+    display: flex;
+  }
+
+  .gap {
+    gap: var(--gap);
+  }
+
+  .grid {
+    display: flex;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+}

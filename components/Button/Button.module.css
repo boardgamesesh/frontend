@@ -1,7 +1,9 @@
 @layer components {
   .base {
-    padding: 8px 16px;
-    background-color: var(--violet-600);
+    --button-background: var(--colour-interactive);
+
+    padding: var(--space-8) var(--space-16);
+    background-color: var(--button-background);
     color: #fff;
     border: 1px solid var(--violet-700);
     border-radius: 3px;
@@ -16,34 +18,22 @@
 
   .secondary {
     color: var(--violet-600);
-    background-color: var(--white);
+    --button-background: var(--white);
   }
 
   .secondary:hover {
     color: var(--white);
   }
 
-  /* Moods */
-
-  .secondary.negative {
-    border-color: red;
-    color: red;
-  }
-
-  .secondary.negative:hover {
-    background-color: red;
-    color: white;
-  }
-
   /* Sizes */
 
   .small {
-    font-size: 0.725em;
-    padding: 3px 6px;
+    font-size: var(--size-8);
+    padding: var(--space-4) var(--space-8);
   }
 
   .large {
-    font-size: 1.125em;
-    padding: 3px 6px;
+    font-size: var(--size-20);
+    padding: var(--size-4) var(--size-8);
   }
 }

@@ -6,6 +6,8 @@ import DashboardLayout from "@layouts/DashboardLayout";
 
 import { Card } from "@components/Card";
 import { Button } from "@components/Button";
+import { List } from "@components/List";
+import { Actions } from "@components/Actions";
 
 export default function Page() {
   return (
@@ -37,11 +39,11 @@ export default function Page() {
                   </Link>
                 </div>
               </header>
-              <ul className="text-sm flex gap-1">
+              <List className="text-sm flex gap-1">
                 <li className="after:content-[',']">Rising Sun</li>
                 <li>Teraforming Mars</li>
-              </ul>
-              <ul className="flex flex-wrap gap-1">
+              </List>
+              <List className="flex flex-wrap gap-1">
                 <li>
                   <div className="rounded-full bg-green-200 border border-green-300 px-2 text-xs">
                     119
@@ -67,9 +69,9 @@ export default function Page() {
                     +5
                   </div>
                 </li>
-              </ul>
+              </List>
             </div>
-            <ul className="flex gap-16">
+            <List className="flex gap-16">
               <li className="w-full">
                 <a
                   href="tel:0411757997"
@@ -92,7 +94,7 @@ export default function Page() {
                   Directions
                 </a>
               </li>
-            </ul>
+            </List>
           </Card>
           <Card className="p-5 bg-white">
             <header className="pb-2 flex justify-between border-b">
@@ -107,7 +109,7 @@ export default function Page() {
               </span>
               <Button onClick={() => {}}>Setup a Sesh</Button>
             </Card>
-            <ul className="divide-y flex flex-col flex-grow">
+            <List className="divide-y flex flex-col flex-grow">
               <li>
                 <Link
                   href="/session/1234567"
@@ -152,8 +154,8 @@ export default function Page() {
                   <BsChevronRight />
                 </Link>
               </li>
-            </ul>
-            <ul className="flex">
+            </List>
+            <List className="flex">
               <li>
                 <Link href="/">
                   <span className="">See all</span>
@@ -164,7 +166,7 @@ export default function Page() {
                   <span className="">Manage</span>
                 </Link>
               </li>
-            </ul>
+            </List>
           </Card>
         </section>
         <section>
@@ -172,74 +174,69 @@ export default function Page() {
             <header className="pb-2 flex justify-between border-b">
               <h2 className="font-bold">Invites</h2>
             </header>
-            <ul className="divide-y">
-              <li className="py-2 flex flex-row flex-wrap items-center justify-between">
-                <div className="flex-grow sm:flex-grow-0">
-                  02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
-                </div>
-                <ul className="flex w-full sm:w-auto gap-2">
-                  <li className="w-full sm:w-auto">
-                    <Button
-                      onClick={() => {}}
-                      intent="secondary"
-                      mood="negative"
-                      size="small"
-                    >
+            <List dividers>
+              <li>
+                <Card className="flex flex-row flex-wrap items-center justify-between">
+                  <div className="flex-grow sm:flex-grow-0">
+                    02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
+                  </div>
+                  <Actions>
+                    <Button onClick={() => {}} size="small">
                       Nope
                     </Button>
-                  </li>
-                  <li className="w-full md:w-auto">
                     <Button onClick={() => {}} intent="secondary" size="small">
                       Going
                     </Button>
-                  </li>
-                </ul>
+                  </Actions>
+                </Card>
               </li>
-              <li className="py-2 flex flex-row flex-wrap items-center justify-between">
-                <div className="flex-grow sm:flex-grow-0">
-                  02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
-                </div>
-                <ul className="flex w-full sm:w-auto gap-2">
-                  <li className="w-full sm:w-auto">
-                    <Button
-                      onClick={() => {}}
-                      intent="secondary"
-                      mood="negative"
-                      size="small"
-                    >
-                      Nope
-                    </Button>
-                  </li>
-                  <li className="w-full md:w-auto">
-                    <Button onClick={() => {}} intent="secondary" size="small">
-                      Going
-                    </Button>
-                  </li>
-                </ul>
+              <li>
+                <Card className="flex flex-row flex-wrap items-center justify-between">
+                  <div className="flex-grow">
+                    02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
+                  </div>
+                  <List className="flex w-full sm:w-auto gap-2">
+                    <li className="w-full sm:w-auto">
+                      <Button onClick={() => {}} size="small">
+                        Nope
+                      </Button>
+                    </li>
+                    <li className="w-full md:w-auto">
+                      <Button
+                        onClick={() => {}}
+                        intent="secondary"
+                        size="small"
+                      >
+                        Going
+                      </Button>
+                    </li>
+                  </List>
+                </Card>
               </li>
-              <li className="py-2 flex flex-row flex-wrap items-center justify-between">
-                <div className="flex-grow sm:flex-grow-0">
-                  02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
-                </div>
-                <ul className="flex w-full sm:w-auto gap-2">
-                  <li className="w-full sm:w-auto">
-                    <Button
-                      onClick={() => {}}
-                      intent="secondary"
-                      mood="negative"
-                      size="small"
-                    >
-                      Nope
-                    </Button>
-                  </li>
-                  <li className="w-full md:w-auto">
-                    <Button onClick={() => {}} intent="secondary" size="small">
-                      Going
-                    </Button>
-                  </li>
-                </ul>
+              <li>
+                <Card className="flex flex-row flex-wrap items-center justify-between">
+                  <div className="flex-grow sm:flex-grow-0">
+                    02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
+                  </div>
+                  <List className="flex w-full sm:w-auto gap-2">
+                    <li className="w-full sm:w-auto">
+                      <Button onClick={() => {}} size="small">
+                        Nope
+                      </Button>
+                    </li>
+                    <li className="w-full md:w-auto">
+                      <Button
+                        onClick={() => {}}
+                        intent="secondary"
+                        size="small"
+                      >
+                        Going
+                      </Button>
+                    </li>
+                  </List>
+                </Card>
               </li>
-            </ul>
+            </List>
           </div>
         </section>
         <section>

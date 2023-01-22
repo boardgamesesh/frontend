@@ -1,0 +1,12 @@
+@layer components {
+  .base {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: var(--gap);
+  }
+
+  .dividers > li:not(:last-child) {
+    border-bottom: 1px solid var(--slate-200);
+  }
+}
