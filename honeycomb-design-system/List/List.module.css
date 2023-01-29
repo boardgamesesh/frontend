@@ -6,6 +6,18 @@
     gap: var(--gap);
   }
 
+  .horizontal {
+    display: flex;
+  }
+
+  .align-x-centre {
+    justify-content: center;
+  }
+
+  .align-y-centre {
+    align-items: center;
+  }
+
   .dividers > li:not(:last-child) {
     border-bottom: 1px solid var(--slate-200);
   }

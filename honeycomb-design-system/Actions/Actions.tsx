@@ -1,5 +1,4 @@
-import { Button } from "@components/Button";
-import { List } from "@components/List";
+import { List } from "honeycomb-design-system/List";
 import clsx from "clsx";
 import { Children, ReactNode } from "react";
 import styles from "./Actions.module.css";

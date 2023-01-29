@@ -38,11 +38,23 @@
     flex-wrap: wrap;
   }
 
-  .items-center {
+  .flex-grow {
+    flex-grow: 1;
+  }
+
+  .items-centre {
     align-items: center;
   }
 
   .justify-between {
     justify-content: space-between;
+  }
+
+  .justify-centre {
+    justify-content: center;
+  }
+
+  .display-block {
+    display: block;
   }
 }

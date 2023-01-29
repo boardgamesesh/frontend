@@ -1,5 +1,6 @@
 @layer components {
   .base {
     display: flex;
+    gap: var(--gap);
   }
 }

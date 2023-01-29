@@ -1,5 +1,5 @@
-import { Container } from "@components/Container";
-import { Logo } from "@components/Logo";
+import { Container } from "honeycomb-design-system/Container";
+import { Logo } from "honeycomb-design-system/Logo";
 import Link from "next/link";
 
 export default function RootLayout({

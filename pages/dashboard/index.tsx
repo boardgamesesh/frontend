@@ -4,10 +4,10 @@ import { MdCall } from "react-icons/md";
 import Link from "next/link";
 import DashboardLayout from "@layouts/DashboardLayout";
 
-import { Card } from "@components/Card";
-import { Button } from "@components/Button";
-import { List } from "@components/List";
-import { Actions } from "@components/Actions";
+import { Card } from "honeycomb-design-system/Card";
+import { Button } from "honeycomb-design-system/Button";
+import { List } from "honeycomb-design-system/List";
+import { Actions } from "honeycomb-design-system/Actions";
 
 export default function Page() {
   return (
@@ -96,81 +96,134 @@ export default function Page() {
               </li>
             </List>
           </Card>
-          <Card className="p-5 bg-white">
-            <header className="pb-2 flex justify-between border-b">
-              <h2 className="font-bold">Upcoming sessions</h2>
-            </header>
-            <Card
-              variant="highlight"
-              className="mt-3 p-7 rounded-xl flex flex-col gap-5 md:flex-row justify-between md:items-center"
-            >
-              <span className="text-lg flex-1 font-bold">
-                Accept some invites (3)
-              </span>
-              <Button onClick={() => {}}>Setup a Sesh</Button>
-            </Card>
-            <List className="divide-y flex flex-col flex-grow">
-              <li>
-                <Link
-                  href="/session/1234567"
-                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                >
-                  <div className="flex-grow md:flex-grow-0">
-                    02/10/22 @ 12:00 - 17:00
-                  </div>
-                  <BsChevronRight />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/session/1234567"
-                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                >
-                  <div className="flex-grow md:flex-grow-0">
-                    02/10/22 @ 12:00 - 17:00 (Host)
-                  </div>
-                  <BsChevronRight />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/session/1234567"
-                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                >
-                  <div className="flex-grow md:flex-grow-0">
-                    02/10/22 @ 12:00 - 17:00
-                  </div>
-                  <BsChevronRight />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/session/1234567"
-                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                >
-                  <div className="flex-grow md:flex-grow-0">
-                    02/10/22 @ 12:00 - 17:00
-                  </div>
-                  <BsChevronRight />
-                </Link>
-              </li>
-            </List>
-            <List className="flex">
-              <li>
-                <Link href="/">
-                  <span className="">See all</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <span className="">Manage</span>
-                </Link>
-              </li>
-            </List>
-          </Card>
         </section>
-        <section>
+        <div className="flex gap">
           <div>
+            <List>
+              <li>Upcoming sessions</li>
+              <li>Past games</li>
+            </List>
+            <section>
+              <Card className="p-5 bg-white">
+                <header className="pb-2 flex justify-between border-b">
+                  <h2 className="font-bold">Upcoming sessions</h2>
+                </header>
+                <List className="divide-y flex flex-col flex-grow">
+                  <li>
+                    <Link
+                      href="/session/1234567"
+                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                    >
+                      <div className="flex-grow md:flex-grow-0">
+                        02/10/22 @ 12:00 - 17:00
+                      </div>
+                      <BsChevronRight />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/session/1234567"
+                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                    >
+                      <div className="flex-grow md:flex-grow-0">
+                        02/10/22 @ 12:00 - 17:00 (Host)
+                      </div>
+                      <BsChevronRight />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/session/1234567"
+                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                    >
+                      <div className="flex-grow md:flex-grow-0">
+                        02/10/22 @ 12:00 - 17:00
+                      </div>
+                      <BsChevronRight />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/session/1234567"
+                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                    >
+                      <div className="flex-grow md:flex-grow-0">
+                        02/10/22 @ 12:00 - 17:00
+                      </div>
+                      <BsChevronRight />
+                    </Link>
+                  </li>
+                </List>
+                <List className="flex">
+                  <li>
+                    <Link href="/">
+                      <span className="">See all</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/">
+                      <span className="">Manage</span>
+                    </Link>
+                  </li>
+                </List>
+              </Card>
+            </section>
+            <section>
+              <div>
+                <header className="pb-2 flex justify-between border-b">
+                  <h2 className="font-bold">Past games</h2>
+                </header>
+                <table className="w-full">
+                  <thead className="border-b text-sm">
+                    <tr>
+                      <th className="px-1 py-2 text-left">Boardgame</th>
+                      <th className="px-1 py-2 text-left">Avg. turn time</th>
+                      <th className="px-1 py-2 text-left">Play length</th>
+                      <th className="px-1 py-2 text-left">Score</th>
+                      <th className="px-1 py-2 text-left">Result</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="odd:bg-slate-50">
+                      <td colSpan={6} className="bg-white">
+                        <div className="my-3 p-3 bg-blue-50 rounded flex justify-between items-center">
+                          <span className="text-sm text-blue-700">
+                            Have to play some games first...
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr className="text-sm odd:bg-slate-50">
+                      <td className="p-1">Rising Sun</td>
+                      <td className="p-1">10 min</td>
+                      <td className="p-1">240 min</td>
+                      <td className="p-1">100 pts</td>
+                      <td className="p-1 text-green-500">Win</td>
+                      <td className="p-1">
+                        <Link href="/" className="">
+                          Details
+                        </Link>
+                      </td>
+                    </tr>
+                    <tr className="text-sm odd:bg-slate-50">
+                      <td className="p-1">Teraforming Mars</td>
+                      <td className="p-1">10 min</td>
+                      <td className="p-1">240 min</td>
+                      <td className="p-1">30 pts</td>
+                      <td className="p-1 text-red-500">Loss</td>
+                      <td className="p-1">
+                        <Link href="/" className="">
+                          Details
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+          <section>
             <header className="pb-2 flex justify-between border-b">
               <h2 className="font-bold">Invites</h2>
             </header>
@@ -181,11 +234,8 @@ export default function Page() {
                     02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
                   </div>
                   <Actions>
-                    <Button onClick={() => {}} size="small">
-                      Nope
-                    </Button>
                     <Button onClick={() => {}} intent="secondary" size="small">
-                      Going
+                      Details
                     </Button>
                   </Actions>
                 </Card>
@@ -197,16 +247,16 @@ export default function Page() {
                   </div>
                   <List className="flex w-full sm:w-auto gap-2">
                     <li className="w-full sm:w-auto">
-                      <Button onClick={() => {}} size="small">
+                      <Button
+                        onClick={() => {}}
+                        size="small"
+                        intent="secondary"
+                      >
                         Nope
                       </Button>
                     </li>
                     <li className="w-full md:w-auto">
-                      <Button
-                        onClick={() => {}}
-                        intent="secondary"
-                        size="small"
-                      >
+                      <Button onClick={() => {}} size="small">
                         Going
                       </Button>
                     </li>
@@ -220,16 +270,16 @@ export default function Page() {
                   </div>
                   <List className="flex w-full sm:w-auto gap-2">
                     <li className="w-full sm:w-auto">
-                      <Button onClick={() => {}} size="small">
+                      <Button
+                        onClick={() => {}}
+                        size="small"
+                        intent="secondary"
+                      >
                         Nope
                       </Button>
                     </li>
                     <li className="w-full md:w-auto">
-                      <Button
-                        onClick={() => {}}
-                        intent="secondary"
-                        size="small"
-                      >
+                      <Button onClick={() => {}} size="small">
                         Going
                       </Button>
                     </li>
@@ -237,62 +287,8 @@ export default function Page() {
                 </Card>
               </li>
             </List>
-          </div>
-        </section>
-        <section>
-          <div>
-            <header className="pb-2 flex justify-between border-b">
-              <h2 className="font-bold">Past games</h2>
-            </header>
-            <table className="w-full">
-              <thead className="border-b text-sm">
-                <tr>
-                  <th className="px-1 py-2 text-left">Boardgame</th>
-                  <th className="px-1 py-2 text-left">Avg. turn time</th>
-                  <th className="px-1 py-2 text-left">Play length</th>
-                  <th className="px-1 py-2 text-left">Score</th>
-                  <th className="px-1 py-2 text-left">Result</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="odd:bg-slate-50">
-                  <td colSpan={6} className="bg-white">
-                    <div className="my-3 p-3 bg-blue-50 rounded flex justify-between items-center">
-                      <span className="text-sm text-blue-700">
-                        Have to play some games first...
-                      </span>
-                    </div>
-                  </td>
-                </tr>
-                <tr className="text-sm odd:bg-slate-50">
-                  <td className="p-1">Rising Sun</td>
-                  <td className="p-1">10 min</td>
-                  <td className="p-1">240 min</td>
-                  <td className="p-1">100 pts</td>
-                  <td className="p-1 text-green-500">Win</td>
-                  <td className="p-1">
-                    <Link href="/" className="">
-                      Details
-                    </Link>
-                  </td>
-                </tr>
-                <tr className="text-sm odd:bg-slate-50">
-                  <td className="p-1">Teraforming Mars</td>
-                  <td className="p-1">10 min</td>
-                  <td className="p-1">240 min</td>
-                  <td className="p-1">30 pts</td>
-                  <td className="p-1 text-red-500">Loss</td>
-                  <td className="p-1">
-                    <Link href="/" className="">
-                      Details
-                    </Link>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </DashboardLayout>
   );

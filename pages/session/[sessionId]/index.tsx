@@ -1,4 +1,4 @@
-import { Card } from "@components/Card/Card";
+import { Card } from "honeycomb-design-system/Card/Card";
 import DashboardLayout from "@layouts/DashboardLayout";
 import Link from "next/link";
 import { FaDirections } from "react-icons/fa";
