@@ -4,46 +4,28 @@ import { MdCall } from "react-icons/md";
 import Link from "next/link";
 import DashboardLayout from "@layouts/DashboardLayout";
 
-import { Card } from "honeycomb-design-system/Card";
-import { Button } from "honeycomb-design-system/Button";
-import { List } from "honeycomb-design-system/List";
-import { Actions } from "honeycomb-design-system/Actions";
+import { Actions, Button, Card, Heading, List, Text } from "@honeycomb";
 
 export default function Page() {
   return (
     <DashboardLayout>
-      <div className="space-y-8">
-        <Card variant="highlight">
-          <h3 className="text-2xl flex-1 text-purple-700 font-bold">
-            You haven&lsquo;t got any sessions running!
-          </h3>
-          <div>
-            <Button onClick={() => {}}>Setup a Sesh</Button>
-          </div>
-        </Card>
-        <section className="grid md:grid-cols-[1fr_2fr] gap-3">
-          <Card variant="section">
-            <div className="flex flex-col flex-grow gap-4  p-5">
-              <header className="flex justify-between">
-                <div>
-                  <h2 className="font-bold">Today</h2>
-                  <span className="text-2xl">12:00 - 17:00</span>
-                </div>
-                <div>
-                  <Link
-                    href="/session/1234567"
-                    className="flex items-center gap-2 justify-center text-white px-2 py-1 rounded bg-violet-500 lg:w-fit"
-                  >
-                    <FaPlay className="text-xs" />
-                    Play
-                  </Link>
-                </div>
-              </header>
-              <List className="text-sm flex gap-1">
-                <li className="after:content-[',']">Rising Sun</li>
+      <div className="flex flex-col gap-24">
+        <section>
+          <Card variant="highlight">
+            <div className="flex flex-col flex-grow gap-8 p-5">
+              <div>
+                <Heading element="h2" level="1">
+                  Next
+                </Heading>
+                <Text element="span" size="20" bold>
+                  4/02/23 &#64; 12:00 - 17:00
+                </Text>
+              </div>
+              <List horizontal>
+                <li>Rising Sun</li>
                 <li>Teraforming Mars</li>
               </List>
-              <List className="flex flex-wrap gap-1">
+              <List horizontal>
                 <li>
                   <div className="rounded-full bg-green-200 border border-green-300 px-2 text-xs">
                     119
@@ -97,198 +79,186 @@ export default function Page() {
             </List>
           </Card>
         </section>
-        <div className="flex gap">
-          <div>
-            <List>
-              <li>Upcoming sessions</li>
-              <li>Past games</li>
+        <List>
+          <li>Upcoming sessions</li>
+          <li>Past games</li>
+        </List>
+        <section>
+          <div className="flex flex-col gap-8">
+            <header>
+              <h2 className="font-bold">Upcoming sessions</h2>
+            </header>
+            <List className="divide-y flex flex-col flex-grow">
+              <li>
+                <Link
+                  href="/session/1234567"
+                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                >
+                  <div className="flex-grow md:flex-grow-0">
+                    02/10/22 @ 12:00 - 17:00
+                  </div>
+                  <BsChevronRight />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/session/1234567"
+                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                >
+                  <div className="flex-grow md:flex-grow-0">
+                    02/10/22 @ 12:00 - 17:00 (Host)
+                  </div>
+                  <BsChevronRight />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/session/1234567"
+                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                >
+                  <div className="flex-grow md:flex-grow-0">
+                    02/10/22 @ 12:00 - 17:00
+                  </div>
+                  <BsChevronRight />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/session/1234567"
+                  className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
+                >
+                  <div className="flex-grow md:flex-grow-0">
+                    02/10/22 @ 12:00 - 17:00
+                  </div>
+                  <BsChevronRight />
+                </Link>
+              </li>
             </List>
-            <section>
-              <Card className="p-5 bg-white">
-                <header className="pb-2 flex justify-between border-b">
-                  <h2 className="font-bold">Upcoming sessions</h2>
-                </header>
-                <List className="divide-y flex flex-col flex-grow">
-                  <li>
-                    <Link
-                      href="/session/1234567"
-                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                    >
-                      <div className="flex-grow md:flex-grow-0">
-                        02/10/22 @ 12:00 - 17:00
-                      </div>
-                      <BsChevronRight />
+            <List className="flex">
+              <li>
+                <Link href="/">
+                  <span className="">See all</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <span className="">Manage</span>
+                </Link>
+              </li>
+            </List>
+          </div>
+        </section>
+        <section>
+          <div className="flex flex-col gap-16">
+            <header className="pb-2 flex justify-between border-b">
+              <h2 className="font-bold">Past games</h2>
+            </header>
+            <table className="w-full">
+              <thead className="border-b text-sm">
+                <tr>
+                  <th className="px-1 py-2 text-left">Boardgame</th>
+                  <th className="px-1 py-2 text-left">Avg. turn time</th>
+                  <th className="px-1 py-2 text-left">Play length</th>
+                  <th className="px-1 py-2 text-left">Score</th>
+                  <th className="px-1 py-2 text-left">Result</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="odd:bg-slate-50">
+                  <td colSpan={6} className="bg-white">
+                    <div className="my-3 p-3 bg-blue-50 rounded flex justify-between items-center">
+                      <span className="text-sm text-blue-700">
+                        Have to play some games first...
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr className="text-sm odd:bg-slate-50">
+                  <td className="p-1">Rising Sun</td>
+                  <td className="p-1">10 min</td>
+                  <td className="p-1">240 min</td>
+                  <td className="p-1">100 pts</td>
+                  <td className="p-1 text-green-500">Win</td>
+                  <td className="p-1">
+                    <Link href="/" className="">
+                      Details
                     </Link>
+                  </td>
+                </tr>
+                <tr className="text-sm odd:bg-slate-50">
+                  <td className="p-1">Teraforming Mars</td>
+                  <td className="p-1">10 min</td>
+                  <td className="p-1">240 min</td>
+                  <td className="p-1">30 pts</td>
+                  <td className="p-1 text-red-500">Loss</td>
+                  <td className="p-1">
+                    <Link href="/" className="">
+                      Details
+                    </Link>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section>
+          <header className="pb-2 flex justify-between border-b">
+            <h2 className="font-bold">Invites</h2>
+          </header>
+          <List dividers>
+            <li>
+              <Card className="flex flex-row flex-wrap items-center justify-between">
+                <div className="flex-grow sm:flex-grow-0">
+                  02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
+                </div>
+                <Actions>
+                  <Button onClick={() => {}} intent="secondary" size="small">
+                    Details
+                  </Button>
+                </Actions>
+              </Card>
+            </li>
+            <li>
+              <Card className="flex flex-row flex-wrap items-center justify-between">
+                <div className="flex-grow">
+                  02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
+                </div>
+                <List className="flex w-full sm:w-auto gap-2">
+                  <li className="w-full sm:w-auto">
+                    <Button onClick={() => {}} size="small" intent="secondary">
+                      Nope
+                    </Button>
                   </li>
-                  <li>
-                    <Link
-                      href="/session/1234567"
-                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                    >
-                      <div className="flex-grow md:flex-grow-0">
-                        02/10/22 @ 12:00 - 17:00 (Host)
-                      </div>
-                      <BsChevronRight />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/session/1234567"
-                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                    >
-                      <div className="flex-grow md:flex-grow-0">
-                        02/10/22 @ 12:00 - 17:00
-                      </div>
-                      <BsChevronRight />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/session/1234567"
-                      className="p-2 flex flex-row flex-grow flex-wrap items-center justify-between hover:bg-violet-50"
-                    >
-                      <div className="flex-grow md:flex-grow-0">
-                        02/10/22 @ 12:00 - 17:00
-                      </div>
-                      <BsChevronRight />
-                    </Link>
-                  </li>
-                </List>
-                <List className="flex">
-                  <li>
-                    <Link href="/">
-                      <span className="">See all</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/">
-                      <span className="">Manage</span>
-                    </Link>
+                  <li className="w-full md:w-auto">
+                    <Button onClick={() => {}} size="small">
+                      Going
+                    </Button>
                   </li>
                 </List>
               </Card>
-            </section>
-            <section>
-              <div>
-                <header className="pb-2 flex justify-between border-b">
-                  <h2 className="font-bold">Past games</h2>
-                </header>
-                <table className="w-full">
-                  <thead className="border-b text-sm">
-                    <tr>
-                      <th className="px-1 py-2 text-left">Boardgame</th>
-                      <th className="px-1 py-2 text-left">Avg. turn time</th>
-                      <th className="px-1 py-2 text-left">Play length</th>
-                      <th className="px-1 py-2 text-left">Score</th>
-                      <th className="px-1 py-2 text-left">Result</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="odd:bg-slate-50">
-                      <td colSpan={6} className="bg-white">
-                        <div className="my-3 p-3 bg-blue-50 rounded flex justify-between items-center">
-                          <span className="text-sm text-blue-700">
-                            Have to play some games first...
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr className="text-sm odd:bg-slate-50">
-                      <td className="p-1">Rising Sun</td>
-                      <td className="p-1">10 min</td>
-                      <td className="p-1">240 min</td>
-                      <td className="p-1">100 pts</td>
-                      <td className="p-1 text-green-500">Win</td>
-                      <td className="p-1">
-                        <Link href="/" className="">
-                          Details
-                        </Link>
-                      </td>
-                    </tr>
-                    <tr className="text-sm odd:bg-slate-50">
-                      <td className="p-1">Teraforming Mars</td>
-                      <td className="p-1">10 min</td>
-                      <td className="p-1">240 min</td>
-                      <td className="p-1">30 pts</td>
-                      <td className="p-1 text-red-500">Loss</td>
-                      <td className="p-1">
-                        <Link href="/" className="">
-                          Details
-                        </Link>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          </div>
-          <section>
-            <header className="pb-2 flex justify-between border-b">
-              <h2 className="font-bold">Invites</h2>
-            </header>
-            <List dividers>
-              <li>
-                <Card className="flex flex-row flex-wrap items-center justify-between">
-                  <div className="flex-grow sm:flex-grow-0">
-                    02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
-                  </div>
-                  <Actions>
-                    <Button onClick={() => {}} intent="secondary" size="small">
-                      Details
+            </li>
+            <li>
+              <Card className="flex flex-row flex-wrap items-center justify-between">
+                <div className="flex-grow sm:flex-grow-0">
+                  02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
+                </div>
+                <List className="flex w-full sm:w-auto gap-2">
+                  <li className="w-full sm:w-auto">
+                    <Button onClick={() => {}} size="small" intent="secondary">
+                      Nope
                     </Button>
-                  </Actions>
-                </Card>
-              </li>
-              <li>
-                <Card className="flex flex-row flex-wrap items-center justify-between">
-                  <div className="flex-grow">
-                    02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
-                  </div>
-                  <List className="flex w-full sm:w-auto gap-2">
-                    <li className="w-full sm:w-auto">
-                      <Button
-                        onClick={() => {}}
-                        size="small"
-                        intent="secondary"
-                      >
-                        Nope
-                      </Button>
-                    </li>
-                    <li className="w-full md:w-auto">
-                      <Button onClick={() => {}} size="small">
-                        Going
-                      </Button>
-                    </li>
-                  </List>
-                </Card>
-              </li>
-              <li>
-                <Card className="flex flex-row flex-wrap items-center justify-between">
-                  <div className="flex-grow sm:flex-grow-0">
-                    02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
-                  </div>
-                  <List className="flex w-full sm:w-auto gap-2">
-                    <li className="w-full sm:w-auto">
-                      <Button
-                        onClick={() => {}}
-                        size="small"
-                        intent="secondary"
-                      >
-                        Nope
-                      </Button>
-                    </li>
-                    <li className="w-full md:w-auto">
-                      <Button onClick={() => {}} size="small">
-                        Going
-                      </Button>
-                    </li>
-                  </List>
-                </Card>
-              </li>
-            </List>
-          </section>
-        </div>
+                  </li>
+                  <li className="w-full md:w-auto">
+                    <Button onClick={() => {}} size="small">
+                      Going
+                    </Button>
+                  </li>
+                </List>
+              </Card>
+            </li>
+          </List>
+        </section>
       </div>
     </DashboardLayout>
   );

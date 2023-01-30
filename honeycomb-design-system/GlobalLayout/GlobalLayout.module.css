@@ -1,0 +1,9 @@
+@layer components {
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    padding: var(--size-16);
+  }
+}

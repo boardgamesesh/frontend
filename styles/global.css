@@ -15,6 +15,15 @@
   html {
     font-size: 100%;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
 }
 
 @layer utilities {
@@ -26,12 +35,28 @@
     gap: var(--gap);
   }
 
+  .gap-8 {
+    gap: var(--space-8);
+  }
+
+  .gap-16 {
+    gap: var(--space-16);
+  }
+
+  .gap-24 {
+    gap: var(--space-24);
+  }
+
   .grid {
     display: flex;
   }
 
   .flex-row {
     flex-direction: row;
+  }
+
+  .flex-col {
+    flex-direction: column;
   }
 
   .flex-wrap {

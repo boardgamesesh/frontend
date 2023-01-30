@@ -5,8 +5,8 @@ export const Logo = () => (
   <Image
     alt="Boardgame Sesh logo"
     src={logo}
-    width={32}
-    height={32}
+    width={28}
+    height={28}
     style={{
       maxWidth: "100%",
       height: "auto",

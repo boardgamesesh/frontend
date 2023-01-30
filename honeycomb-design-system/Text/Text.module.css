@@ -1,0 +1,25 @@
+@layer components {
+  .size-8 {
+    font-size: var(--size-8);
+  }
+
+  .size-16 {
+    font-size: var(--size-16);
+  }
+
+  .size-20 {
+    font-size: var(--size-20);
+  }
+
+  .size-24 {
+    font-size: var(--size-24);
+  }
+
+  .size-28 {
+    font-size: var(--size-28);
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+}

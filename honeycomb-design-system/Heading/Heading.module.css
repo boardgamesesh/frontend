@@ -1,0 +1,13 @@
+@layer components {
+  .level-1 {
+    font-size: var(--size-28);
+  }
+
+  .level-2 {
+    font-size: var(--size-24);
+  }
+
+  .level-3 {
+    font-size: var(--size-20);
+  }
+}

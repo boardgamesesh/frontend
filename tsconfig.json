@@ -22,7 +22,8 @@
     ],
     "paths": {
       "@styles/*": ["./styles/*"],
-      "@honeycomb/*": ["honeycomb-design-system/*"],
+      "@honeycomb": ["./honeycomb-design-system"],
+      "@components/*": ["./components/*"],
       "@layouts/*": ["./layouts/*"],
       "@assets/*": ["./public/*"],
       "@lib/*": ["./lib/*"]
