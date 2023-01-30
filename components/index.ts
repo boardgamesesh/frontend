@@ -1,1 +1,1 @@
-export * from "./LogoNav";
+export * from "./Header";
