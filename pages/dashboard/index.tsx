@@ -12,7 +12,11 @@ export default function Page() {
     <DashboardLayout>
       <Head>
         <title>Dashboard</title>
-        <meta name="Dashboard" content="Dashing through the snow" key="desc" />
+        <meta
+          name="description"
+          content="Dashing through the snow"
+          key="desc"
+        />
       </Head>
       <div className="flex flex-col gap-24">
         <section>
