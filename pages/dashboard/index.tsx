@@ -159,17 +159,15 @@ export default function Page() {
         </section>
         <section>
           <div className="flex flex-col gap-16">
-            <header className="pb-2 flex justify-between border-b">
-              <h2 className="font-bold">Past games</h2>
-            </header>
+            <h2>Past games</h2>
             <table className="w-full">
-              <thead className="border-b text-sm">
+              <thead>
                 <tr>
-                  <th className="px-1 py-2 text-left">Boardgame</th>
-                  <th className="px-1 py-2 text-left">Avg. turn time</th>
-                  <th className="px-1 py-2 text-left">Play length</th>
-                  <th className="px-1 py-2 text-left">Score</th>
-                  <th className="px-1 py-2 text-left">Result</th>
+                  <th>Boardgame</th>
+                  <th>Avg. turn time</th>
+                  <th>Play length</th>
+                  <th>Score</th>
+                  <th>Result</th>
                   <th></th>
                 </tr>
               </thead>
@@ -212,9 +210,7 @@ export default function Page() {
           </div>
         </section>
         <section>
-          <header className="pb-2 flex justify-between border-b">
-            <h2 className="font-bold">Invites</h2>
-          </header>
+          <h2 className="font-bold">Invites</h2>
           <List dividers>
             <li>
               <Card className="flex flex-row flex-wrap items-center justify-between">
