@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+.container {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.invitesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-style: normal;
+  width: 100%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 1px;
+  height: 2.6rem;
+  position: relative;
+  left: 0;
+  margin-bottom: 0.5rem;
+}
+
+.invites {
+  height: 3.5rem;
+  width: 30rem;
+  padding: 0.8rem;
+  /* border: 1px solid #367ba2; */
+  /* box-shadow: 0px 0px 0px 2px #a9c8d9; */
+  border: transparent;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 6px;
+  position: relative;
+}
+
+.invites:focus {
+  outline: 1px solid #367ba2;
+}
+
+.add {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  border: transparent;
+  position: absolute;
+  transform: translateY(-100% -50%);
+  right: 0.5rem;
+  bottom: calc(50% + (2rem + 1rem) / 2);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  background-color: #2fa3e3;
+  color: var(--white);
+}
+
+.addedEmails {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.emailAdded {
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  background-color: #cde6f4;
+  letter-spacing: 0.5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.deleteEmail {
+  margin-left: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.deleteEmail:hover {
+  color: red;
+}
+
+.actionButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.inviteButton,
+.copyButton,
+.skipButton {
+  padding: 0.8rem;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.inviteButton {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: transparent;
+  background-color: #2fa3e3;
+  color: var(--white);
+}
+
+.copyButton {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: transparent;
+  background-color: var(--slate-100);
+}
+
+.skipButton {
+  background-color: transparent;
+  border: transparent;
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.add:hover,
+.inviteButton:hover,
+.copyButton:hover {
+  background-color: var(--violet-500);
+}
+
+.copyButton:hover {
+  color: white;
+}
+.skipButton:hover {
+  text-decoration: underline 2px var(--violet-300);
+}
+
+.add:active,
+.inviteButton:active,
+.copyButton:active,
+.skipButton:active {
+  transform: scale(95%);
+}
+
+/* My resource for CSS box-shadows: https://getcssscan.com/css-box-shadow-examples */

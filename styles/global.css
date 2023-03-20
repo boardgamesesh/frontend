@@ -5,10 +5,20 @@
 @import "./tokens/sizes.css";
 @import "./tokens/space.css";
 
+/* @import "../pages/session-onboarding/session-onboarding.css"; */
 * {
   --font-size: var(--size-16);
   --gap: var(--space-8);
   --colour-interactive: var(--violet-600);
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 @layer base {
