@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <>
       <div className={styles.container}>
-        <h3 className={styles.title}>Who's invited?</h3>
+        <h3 className={styles.title}>Who&apos;s invited?</h3>
         {/* Text/Header component*/}
         <div className={styles.invitesContainer}>
           <input
