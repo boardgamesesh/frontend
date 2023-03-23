@@ -160,7 +160,7 @@ export default function Page() {
         <section>
           <div className="flex flex-col gap-16">
             <h2>Past games</h2>
-            <table className="w-full">
+            <table>
               <thead>
                 <tr>
                   <th>Boardgame</th>
@@ -168,41 +168,34 @@ export default function Page() {
                   <th>Play length</th>
                   <th>Score</th>
                   <th>Result</th>
-                  <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="odd:bg-slate-50">
-                  <td colSpan={6} className="bg-white">
-                    <div className="my-3 p-3 bg-blue-50 rounded flex justify-between items-center">
-                      <span className="text-sm text-blue-700">
-                        Have to play some games first...
-                      </span>
+                <tr>
+                  <td colSpan={6}>
+                    <div className="flex justify-between items-center">
+                      <span>Have to play some games first...</span>
                     </div>
                   </td>
                 </tr>
-                <tr className="text-sm odd:bg-slate-50">
-                  <td className="p-1">Rising Sun</td>
-                  <td className="p-1">10 min</td>
-                  <td className="p-1">240 min</td>
-                  <td className="p-1">100 pts</td>
-                  <td className="p-1 text-green-500">Win</td>
-                  <td className="p-1">
-                    <Link href="/" className="">
-                      Details
-                    </Link>
+                <tr>
+                  <td>Rising Sun</td>
+                  <td>10 min</td>
+                  <td>240 min</td>
+                  <td>100 pts</td>
+                  <td>Win</td>
+                  <td>
+                    <Link href="/">Details</Link>
                   </td>
                 </tr>
-                <tr className="text-sm odd:bg-slate-50">
-                  <td className="p-1">Teraforming Mars</td>
-                  <td className="p-1">10 min</td>
-                  <td className="p-1">240 min</td>
-                  <td className="p-1">30 pts</td>
-                  <td className="p-1 text-red-500">Loss</td>
-                  <td className="p-1">
-                    <Link href="/" className="">
-                      Details
-                    </Link>
+                <tr>
+                  <td>Teraforming Mars</td>
+                  <td>10 min</td>
+                  <td>240 min</td>
+                  <td>30 pts</td>
+                  <td>Loss</td>
+                  <td>
+                    <Link href="/">Details</Link>
                   </td>
                 </tr>
               </tbody>
