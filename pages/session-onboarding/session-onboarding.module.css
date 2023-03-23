@@ -1,73 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
-
 .container {
-  font-family: "DM Sans", sans-serif;
-  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  position: relative;
+  align-items: auto;
+  margin: auto;
+  height: 100vh;
+  max-width: 40rem;
+  letter-spacing: 1px;
 }
 
 .invitesContainer {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.emailLabel {
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
-.title {
-  font-style: normal;
-  width: 100%;
-  text-align: left;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 2.6rem;
-  letter-spacing: 1px;
-  height: 2.6rem;
-  position: relative;
-  left: 0;
-  margin-bottom: 0.5rem;
-}
-
-.invites {
+.emailInput {
   height: 3.5rem;
-  width: 30rem;
   padding: 0.8rem;
-  /* border: 1px solid #367ba2; */
-  /* box-shadow: 0px 0px 0px 2px #a9c8d9; */
+  margin-top: 0.5rem;
+  border-radius: 5px;
   border: transparent;
+  border: 1px solid #367ba2;
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  border-radius: 6px;
-  position: relative;
 }
 
-.invites:focus {
+.emailInput:focus {
   outline: 1px solid #367ba2;
 }
 
+/* Used this as a guide https://discourse.webflow.com/t/styling-a-button-to-sit-inside-an-input-field/220047 */
 .add {
   padding: 0.5rem 1rem;
   font-weight: 600;
-  letter-spacing: 1px;
   border-radius: 5px;
   border: transparent;
-  position: absolute;
-  transform: translateY(-100% -50%);
-  right: 0.5rem;
-  bottom: calc(50% + (2rem + 1rem) / 2);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   cursor: pointer;
   background-color: #2fa3e3;
   color: var(--white);
+  position: absolute;
+  transform: translateY(-100% -50%);
+  top: 50%;
+  right: 0.5rem;
 }
 
 .addedEmails {
-  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -75,20 +66,23 @@
   border-radius: 5px;
   padding: 0.3rem 0.5rem;
   background-color: #cde6f4;
-  letter-spacing: 0.5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .deleteEmail {
   margin-left: 0.8rem;
-  font-size: 1rem;
-  font-weight: bold;
+  vertical-align: center;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
+  border: transparent;
+  background-color: transparent;
 }
 
 .deleteEmail:hover {
-  color: red;
+  color: var(--violet-500);
 }
 
 .actionButtons {
@@ -103,7 +97,6 @@
 .skipButton {
   padding: 0.8rem;
   border-radius: 5px;
-  letter-spacing: 0.5px;
   cursor: pointer;
 }
 
@@ -148,4 +141,10 @@
   transform: scale(95%);
 }
 
+@media (max-width: 640px) {
+  .container {
+    height: 80vh;
+    margin: 1.2rem;
+  }
+}
 /* My resource for CSS box-shadows: https://getcssscan.com/css-box-shadow-examples */

@@ -1,5 +1,7 @@
 @layer base, components, utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
 @import "node_modules/modern-normalize/modern-normalize.css";
 @import "./tokens/colours.css";
 @import "./tokens/sizes.css";
@@ -11,14 +13,6 @@
   --gap: var(--space-8);
   --colour-interactive: var(--violet-600);
   box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 @layer base {
