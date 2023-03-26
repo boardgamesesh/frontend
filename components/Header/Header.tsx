@@ -12,7 +12,7 @@ export const Header = () => (
         <List horizontal alignY="centre">
           <li>
             <Button onClick={() => {}} size="small">
-              Start Sesh
+              Start Sesh's
             </Button>
           </li>
           <li>
