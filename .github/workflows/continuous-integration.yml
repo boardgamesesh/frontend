@@ -1,9 +1,9 @@
-name: Lint
+name: Continuous Integration
 
 on: [push]
 
 jobs:
-  lint:
+  install:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,5 +38,24 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: Lint
         run: pnpm lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Test
+        run: pnpm test
