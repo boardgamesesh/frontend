@@ -3,7 +3,7 @@ name: Lint
 on: [push]
 
 jobs:
-  setup:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,8 +37,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-  lint:
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Lint
         run: pnpm lint
