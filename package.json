@@ -11,22 +11,22 @@
     "create:component": "plop"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.4",
+    "@apollo/client": "^3.7.10",
     "clsx": "^1.2.1",
     "graphql": "^16.6.0",
     "modern-normalize": "^1.1.0",
-    "next": "^13.1.4",
+    "next": "^13.2.4",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "react-svg": "^15.1.21"
+    "react-icons": "^4.8.0",
+    "react-svg": "^16.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@testing-library/dom": "^8.20.0",
+    "@babel/core": "^7.21.3",
+    "@testing-library/dom": "^9.0.1",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.2.6",
     "@types/node": "18.11.18",
