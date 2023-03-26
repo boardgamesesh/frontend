@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install
-        uses: boardgamesesh/app/.github/workflows/pnpm-install.yml
+        uses: actions/pnpm-install@v1
 
       - name: Lint
         run: pnpm lint
