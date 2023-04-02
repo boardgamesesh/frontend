@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { gql, useMutation, useQuery } from "~apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
 
 import { useEffect } from "react";
 
