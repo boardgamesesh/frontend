@@ -1,0 +1,57 @@
+@layer utilities {
+  .flex {
+    display: flex;
+  }
+
+  .gap {
+    gap: var(--gap);
+  }
+
+  .gap-8 {
+    gap: var(--space-8);
+  }
+
+  .gap-16 {
+    gap: var(--space-16);
+  }
+
+  .gap-24 {
+    gap: var(--space-24);
+  }
+
+  .grid {
+    display: flex;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .flex-grow {
+    flex-grow: 1;
+  }
+
+  .items-centre {
+    align-items: center;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-centre {
+    justify-content: center;
+  }
+
+  .display-block {
+    display: block;
+  }
+}
