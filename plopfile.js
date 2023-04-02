@@ -1,7 +1,4 @@
-module.exports = (
-  /** @type {import('plop').NodePlopAPI} */
-  plop
-) => {
+module.exports = (plop) => {
   plop.setGenerator("basic component", {
     description: "Generate a basic component",
     prompts: [
