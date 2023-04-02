@@ -1,5 +1,5 @@
-import { Card } from "@honeycomb";
-import DashboardLayout from "@layouts/DashboardLayout";
+import { Card } from "~honeycomb";
+import DashboardLayout from "~layouts/DashboardLayout";
 import Link from "next/link";
 import { FaDirections } from "react-icons/fa";
 import { MdCall, MdOutlineWarningAmber, MdOutlineAdd } from "react-icons/md";

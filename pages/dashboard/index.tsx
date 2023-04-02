@@ -3,9 +3,9 @@ import { FaDirections, FaPlay } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import Link from "next/link";
 import Head from "next/head";
-import DashboardLayout from "@layouts/DashboardLayout";
+import DashboardLayout from "~layouts/DashboardLayout";
 
-import { Actions, Button, Card, Heading, List, Text } from "@honeycomb";
+import { Actions, Button, Card, Heading, List, Text } from "~honeycomb";
 
 export default function Page() {
   return (

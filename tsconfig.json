@@ -21,12 +21,12 @@
       }
     ],
     "paths": {
-      "@styles/*": ["./styles/*"],
-      "@honeycomb": ["./honeycomb-design-system"],
-      "@components/*": ["./components/*"],
-      "@layouts/*": ["./layouts/*"],
-      "@assets/*": ["./public/*"],
-      "@lib/*": ["./lib/*"]
+      "~styles/*": ["./styles/*"],
+      "~honeycomb": ["./packages/honeycomb"],
+      "~components/*": ["./components/*"],
+      "~layouts/*": ["./layouts/*"],
+      "~assets/*": ["./public/*"],
+      "~lib/*": ["./lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

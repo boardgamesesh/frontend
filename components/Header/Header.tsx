@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 import Link from "next/link";
-import { Button, Container, List, Logo } from "@honeycomb";
+import { Button, Container, List, Logo } from "~honeycomb";
 
 export const Header = () => (
   <header className={styles.base}>

@@ -1,4 +1,4 @@
-import { Container } from "@honeycomb";
+import { Container } from "~honeycomb";
 import { ReactNode } from "react";
 import styles from "./GlobalLayout.module.css";
 

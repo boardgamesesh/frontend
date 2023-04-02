@@ -1,5 +1,5 @@
-import { Header } from "@components/Header";
-import { GlobalLayout, GlobalHeader, GlobalMain } from "@honeycomb";
+import { Header } from "~components/Header";
+import { GlobalLayout, GlobalHeader, GlobalMain } from "~honeycomb";
 
 export default function RootLayout({
   children,
