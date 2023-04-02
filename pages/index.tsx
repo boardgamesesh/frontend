@@ -1,4 +1,4 @@
-import LandingLayout from "@layouts/LandingLayout";
+import LandingLayout from "~layouts/LandingLayout";
 import Link from "next/link";
 import Head from "next/head";
 

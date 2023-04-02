@@ -1,9 +1,9 @@
-import "@styles/global.css";
+import "~styles/global.css";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
 import { ApolloProvider } from "@apollo/client";
-import client from "@lib/apollo";
+import client from "~lib/apollo";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
