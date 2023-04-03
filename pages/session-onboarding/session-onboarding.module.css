@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: auto;
   margin: auto;
   height: 100vh;
   max-width: 40rem;
@@ -11,35 +10,47 @@
 
 .invitesContainer {
   margin-top: 1rem;
-  position: relative;
+  width: 100%;
 }
 
 .emailLabel {
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
+  padding-bottom: 0.5rem;
+}
+
+.enterEmail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #367ba2;
+  height: 3.5rem;
+  border-radius: 5px;
 }
 
 .emailInput {
-  height: 3.5rem;
-  padding: 0.8rem;
-  margin-top: 0.5rem;
+  height: 100%;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
   border-radius: 5px;
-  border: transparent;
-  border: 1px solid #367ba2;
-  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border: none;
+  width: 85%;
+  margin-right: auto;
 }
 
-.emailInput:focus {
-  outline: 1px solid #367ba2;
+.enterEmail:focus {
+  outline: 1px solid #2fa3e3;
+}
+.emailInput {
+  outline: none;
 }
 
 /* Used this as a guide https://discourse.webflow.com/t/styling-a-button-to-sit-inside-an-input-field/220047 */
-.add {
-  padding: 0.5rem 1rem;
+.addButton {
+  margin: auto;
+  padding: 0.8rem;
   font-weight: 600;
   border-radius: 5px;
   border: transparent;
@@ -48,10 +59,6 @@
   cursor: pointer;
   background-color: #2fa3e3;
   color: var(--white);
-  position: absolute;
-  transform: translateY(-100% -50%);
-  top: 50%;
-  right: 0.5rem;
 }
 
 .addedEmails {
@@ -59,30 +66,36 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
-  margin-bottom: 2rem;
 }
 
 .emailAdded {
   border-radius: 5px;
-  padding: 0.3rem 0.5rem;
+  min-height: 2rem;
+  padding-left: 0.5rem;
   background-color: #cde6f4;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  word-break: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .deleteEmail {
-  margin-left: 0.8rem;
+  height: 100%;
+  padding: 0 0.5rem;
   vertical-align: center;
-  padding: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
   font-weight: 700;
-  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   border: transparent;
   background-color: transparent;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
 }
 
 .deleteEmail:hover {
-  color: var(--violet-500);
+  background-color: var(--violet-500);
+  color: var(--white) ;
 }
 
 .actionButtons {
@@ -90,14 +103,21 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .inviteButton,
-.copyButton,
-.skipButton {
+.copyButton {
   padding: 0.8rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.skipStep {
+  cursor: pointer;
+  padding: 0.8rem;
+  text-decoration: none;
+  color: #000;
 }
 
 .inviteButton {
@@ -115,13 +135,12 @@
   background-color: var(--slate-100);
 }
 
-.skipButton {
+.skipStep {
   background-color: transparent;
   border: transparent;
-  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.add:hover,
+.addButton:hover,
 .inviteButton:hover,
 .copyButton:hover {
   background-color: var(--violet-500);
@@ -130,21 +149,26 @@
 .copyButton:hover {
   color: white;
 }
-.skipButton:hover {
+
+.skipStep:hover {
   text-decoration: underline 2px var(--violet-300);
 }
 
-.add:active,
+.addButton:active,
 .inviteButton:active,
 .copyButton:active,
-.skipButton:active {
+.skipStep:active {
   transform: scale(95%);
 }
 
 @media (max-width: 640px) {
   .container {
-    height: 80vh;
-    margin: 1.2rem;
+    margin: 1rem;
   }
 }
-/* My resource for CSS box-shadows: https://getcssscan.com/css-box-shadow-examples */
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .emailInput {
+    width: 75%;
+  }
+}

@@ -1,7 +1,8 @@
 // import Link from "next/link";
 import React, { HTMLAttributes } from "react";
-// import { Heading, Button, Input, Text, Label } from "@honeycomb";
+// import { Heading, Button, Input, Text, Label } from "../../packages/honeycomb";
 import styles from "./session-onboarding.module.css";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -13,20 +14,23 @@ export default function Page() {
           <div className={styles.invitesContainer}>
             <label htmlFor="email" className={styles.emailLabel}>
               Enter your friend&apos;s email address bellow
+            </label>
+            <div className={styles.enterEmail}>
               <input
                 type="email"
                 id="email"
                 name="email"
                 className={styles.emailInput}
               />
-            </label>
+              {/* Could be an Input component since the app will contain more than one*/}
+              <button className={styles.addButton} type="button">
+                Add
+              </button>
+            </div>
 
-            {/* Could be an Input component since the app will contain more than one*/}
-            <button className={styles.add} type="button">
-              Add
-            </button>
             {/* Text component maybe  */}
           </div>
+
           <div className={styles.addedEmails}>
             {/* Text component maybe */}
 
@@ -42,27 +46,7 @@ export default function Page() {
               </button>
             </div>
             <div className={styles.emailAdded}>
-              Tywin@lanister.com
-              <button
-                className={styles.deleteEmail}
-                aria-label="remove"
-                type="button"
-              >
-                &times;
-              </button>
-            </div>
-            <div className={styles.emailAdded}>
               averylongemail.address_here@email.com
-              <button
-                className={styles.deleteEmail}
-                aria-label="remove"
-                type="button"
-              >
-                &times;
-              </button>
-            </div>
-            <div className={styles.emailAdded}>
-              Tywin@lanister.com
               <button
                 className={styles.deleteEmail}
                 aria-label="remove"
@@ -89,9 +73,9 @@ export default function Page() {
             <button className={styles.copyButton} type="button">
               Copy invite link
             </button>
-            <button className={styles.skipButton} type="button">
+            <Link href="/dashboard" className={styles.skipStep}>
               Skip this step
-            </button>
+            </Link>
           </div>
         </form>
       </div>
