@@ -32,6 +32,10 @@
   padding: 0.3rem;
 }
 
+.enterEmail.darkborder {
+  border: 2px solid var(--violet-500);
+}
+
 .emailInput {
   height: 100%;
   font-size: 1.2rem;
@@ -156,8 +160,7 @@
 
 .addButton:active,
 .inviteButton:active,
-.copyButton:active,
-.skipStep:active {
+.copyButton:active {
   transform: scale(95%);
 }
 
