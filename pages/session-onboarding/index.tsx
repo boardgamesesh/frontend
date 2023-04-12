@@ -20,6 +20,8 @@ export default function Page() {
               Enter your friend&apos;s email address bellow
             </label>
             <div
+              aria-live="assertive"
+              role="alert"
               className={clsx(styles.enterEmail, {
                 [styles.darkborder]: focus,
               })}
@@ -37,7 +39,6 @@ export default function Page() {
                 value={email}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
-                aria-live="assertive" role="alert"
               />
               <button
                 id="add"
