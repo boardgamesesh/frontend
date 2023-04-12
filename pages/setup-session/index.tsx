@@ -7,7 +7,7 @@ export default function Page() {
       <div className={styles.container}>
         <h1 className={styles.title}> When is your next session?</h1>
         <form className={styles.form}>
-          <div className={styles.date}>
+          <div className={styles.date} aria-live="polite">
             <label htmlFor="session-date" className={styles.label}>
               Enter the date bellow
             </label>
@@ -16,14 +16,12 @@ export default function Page() {
               name="session-date"
               id="session-date"
               placeholder="dd/mm/yyyy"
-              aria-live="assertive"
-              role="alert"
               className={styles.dateInput}
             />
           </div>
 
           <div className={styles.details}>
-            <div className={styles.time}>
+            <div className={styles.time} aria-live="polite">
               <label htmlFor="session-time" className={styles.label}>
                 Time
               </label>
@@ -31,13 +29,11 @@ export default function Page() {
                 type="text"
                 id="session-time"
                 name="session-time"
-                aria-live="assertive"
-                role="alert"
                 className={styles.detailInput}
               />
             </div>
 
-            <div className={styles.location}>
+            <div className={styles.location} aria-live="polite">
               <label htmlFor="session-location" className={styles.label}>
                 Location
               </label>
@@ -45,8 +41,6 @@ export default function Page() {
                 type="text"
                 id="session-location"
                 name="session-location"
-                aria-live="assertive"
-                role="alert"
                 className={styles.detailInput}
               />
             </div>
