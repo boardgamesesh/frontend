@@ -1,15 +1,19 @@
 @layer base, components, utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
 @import "node_modules/modern-normalize/modern-normalize.css";
 @import "./tokens/colours.css";
 @import "./tokens/sizes.css";
 @import "./tokens/space.css";
 @import "./utilities/layout.css";
 
+/* @import "../pages/session-onboarding/session-onboarding.css"; */
 * {
   --font-size: var(--size-16);
   --gap: var(--space-8);
   --colour-interactive: var(--violet-600);
+  box-sizing: border-box;
 }
 
 @layer base {

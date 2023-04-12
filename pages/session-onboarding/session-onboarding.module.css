@@ -1,0 +1,171 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  height: 100vh;
+  max-width: 40rem;
+  letter-spacing: 1px;
+}
+
+.invitesContainer {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.emailLabel {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+}
+
+.enterEmail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid #367ba2;
+  height: 3.5rem;
+  border-radius: 5px;
+  padding: 0.3rem;
+}
+
+.enterEmail.darkborder {
+  border: 2px solid var(--violet-500);
+}
+
+.emailInput {
+  height: 100%;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  width: 90%;
+}
+
+.enterEmail:focus {
+  outline: 1px solid #2fa3e3;
+}
+.emailInput {
+  outline: none;
+}
+
+/* Used this as a guide https://discourse.webflow.com/t/styling-a-button-to-sit-inside-an-input-field/220047 */
+.addButton {
+  padding: 0.8rem;
+  font-weight: 600;
+  border-radius: 5px;
+  border: transparent;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  background-color: #2fa3e3;
+  color: var(--white);
+}
+
+.addedEmails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.emailAdded {
+  border-radius: 5px;
+  min-height: 2rem;
+  padding-left: 0.5rem;
+  background-color: #cde6f4;
+  word-break: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteEmail {
+  height: 100%;
+  padding: 0 0.5rem;
+  vertical-align: center;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  border: transparent;
+  background-color: transparent;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.deleteEmail:hover {
+  background-color: var(--violet-500);
+  color: var(--white);
+}
+
+.actionButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.inviteButton,
+.copyButton {
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.skipStep {
+  cursor: pointer;
+  padding: 0.8rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.inviteButton {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: transparent;
+  background-color: #2fa3e3;
+  color: var(--white);
+}
+
+.copyButton {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: transparent;
+  background-color: var(--slate-100);
+}
+
+.skipStep {
+  background-color: transparent;
+  border: transparent;
+}
+
+.addButton:hover,
+.inviteButton:hover,
+.copyButton:hover {
+  background-color: var(--violet-500);
+}
+
+.copyButton:hover {
+  color: white;
+}
+
+.skipStep:hover {
+  text-decoration: underline 2px var(--violet-300);
+}
+
+.addButton:active,
+.inviteButton:active,
+.copyButton:active {
+  transform: scale(95%);
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 1rem;
+  }
+}
