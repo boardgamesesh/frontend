@@ -6,7 +6,7 @@ import clsx from "clsx";
 export default function Page() {
   const [email, setEmail] = useState<string>("");
   const [emails, setEmails] = useState<string[]>([]);
-  const [focus, setFocus] = useState<any>(false);
+  const [focus, setFocus] = useState<boolean>(false);
 
   return (
     <>
@@ -37,15 +37,16 @@ export default function Page() {
                 value={email}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
+                aria-live="assertive" role="alert"
               />
               <button
                 id="add"
                 className={styles.addButton}
                 type="button"
-                onClick={() => { 
-                  // Validation can be improved or replaced with a library..
-                  let regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-                  
+                onClick={() => {
+                  // Validation can be improved or replaced with a library such as joi.dev
+                  const regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
                   if (!email || !regExp.test(email)) {
                     alert("Please enter a valid email");
                   } else {
@@ -57,12 +58,12 @@ export default function Page() {
                 Add
               </button>
             </div>
-
           </div>
-          <div className={styles.addedEmails}>
+          <ul className={styles.addedEmails}>
             {/* Text component maybe */}
             {emails.map((email, index) => (
-              <div className={styles.emailAdded} key={index}>
+              // rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              <li className={styles.emailAdded} key={index}>
                 {email}
                 <button
                   className={styles.deleteEmail}
@@ -74,9 +75,9 @@ export default function Page() {
                 >
                   &times;
                 </button>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className={styles.actionButtons}>
             {/* Text component maybe */}
