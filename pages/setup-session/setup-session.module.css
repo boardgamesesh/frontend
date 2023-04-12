@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  max-width: 30rem;
+  margin: auto;
+  letter-spacing: 1px;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.form {
+  width: 100%;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.label {
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.detailInput {
+  padding: 0.6rem 0.2rem;
+  border-radius: 5px;
+  border: 1px solid #367ba2;
+}
+
+.dateInput {
+  padding: 0.2rem;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.detailInput:focus {
+  outline: 1px solid var(--violet-500);
+}
+
+.dateInput:focus {
+  outline: none;
+  border-radius: 5px;
+}
+
+.setupBtn {
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  border: transparent;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  background-color: #2fa3e3;
+  color: var(--white);
+}
+
+.setupBtn:hover {
+  background-color: var(--violet-500);
+  color: var(--white);
+}
+
+.setupBtn:active {
+  transform: scale(95%);
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin: 1rem;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+  .time,
+  .location {
+    width: 100%;
+  }
+}
