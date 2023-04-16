@@ -20,7 +20,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           deploy_alias: ${{ env.BRANCH_NAME }}
-          BUILD_COMMAND: "pnpm build"
+          BUILD_COMMAND: "npm run build"
           BUILD_DIRECTORY: ".next"
 
       # Creates a status check with link to preview
