@@ -12,6 +12,15 @@ export default function RootLayout({
         <Header />
       </GlobalHeader>
       <GlobalMain>{children}</GlobalMain>
+      <footer>
+        <a
+          href="https://github.com/boardgamesesh/app/blob/main/README.md"
+          target="_blank"
+          rel="noreferrer noopner"
+        >
+          Code of conduct
+        </a>
+      </footer>
     </GlobalLayout>
   );
 }
