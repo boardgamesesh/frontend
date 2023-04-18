@@ -90,7 +90,7 @@
   transform: scale(95%);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 30rem) {
   .container {
     margin: 1rem;
   }
