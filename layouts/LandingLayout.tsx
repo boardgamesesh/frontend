@@ -32,7 +32,7 @@ export default function RootLayout({
         <a
           href="https://github.com/boardgamesesh/app/blob/main/README.md"
           target="_blank"
-          rel="noreferrer noopner"
+          rel="noreferrer noopener"
         >
           Code of conduct
         </a>
