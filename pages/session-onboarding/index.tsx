@@ -8,10 +8,32 @@ export default function Page() {
   const [emails, setEmails] = useState<string[]>([]);
   const [focus, setFocus] = useState<boolean>(false);
 
+  const randomId = () => {
+    return Math.floor(Math.random() * 10000);
+  };
+
+  const addEmail = () => {
+    // Validation can be improved or replaced with a library such as joi.dev
+    const regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!email || !regExp.test(email)) {
+      alert("Please enter a valid email");
+    } else {
+      setEmail("");
+      setEmails([...emails, email]);
+    }
+  };
+
   return (
     <>
       <div className={styles.container}>
-        <form>
+        <form
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              addEmail();
+            }
+          }}
+        >
           <h1 className={styles.title}>Who&apos;s invited?</h1>
 
           {/* Text/Header component*/}
@@ -20,8 +42,6 @@ export default function Page() {
               Enter your friend&apos;s email address bellow
             </label>
             <div
-              aria-live="assertive"
-              role="alert"
               className={clsx(styles.enterEmail, {
                 [styles.darkborder]: focus,
               })}
@@ -44,41 +64,34 @@ export default function Page() {
                 id="add"
                 className={styles.addButton}
                 type="button"
-                onClick={() => {
-                  // Validation can be improved or replaced with a library such as joi.dev
-                  const regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
-                  if (!email || !regExp.test(email)) {
-                    alert("Please enter a valid email");
-                  } else {
-                    setEmail("");
-                    setEmails([...emails, email]);
-                  }
-                }}
+                onClick={addEmail}
               >
                 Add
               </button>
             </div>
           </div>
-          <ul className={styles.addedEmails}>
-            {/* Text component maybe */}
-            {emails.map((email, index) => (
-              // rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              <li className={styles.emailAdded} key={index}>
-                {email}
-                <button
-                  className={styles.deleteEmail}
-                  aria-label="remove"
-                  type="button"
-                  onClick={() => {
-                    setEmails(emails.filter((em) => em !== email));
-                  }}
-                >
-                  &times;
-                </button>
-              </li>
-            ))}
-          </ul>
+
+          {/* only render when there are emails */}
+          {emails.length > 0 && (
+            <ul className={styles.addedEmails}>
+              {/* Text component maybe */}
+              {emails.map((email, index) => (
+                <li className={styles.emailAdded} key={randomId()}>
+                  {email}
+                  <button
+                    className={styles.deleteEmail}
+                    aria-label="remove"
+                    type="button"
+                    onClick={() => {
+                      setEmails(emails.filter((em) => em !== email));
+                    }}
+                  >
+                    &times;
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
 
           <div className={styles.actionButtons}>
             {/* Text component maybe */}
