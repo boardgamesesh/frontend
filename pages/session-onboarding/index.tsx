@@ -42,6 +42,8 @@ export default function Page() {
               Enter your friend&apos;s email address bellow
             </label>
             <div
+              aria-live="assertive"
+              role="alert"
               className={clsx(styles.enterEmail, {
                 [styles.darkborder]: focus,
               })}
