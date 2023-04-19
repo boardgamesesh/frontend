@@ -7,43 +7,115 @@ export default function Page() {
       <div className={styles.container}>
         <h1 className={styles.title}> When is your next session?</h1>
         <form className={styles.form}>
-          <div className={styles.date} aria-live="polite">
+          <div className={styles.gameDate}>
             <label htmlFor="session-date" className={styles.label}>
-              Enter the date bellow
+              Date
             </label>
-            <input
-              type="text"
-              name="session-date"
-              id="session-date"
-              placeholder="dd/mm/yyyy"
-              className={styles.dateInput}
-            />
+
+            <fieldset className={styles.dateDetails}>
+              <section>
+                <input
+                  type="text"
+                  name="session-date"
+                  id="session-day"
+                  placeholder="day"
+                  className={styles.dateInput}
+                />
+                <div aria-live="polite"> </div>
+              </section>
+
+              <svg height="35" width="20">
+                <line
+                  x1="15"
+                  y1="0"
+                  x2="0"
+                  y2="45"
+                  className={styles.dateSeparator}
+                />
+              </svg>
+
+              <section>
+                <input
+                  type="text"
+                  name="session-date"
+                  id="session-day"
+                  placeholder="month"
+                  className={styles.dateInput}
+                />
+                <div aria-live="polite"> </div>
+              </section>
+
+              <svg height="35" width="20">
+                <line
+                  x1="15"
+                  y1="0"
+                  x2="0"
+                  y2="45"
+                  className={styles.dateSeparator}
+                />
+              </svg>
+
+              <section>
+                <input
+                  type="text"
+                  name="session-date"
+                  id="session-day"
+                  placeholder="year"
+                  className={styles.dateInput}
+                />
+                <div aria-live="polite"> </div>
+              </section>
+            </fieldset>
           </div>
 
-          <div className={styles.details}>
-            <div className={styles.time} aria-live="polite">
-              <label htmlFor="session-time" className={styles.label}>
-                Time
-              </label>
-              <input
-                type="text"
-                id="session-time"
-                name="session-time"
-                className={styles.detailInput}
-              />
-            </div>
+          <div className={styles.gameTime}>
+            <label htmlFor="session-time" className={styles.label}>
+              Time
+            </label>
 
-            <div className={styles.location} aria-live="polite">
-              <label htmlFor="session-location" className={styles.label}>
-                Location
-              </label>
+            <fieldset className={styles.timeDetails}>
+              <section>
+                <input
+                  type="text"
+                  id="session-time"
+                  name="session-time"
+                  className={styles.timeInput}
+                  placeholder="hours"
+                />
+                <div aria-live="polite"> </div>
+              </section>
+
+              <svg height="35" width="10">
+                <circle cx="5" cy="15" r="1.5" className={styles.timeDot} />
+                <circle cx="5" cy="25" r="1.5" className={styles.timeDot} />
+              </svg>
+
+              <section>
+                <input
+                  type="text"
+                  id="session-time"
+                  name="session-time"
+                  className={styles.timeInput}
+                  placeholder="minutes"
+                />
+                <div aria-live="polite"> </div>
+              </section>
+            </fieldset>
+          </div>
+
+          <div className={styles.location}>
+            <label htmlFor="session-location" className={styles.label}>
+              Location
+            </label>
+            <section className={styles.time}>
               <input
                 type="text"
                 id="session-location"
                 name="session-location"
-                className={styles.detailInput}
+                className={styles.locationInput}
               />
-            </div>
+              <div aria-live="polite" />
+            </section>
           </div>
 
           <button
