@@ -165,7 +165,7 @@
   transform: scale(95%);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 40rem) {
   .container {
     margin: 1rem;
   }
