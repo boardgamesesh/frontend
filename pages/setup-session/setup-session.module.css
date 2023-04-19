@@ -95,7 +95,7 @@
   width: 26rem;
 }
 
-.locationIntput:focus {
+.locationInput:focus {
   outline: 1px solid var(--violet-500);
 }
 
