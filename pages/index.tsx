@@ -16,6 +16,9 @@ export default function Page() {
           <Link href="/signup" className="bg-violet-500">
             Sign up
           </Link>
+          <Link href="/session-onboarding" className="bg-violet-500">
+            Session onboarding
+          </Link>
         </div>
       </div>
     </LandingLayout>
