@@ -61,12 +61,19 @@ export default function Page() {
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
               />
-              <div aria-live="assertive" role="alert"> </div>
+              <div aria-live="assertive" role="alert">
+                {" "}
+              </div>
               <button
                 id="add"
                 className={styles.addButton}
                 type="button"
-                onClick={addEmail}
+                onClick={() => {
+                  addEmail();
+                  setFocus(true);
+                }}
+                onFocus={() => setFocus(true)}
+                onBlur={() => setFocus(false)}
               >
                 Add
               </button>
@@ -87,6 +94,7 @@ export default function Page() {
                     onClick={() => {
                       setEmails(emails.filter((em) => em !== email));
                     }}
+                    onFocus={() => setFocus(true)}
                   >
                     &times;
                   </button>
