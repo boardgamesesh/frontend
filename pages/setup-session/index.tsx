@@ -4,22 +4,18 @@ import styles from "./setup-session.module.css";
 export default function Page() {
   return (
     <>
-
-    {/* Some random change for deploying test... */}
       <div className={styles.container}>
         <h1 className={styles.title}> When is your next session?</h1>
         <form className={styles.form}>
           <div className={styles.gameDate}>
-            <label htmlFor="session-date" className={styles.label}>
-              Date
-            </label>
-
             <fieldset className={styles.dateDetails}>
+              <legend className={styles.label}> Date </legend>
               <section>
+                <label htmlFor="day"></label>
                 <input
                   type="text"
-                  name="session-date"
-                  id="session-day"
+                  name="day"
+                  id="day"
                   placeholder="day"
                   className={styles.dateInput}
                 />
@@ -37,10 +33,11 @@ export default function Page() {
               </svg>
 
               <section>
+                <label htmlFor="month"></label>
                 <input
                   type="text"
-                  name="session-date"
-                  id="session-day"
+                  name="month"
+                  id="month"
                   placeholder="month"
                   className={styles.dateInput}
                 />
@@ -58,10 +55,11 @@ export default function Page() {
               </svg>
 
               <section>
+                <label htmlFor="year"></label>
                 <input
                   type="text"
-                  name="session-date"
-                  id="session-day"
+                  name="year"
+                  id="year"
                   placeholder="year"
                   className={styles.dateInput}
                 />
@@ -71,32 +69,29 @@ export default function Page() {
           </div>
 
           <div className={styles.gameTime}>
-            <label htmlFor="session-time" className={styles.label}>
-              Time
-            </label>
-
             <fieldset className={styles.timeDetails}>
+              <legend className={styles.label}>Time</legend>
               <section>
+                <label htmlFor="hours"></label>
                 <input
                   type="text"
-                  id="session-time"
-                  name="session-time"
+                  id="hours"
+                  name="hours"
                   className={styles.timeInput}
                   placeholder="hours"
                 />
                 <div aria-live="polite"> </div>
               </section>
-
               <svg height="35" width="10">
                 <circle cx="5" cy="15" r="1.5" className={styles.timeDot} />
                 <circle cx="5" cy="25" r="1.5" className={styles.timeDot} />
               </svg>
-
               <section>
+                <label htmlFor="minutes"></label>
                 <input
                   type="text"
-                  id="session-time"
-                  name="session-time"
+                  id="minutes"
+                  name="minutes"
                   className={styles.timeInput}
                   placeholder="minutes"
                 />
@@ -112,14 +107,13 @@ export default function Page() {
             <section className={styles.time}>
               <input
                 type="text"
-                id="session-location"
-                name="session-location"
+                id="location"
+                name="location"
                 className={styles.locationInput}
               />
-              <div aria-live="polite" />
+              <div aria-live="polite"> </div>
             </section>
           </div>
-
           <button
             type="submit"
             id="setup-session"
