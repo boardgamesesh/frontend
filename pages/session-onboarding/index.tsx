@@ -14,9 +14,7 @@ export default function Page() {
     if (!email || !regExp.test(email)) {
       alert("Please enter a valid email");
     } else {
-      setEmail("");
-      setEmails([...emails, email]);
-    }
+      } else {
   };
 
   return (
