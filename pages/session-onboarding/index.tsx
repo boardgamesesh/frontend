@@ -11,10 +11,17 @@ export default function Page() {
   const addEmail = () => {
     // Validation can be improved or replaced with a library such as joi.dev
     const regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
     if (!email || !regExp.test(email)) {
       alert("Please enter a valid email");
     } else {
+      if (emails.includes(email)) {
+        alert("Email already added");
       } else {
+        setEmail("");
+        setEmails([...emails, email]);
+      }
+    }
   };
 
   return (
