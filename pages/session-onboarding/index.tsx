@@ -96,7 +96,7 @@ export default function Page() {
 
           <div className={styles.actionButtons}>
             {/* Text component maybe */}
-            <button className={styles.inviteButton} type="button">
+            <button className={styles.inviteButton} type="submit">
               Invite friends
             </button>
             <button className={styles.copyButton} type="button">
