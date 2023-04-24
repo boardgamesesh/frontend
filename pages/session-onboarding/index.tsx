@@ -8,10 +8,6 @@ export default function Page() {
   const [emails, setEmails] = useState<string[]>([]);
   const [focus, setFocus] = useState<boolean>(false);
 
-  const randomId = () => {
-    return Math.floor(Math.random() * 10000);
-  };
-
   const addEmail = () => {
     // Validation can be improved or replaced with a library such as joi.dev
     const regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -76,8 +72,8 @@ export default function Page() {
           {emails.length > 0 && (
             <ul className={styles.addedEmails}>
               {/* Text component maybe */}
-              {emails.map((email, index) => (
-                <li className={styles.emailAdded} key={randomId()}>
+              {emails.map((email) => (
+                <li className={styles.emailAdded} key={email}>
                   {email}
                   <button
                     className={styles.deleteEmail}
