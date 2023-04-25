@@ -21,7 +21,7 @@ export default function Page() {
           to roll some dice, shuffle cards and put mini&apos;s on a board.
         </p>
         <Link href="/new-session/invite" className={styles.heroCallToAction}>
-          Start sesh &rarr;
+          Start sesh for free &rarr;
         </Link>
       </div>
     </div>
