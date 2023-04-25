@@ -1,4 +1,4 @@
-import styles from "./Header.module.css";
+import styles from "./AppHeader.module.css";
 import Link from "next/link";
 import { Button, Container, List, Logo } from "~honeycomb";
 
@@ -16,14 +16,10 @@ export const Header = () => (
             </Button>
           </li>
           <li>
-            <Link href="/" className="font-bold">
-              Invites
-            </Link>
+            <Link href="/">Invites</Link>
           </li>
           <li>
-            <Link href="/" className="font-bold">
-              Manage sessions
-            </Link>
+            <Link href="/">Manage sessions</Link>
           </li>
           <li>
             <Link href="/">Settings</Link>

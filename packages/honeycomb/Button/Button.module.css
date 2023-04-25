@@ -5,19 +5,19 @@
     padding: var(--space-8) var(--space-16);
     background-color: var(--button-background);
     color: #fff;
-    border: 1px solid var(--violet-700);
+    border: 1px solid var(--sky-700);
     border-radius: 3px;
     cursor: pointer;
   }
 
   .base:hover {
-    background-color: var(--violet-700);
+    background-color: var(--sky-700);
   }
 
   /* Intents */
 
   .secondary {
-    color: var(--violet-600);
+    color: var(--sky-600);
     --button-background: var(--white);
   }
 

@@ -23,7 +23,7 @@
 }
 
 .enterEmail.darkborder {
-  border: 2px solid var(--violet-500);
+  border: 2px solid var(--sky-500);
 }
 
 .emailInput {
@@ -88,7 +88,7 @@
 }
 
 .deleteEmail:hover {
-  background-color: var(--violet-500);
+  background-color: var(--sky-500);
   color: var(--white);
 }
 
@@ -137,7 +137,7 @@
 .addButton:hover,
 .inviteButton:hover,
 .copyButton:hover {
-  background-color: var(--violet-500);
+  background-color: var(--sky-500);
 }
 
 .copyButton:hover {
@@ -145,7 +145,7 @@
 }
 
 .skipStep:hover {
-  text-decoration: underline 2px var(--violet-300);
+  text-decoration: underline 2px var(--sky-300);
 }
 
 .addButton:active,
