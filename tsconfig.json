@@ -24,7 +24,6 @@
       "~styles/*": ["./styles/*"],
       "~honeycomb": ["./packages/honeycomb"],
       "~components/*": ["./components/*"],
-      "~layouts/*": ["./layouts/*"],
       "~assets/*": ["./public/*"],
       "~lib/*": ["./lib/*"]
     }

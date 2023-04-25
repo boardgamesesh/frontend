@@ -18,7 +18,7 @@ module.exports = (plop) => {
       let destination = "components";
 
       if (isHoneycombComponent) {
-        destination = "honeycomb-design-system";
+        destination = "packages/honeycomb";
       }
 
       return [
