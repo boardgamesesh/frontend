@@ -49,5 +49,5 @@ Anything that is an interface to an external library, or is a library in it self
 
 ## Contributing
 
-- If something on the UI **doesn't work**: [submit and issue](https://github.com/boardgamesesh/app/issues/new?assignees=&labels=&template=bug_report.md&title=).
+- If something on the UI **doesn't work**: [submit an issue](https://github.com/boardgamesesh/app/issues/new?assignees=&labels=&template=bug_report.md&title=).
 - For everything else, [submit a discussion](https://github.com/boardgamesesh/app/discussions/new/choose).
