@@ -1,5 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/game/:match*", "destination": "/game/:match*/preparing" }
-  ]
-}
