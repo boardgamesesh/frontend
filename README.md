@@ -1,32 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Boardgame Sesh
+
+Helping boardgame enthusiasts seamlessly organise their one-time & recurring boardgame sessions so that you can forget about the work and get back to boardgaming.
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
+
+We use [pnpm](https://pnpm.io/) on this project
+
+```bash
+pnpm install
+```
+
+### Run in development mode
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Understanding the repo
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### /app
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+There are 3 distinct groups (directories) setup in our `app` directory:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. (app): All pages that users interact with to organise their boardgame sessions, typically need authentication to access.
+2. (workflows): Workflows provide a focused and step-by-step user experience which guides users to achieve a task.
+3. (marketing): Dedicated pages for things like the landing page which are open to the public to view.
 
-## Learn More
+Each one of these groups have their own top level `layout.tsx` to facilitate their specific user experience (eg. different navigations) and any directories under these groups are routes.
 
-To learn more about Next.js, take a look at the following resources:
+### /components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Re-usable components composed of multiple other components. Generally these facilitatet specific design patterns to be used for BGS, typically made up of Honeycomb (our internal design system) components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### /packages
 
-## Deploy on Vercel
+Any generic code which can be published for external uses.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### /lib
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Anything that is an interface to an external library, or is a library in it self, which contains BGS specific configuration.
+
+## The pipeline
+
+- Continuous Integration: [Github Actions workflows](https://github.com/boardgamesesh/app/tree/main/.github/workflows) to ensure a fast (and free) feedback loops on our PR's
+- Continuous Deployment: [Netlify](https://www.netlify.com/)
+
+## Contributing
+
+- If something on the UI **doesn't work**: [submit an issue](https://github.com/boardgamesesh/app/issues/new?assignees=&labels=&template=bug_report.md&title=).
+- For everything else, [submit a discussion](https://github.com/boardgamesesh/app/discussions/new/choose).

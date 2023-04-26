@@ -1,7 +1,7 @@
 import { Container, Logo } from "~honeycomb";
 import Link from "next/link";
 
-export default function RootLayout({
+export default function WebsiteLayout({
   children,
 }: {
   children: React.ReactNode;

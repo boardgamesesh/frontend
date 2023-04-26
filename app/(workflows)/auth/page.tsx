@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 import { gql, useMutation, useQuery } from "@apollo/client";
 
 import { useEffect } from "react";
@@ -21,8 +23,10 @@ const MY_USER = gql`
 `;
 
 export default function Page() {
-  const router = useRouter();
-  const { token, id } = router.query;
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
+  const id = searchParams.get("id");
+
   const {
     data: userData,
     loading: userLoading,

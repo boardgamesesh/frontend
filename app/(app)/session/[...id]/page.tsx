@@ -1,12 +1,14 @@
+"use client";
+
 import { Card } from "~honeycomb";
-import DashboardLayout from "~layouts/DashboardLayout";
 import Link from "next/link";
 import { FaDirections } from "react-icons/fa";
 import { MdCall, MdOutlineWarningAmber, MdOutlineAdd } from "react-icons/md";
+import Image from "next/image";
 
 export default function Page() {
   return (
-    <DashboardLayout>
+    <>
       <h1 className="text-3xl font-bold text-slate-700">Session</h1>
       <div className="flex flex-col gap-6">
         <section className="flex flex-col gap-3">
@@ -82,7 +84,7 @@ export default function Page() {
                     Pick &#x23;1: Rising Sun (90 &#45;120 Min)
                   </h3>
                   <div className="flex gap-3">
-                    <img
+                    <Image
                       src="https://cf.geekdo-images.com/iwevA6XmiNLHn1QnGUucqw__imagepagezoom/img/Pjl5062rAod_8ypRjpDZMJxaDY4=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic3880340.jpg"
                       alt="Rising Sun boardgame box art"
                       className="max-w-[80px] max-h-[80px]"
@@ -110,7 +112,7 @@ export default function Page() {
                       Pick &#x23;2: Terraforming mars (120min)
                     </h3>
                     <div className="flex gap-3">
-                      <img
+                      <Image
                         src="https://cf.geekdo-images.com/wg9oOLcsKvDesSUdZQ4rxw__imagepage/img/FS1RE8Ue6nk1pNbPI3l-OSapQGc=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3536616.jpg"
                         alt="Terraforming mars boardgame box art"
                         className="max-w-[80px] max-h-[80px]"
@@ -142,6 +144,6 @@ export default function Page() {
           </div>
         </section>
       </div>
-    </DashboardLayout>
+    </>
   );
 }
