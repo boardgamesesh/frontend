@@ -32,7 +32,7 @@ Each one of these groups have their own top level `layout.tsx` to facilitate the
 
 ### /components
 
-Re-usable components composed of multiple other components. Generally these facilitatet specific design patterns to be used for BGS, typically made up of Honeycomb (our internal design system) components.
+Re-usable components composed of multiple other components. Generally these facilitate specific design patterns with business logic to be used for BGS, typically made up of Honeycomb (our internal design system) components.
 
 ### /packages
 
