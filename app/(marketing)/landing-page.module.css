@@ -18,6 +18,11 @@ ul.columns {
   padding: 0;
 }
 
+.column p {
+  /*  Don't transfer to a column component, gotta figure out a place to define this that's more generic */
+  line-height: 1.5;
+}
+
 .featureContainer {
   margin: -2.5rem auto 0;
   padding-top: 2.5rem;

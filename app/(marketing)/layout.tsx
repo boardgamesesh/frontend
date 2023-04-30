@@ -48,7 +48,7 @@ export default function WebsiteLayout({
       <footer className={styles.footer}>
         <div className={styles.contentWrapper}>
           <div className={styles.footerContent}>
-            Boardgamesesh &copy; 2022
+            Boardgamesesh &copy; 2023
             <Link href="/terms-and-conditions" className={styles.link}>
               Terms &amp; Conditions
             </Link>
