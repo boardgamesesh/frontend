@@ -11,7 +11,7 @@ export default function WebsiteLayout({
   return (
     <div className={styles.pageWrapper}>
       <header>
-        <div className={styles.container}>
+        <div className={styles.contentWrapper}>
           <div className={styles.headerContent}>
             <Link href="/" className={styles.logoLink}>
               <Logo /> <span className={styles.logoText}>BoardgameSesh</span>
@@ -43,23 +43,15 @@ export default function WebsiteLayout({
         </div>
       </header>
       <main className={styles.main}>
-        <div className={styles.container}>{children}</div>
+        <div className={styles.contentWrapper}>{children}</div>
       </main>
       <footer className={styles.footer}>
-        <div className={styles.container}>
+        <div className={styles.contentWrapper}>
           <div className={styles.footerContent}>
             Boardgamesesh &copy; 2022
             <Link href="/terms-and-conditions" className={styles.link}>
               Terms &amp; Conditions
             </Link>
-            <a
-              href="https://netlify.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className={styles.link}
-            >
-              Powered by Netlify
-            </a>
           </div>
         </div>
       </footer>
