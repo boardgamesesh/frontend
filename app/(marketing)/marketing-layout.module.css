@@ -1,4 +1,16 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  margin: var(--space-32) 0;
+}
+
 .headerContent {
+  container-type: inline-size;
   display: flex;
   padding: var(--size-16) 0;
   align-items: center;
@@ -22,6 +34,14 @@
 
   &:hover {
     text-decoration: underline 3px var(--colour-brand);
+  }
+}
+
+.logoText {
+  display: none;
+
+  @container (min-width: 465px) {
+    display: inline;
   }
 }
 
@@ -58,14 +78,11 @@
 }
 
 .container {
+  container-type: inline-size;
   margin: 0 auto;
   padding: 0 var(--space-16);
   max-width: calc(1440px - var(--space-16) * 2);
   flex-grow: 1;
-}
-
-.main {
-  margin: var(--space-32) 0;
 }
 
 .footer {
@@ -76,40 +93,4 @@
   display: flex;
   gap: var(--gap);
   padding: var(--space-16) 0;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 5rem;
-  max-width: 60rem;
-
-  min-height: 90vh;
-}
-
-.heroContent {
-  text-align: center;
-}
-
-.heroTitle {
-  font-size: 4rem;
-}
-
-.heroText {
-  display: block;
-  font-size: 1.5rem;
-  line-height: 1.4;
-}
-
-.heroCallToAction {
-  display: inline-block;
-  padding: 0.8rem 1rem;
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: var(--white);
-  border-radius: 5px;
-  background-color: var(--colour-interactive);
 }

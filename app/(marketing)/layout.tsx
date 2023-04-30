@@ -9,17 +9,21 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className={styles.pageWrapper}>
       <header>
         <div className={styles.container}>
           <div className={styles.headerContent}>
             <Link href="/" className={styles.logoLink}>
-              <Logo /> BoardgameSesh
+              <Logo /> <span className={styles.logoText}>BoardgameSesh</span>
             </Link>
             <nav>
               <List horizontal alignY="centre" gap={16}>
                 <li>
-                  <Link href="/#features" className={styles.navLink}>
+                  <Link
+                    href="/#features"
+                    className={styles.navLink}
+                    scroll={false}
+                  >
                     Features
                   </Link>
                 </li>
