@@ -16,7 +16,7 @@ export default function WebsiteLayout({
             <Link href="/" className={styles.logoLink}>
               <Logo /> <span className={styles.logoText}>BoardgameSesh</span>
             </Link>
-            <nav>
+            <nav className={styles.nav}>
               <List horizontal alignY="centre" gap={16}>
                 <li>
                   <Link
@@ -32,8 +32,8 @@ export default function WebsiteLayout({
                     Login
                   </Link>
                 </li>
-                <li>
-                  <Link href="/auth" className={styles.navCallToAction}>
+                <li className={styles.callToAction}>
+                  <Link href="/auth" className={styles.emphasis}>
                     Start sesh &rarr;
                   </Link>
                 </li>
@@ -48,7 +48,7 @@ export default function WebsiteLayout({
       <footer className={styles.footer}>
         <div className={styles.contentWrapper}>
           <div className={styles.footerContent}>
-            Boardgamesesh &copy; 2023
+            <div>Boardgamesesh &copy; 2023</div>
             <Link href="/terms-and-conditions" className={styles.link}>
               Terms &amp; Conditions
             </Link>
