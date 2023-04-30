@@ -1,8 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
@@ -14,7 +12,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "automergeType": "branch",
-       "platformAutomerge": true
+      "platformAutomerge": true
     }
   ]
 }
