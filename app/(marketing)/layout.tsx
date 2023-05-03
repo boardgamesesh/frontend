@@ -1,7 +1,7 @@
 import { Container, Logo } from "~honeycomb";
 import Link from "next/link";
 
-export default function RootLayout({
+export default function WebsiteLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -29,12 +29,8 @@ export default function RootLayout({
         </div>
       </main>
       <footer>
-        <a
-          href="https://github.com/boardgamesesh/app/blob/main/README.md"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Code of conduct
+        <a href="https://netlify.com" target="_blank" rel="noreferrer noopener">
+          Powered by Netlify
         </a>
       </footer>
     </>

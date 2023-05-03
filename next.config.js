@@ -8,6 +8,9 @@ const nextConfig = {
     locales: ["en-AU"],
     defaultLocale: "en-AU",
   },
+  eslint: {
+    dirs: ["app"],
+  },
 };
 
 module.exports = nextConfig;
