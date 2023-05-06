@@ -54,7 +54,7 @@ export default function Page() {
                 </li>
               </List>
             </div>
-            <List className="flex gap-16">
+            <List classNameExtend="flex gap-16">
               <li className="w-full">
                 <a
                   href="tel:0411757997"
@@ -89,7 +89,7 @@ export default function Page() {
             <header>
               <h2 className="font-bold">Upcoming sessions</h2>
             </header>
-            <List className="divide-y flex flex-col flex-grow">
+            <List classNameExtend="divide-y flex flex-col flex-grow">
               <li>
                 <Link
                   href="/session/1234567"
@@ -135,7 +135,7 @@ export default function Page() {
                 </Link>
               </li>
             </List>
-            <List className="flex">
+            <List classNameExtend="flex">
               <li>
                 <Link href="/">
                   <span className="">See all</span>
@@ -214,7 +214,7 @@ export default function Page() {
                 <div className="flex-grow">
                   02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
                 </div>
-                <List className="flex w-full sm:w-auto gap-2">
+                <List classNameExtend="flex w-full sm:w-auto gap-2">
                   <li className="w-full sm:w-auto">
                     <Button onClick={() => {}} size="small" intent="secondary">
                       Nope
@@ -233,7 +233,7 @@ export default function Page() {
                 <div className="flex-grow sm:flex-grow-0">
                   02/10/22 @ 12:00 - 17:00 (1 Fleming Drive)
                 </div>
-                <List className="flex w-full sm:w-auto gap-2">
+                <List classNameExtend="flex w-full sm:w-auto gap-2">
                   <li className="w-full sm:w-auto">
                     <Button onClick={() => {}} size="small" intent="secondary">
                       Nope

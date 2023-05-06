@@ -12,7 +12,8 @@
 * {
   --font-size: var(--size-16);
   --gap: var(--space-8);
-  --colour-interactive: var(--violet-600);
+  --colour-interactive: var(--sky-500);
+  --colour-brand: #6c1fba;
   box-sizing: border-box;
 }
 

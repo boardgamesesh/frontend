@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { Header } from "~components/Header";
+import { Header } from "~components/AppHeader";
 import { PageLayout } from "~honeycomb";
 
 export default function AppLayout({ children }: { children: ReactNode }) {

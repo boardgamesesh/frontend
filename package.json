@@ -38,6 +38,7 @@
     "eslint-config-next": "^13.2.4",
     "eslint-plugin-testing-library": "^5.10.2",
     "plop": "^3.1.2",
+    "postcss-nesting": "^11.2.2",
     "typescript": "^5.0.3",
     "vite": "^4.2.1",
     "vitest": "^0.30.0"

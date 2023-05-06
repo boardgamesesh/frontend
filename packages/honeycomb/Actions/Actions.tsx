@@ -10,7 +10,7 @@ export const Actions = ({
   children: ReactNode;
   className?: string;
 }) => (
-  <List className={clsx(styles.base, {}, className)}>
+  <List classNameExtend={clsx(styles.base, {}, className)}>
     {Children.map(children, (child) => (
       <li>{child}</li>
     ))}
