@@ -7,6 +7,7 @@ export const Button = ({
   intent,
   size,
   mood,
+  type,
   onClick,
 }: {
   children: ReactNode;
@@ -14,8 +15,10 @@ export const Button = ({
   intent?: string;
   size?: string;
   mood?: string;
+  type?: "button" | "submit" | "reset";
 }) => (
   <button
+    type={type || "button"}
     onClick={onClick}
     className={clsx(styles.base, {
       [styles.secondary]: intent === "secondary",
