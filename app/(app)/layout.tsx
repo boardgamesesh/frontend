@@ -1,8 +1,10 @@
 "use client";
 
 import { ReactNode } from "react";
+import { ApolloProvider } from "@apollo/client";
 import { Header } from "~components/AppHeader";
 import { PageLayout } from "~honeycomb";
+import apolloClient from "~lib/apollo";
 
 export default function AppLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,7 +12,11 @@ export default function AppLayout({ children }: { children: ReactNode }) {
       <PageLayout.Header>
         <Header />
       </PageLayout.Header>
-      <PageLayout.Main>{children}</PageLayout.Main>
+      <PageLayout.Main>
+        <ApolloProvider client={apolloClient}>
+          {children}
+        </ApolloProvider>
+      </PageLayout.Main>
     </PageLayout>
   );
 }

@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { ApolloProvider } from "@apollo/client";
 import { ReactNode } from "react";
 import { PageLayout } from "~honeycomb";
+import apolloClient from "~lib/apollo";
 
 import styles from "./workflow-layout.module.css";
 
@@ -13,7 +15,9 @@ export default function WorkflowLayout({ children }: { children: ReactNode }) {
         <Link href="/">BoardgameSesh</Link>
       </PageLayout.Header>
       <PageLayout.Main classNameExtend={styles.container}>
-        {children}
+        <ApolloProvider client={apolloClient}>
+          {children}
+        </ApolloProvider>
       </PageLayout.Main>
     </PageLayout>
   );

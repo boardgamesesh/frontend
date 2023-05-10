@@ -24,8 +24,11 @@ const MY_USER = gql`
 
 export default function Page() {
   const searchParams = useSearchParams();
-  const token = searchParams.get("token");
+  const secretToken = searchParams.get("token");
   const id = searchParams.get("id");
+
+  const storedAuth = JSON.parse(localStorage.getItem("auth") || "{}");
+  const { id: storedId } = storedAuth;
 
   const {
     data: userData,
@@ -33,13 +36,14 @@ export default function Page() {
     error: userError,
   } = useQuery(MY_USER, {
     variables: {
-      id: "RZxkLgwBptW8UtVO2hw_v",
+      id: storedId,
     },
   });
+
   const [signIn, { data, loading, error }] = useMutation(SIGN_IN, {
     variables: {
-      id: "RZxkLgwBptW8UtVO2hw_v",
-      secretToken: "PlGx72cIybkjVbMfv04zp",
+      id,
+      secretToken,
     },
   });
 
@@ -52,7 +56,7 @@ export default function Page() {
 
   return (
     <>
-      <h1>Hello, Signup Page</h1> <Link href="/dashboard">Signup</Link>
+      <h1>Hello, Signup Page</h1> <Link href="/signup">Signup</Link>
       {JSON.stringify(data)}
     </>
   );
