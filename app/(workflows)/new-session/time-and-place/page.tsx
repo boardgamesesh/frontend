@@ -1,10 +1,43 @@
+"use client";
+
 import React, { HTMLAttributes, useState } from "react";
-import styles from "./setup-session.module.css";
+import styles from "./time-and-place.module.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Page() {
+  const [date, setDate] = useState(new Date());
+  const weekend = (date: any) => new Date() < date;
+
   return (
-    <>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <h1 className={styles.datePickerTitle}>
+        Select a date and time for your session
+      </h1>
+      <form className={styles.datePickerForm}>
+        <div className={styles.datePickerContainer}>
+          <DatePicker
+            className={styles.datePicker}
+            calendarClassName={styles.calendar}
+            selected={date}
+            dateFormat="MMMM d, yyyy h:mmaa"
+            calendarStartDay={1}
+            showTimeSelect
+            fixedHeight
+            onChange={(date: any) => setDate(date)}
+          />
+          <button
+            type="submit"
+            id="setup-session"
+            className={styles.setupBtn}
+            onClick={(e) => e.preventDefault()}
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+
+      {/* <div className={styles.container}>
         <h1 className={styles.title}> When is your next session?</h1>
         <form className={styles.form}>
           <div className={styles.gameDate}>
@@ -123,7 +156,7 @@ export default function Page() {
             Setup session
           </button>
         </form>
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 }

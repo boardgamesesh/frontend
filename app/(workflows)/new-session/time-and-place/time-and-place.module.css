@@ -1,3 +1,43 @@
+.datePickerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.datePicker {
+  width: 20rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  color: var(--slate-600);
+  border-radius: 5px 0 0 5px;
+  font-size: var(--size-24);
+  border: 1px solid var(--sky-700);
+  border-right: none;
+}
+
+.datePickerTitle {
+  font-size: var(--size-24);
+}
+
+.setupBtn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.7rem;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  background-color: #2fa3e3;
+  color: var(--white);
+}
+
+/* 
 .container {
   display: flex;
   flex-direction: column;
@@ -99,18 +139,7 @@
   outline: 1px solid var(--violet-500);
 }
 
-.setupBtn {
-  padding: 0.8rem;
-  margin-top: 1rem;
-  font-weight: 600;
-  border-radius: 5px;
-  border: transparent;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  cursor: pointer;
-  background-color: #2fa3e3;
-  color: var(--white);
-}
+
 
 .setupBtn:hover {
   background-color: var(--violet-500);
@@ -129,4 +158,4 @@
   .dateInput {
     width: 4rem;
   }
-}
+} */
