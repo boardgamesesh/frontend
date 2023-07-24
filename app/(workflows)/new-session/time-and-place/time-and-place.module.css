@@ -1,148 +1,123 @@
-.datePickerContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-
-  border-radius: 5px;
-  width: fit-content;
-}
-
-.datePicker {
-  width: 20rem;
-  padding: 0.5rem 0;
-  text-align: center;
-  color: var(--slate-600);
-  border-radius: 5px 0 0 5px;
-  font-size: var(--size-24);
-  border: 1px solid var(--sky-700);
-  border-right: none;
-}
-
-.datePickerTitle {
-  font-size: var(--size-24);
-}
-
-.setupBtn {
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 0.7rem;
-  border-radius: 0 5px 5px 0;
-  border: none;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  cursor: pointer;
-  background-color: #2fa3e3;
-  color: var(--white);
-}
-
-/* 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   height: 100vh;
-  width: 30rem;
+  width: 28rem;
   margin: auto;
   letter-spacing: 1px;
+}
+
+.form {
+  width: 100%;
 }
 
 .title {
   margin-bottom: 1.5rem;
 }
 
-.form {
-  width: 30rem;
+.fieldset {
+  display: flex;
+  width: 100%;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 0;
+  gap: var(--gap);
+}
+
+.gameTime,
+.gameDate {
+  display: flex;
+  flex-direction: column;
 }
 
 .label {
   font-size: 1.2rem;
-  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-.gameDate {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-
-.dateDetails {
-  border: none;
-  padding: 0;
-  display: flex;
-  gap: 0.2rem;
-  width: 100%;
-}
-
-.dateInput {
+.datePicker {
   padding: 0.5rem;
-  border: 1px solid #367ba2;
+  color: var(--slate-500);
   border-radius: 5px;
-  width: 7.5rem;
-}
-
-.dateInput:focus {
-  outline: 1px solid var(--violet-500);
-}
-
-.dateSeparator {
-  stroke: black;
-  stroke-width: 1.5;
-}
-
-.gameTime {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-
-.timeDetails {
-  display: flex;
-  gap: 0.2rem;
   border: none;
+  border: 1px solid var(--sky-500);
+  width: 13.6rem;
+  font-size: var(--size-20);
+}
+
+.time {
+  width: 6rem;
+  overflow-x: hidden;
+}
+
+.time {
+  .react-datepicker-popper {
+    width: 200px;
+  }
+}
+.time div {
+  width: 100% !important;
+}
+
+.time ul::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
   padding: 0;
-  width: 3rem;
+  margin: 0;
+  background-color: #f3f3f8;
 }
-
-.timeInput {
-  padding: 0.5rem;
+.time ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+.time ul::-webkit-scrollbar-thumb {
+  background-color: #222020;
   border-radius: 5px;
-  border: 1px solid #367ba2;
-  width: 5rem;
+  border: 1px solid #766f6f;
+  height: 2rem;
 }
 
-.timeInput:focus {
-  outline: 1px solid var(--violet-500);
-}
-
-.timeDot {
-  stroke: black;
+.datePicker:focus {
+  outline: 1px solid var(--sky-950);
 }
 
 .location {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .locationInput {
   padding: 0.5rem;
   margin: 0;
   border-radius: 5px;
-  border: 1px solid #367ba2;
-  width: 26rem;
+  border: 1px solid var(--sky-500);
+  color: var(--slate-500);
+  font-size: var(--size-20);
 }
 
 .locationInput:focus {
-  outline: 1px solid var(--violet-500);
+  outline: 1px solid var(--sky-950);
 }
 
-
+.setupBtn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: transparent;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  background-color: var(--sky-500);
+  color: var(--white);
+}
 
 .setupBtn:hover {
-  background-color: var(--violet-500);
+  background-color: var(--sky-950);
   color: var(--white);
 }
 
@@ -154,8 +129,4 @@
   .container {
     margin: 1rem;
   }
-
-  .dateInput {
-    width: 4rem;
-  }
-} */
+}
