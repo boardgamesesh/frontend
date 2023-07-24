@@ -38,6 +38,10 @@ Re-usable components composed of multiple other components. Generally these faci
 
 Any generic code which can be published for external uses.
 
+#### Honeycomb
+
+The name of our design system of common components and basic systems (eg. colour)
+
 ### /lib
 
 Anything that is an interface to an external library, or is a library in it self, which contains BGS specific configuration.
