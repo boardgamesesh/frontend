@@ -2,10 +2,10 @@ import styles from "./AppHeader.module.css";
 import Link from "next/link";
 import { Button, Container, List, Logo } from "~honeycomb";
 
-export const Header = () => (
+export const AppHeader = () => (
   <header className={styles.base}>
     <Container className="flex justify-between items-centre">
-      <Link href="/dashboard">
+      <Link href="/">
         <Logo />
       </Link>
       <nav>

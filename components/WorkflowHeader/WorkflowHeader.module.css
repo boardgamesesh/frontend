@@ -1,0 +1,9 @@
+@layer components {
+  .base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-8);
+    border-bottom: 1px solid var(--slate-200);
+  }
+}

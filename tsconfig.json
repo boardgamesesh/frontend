@@ -23,7 +23,7 @@
     "paths": {
       "~styles/*": ["./styles/*"],
       "~honeycomb": ["./packages/honeycomb"],
-      "~components/*": ["./components/*"],
+      "~components": ["./components/index.ts"],
       "~assets/*": ["./public/*"],
       "~lib/*": ["./lib/*"]
     }
