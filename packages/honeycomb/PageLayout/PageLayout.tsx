@@ -17,7 +17,11 @@ export const PageHeader = ({
 }: {
   children: ReactNode;
   classNameExtend?: string;
-}) => <header className={clsx([classNameExtend])}>{children}</header>;
+}) => (
+  <header className={clsx([styles.header, classNameExtend])}>
+    <Container>{children}</Container>
+  </header>
+);
 
 export const PageMain = ({
   children,
@@ -31,5 +35,16 @@ export const PageMain = ({
   </main>
 );
 
+export const PageFooter = ({
+  classNameExtend,
+}: {
+  classNameExtend?: string;
+}) => (
+  <footer className={clsx([styles.footer, classNameExtend])}>
+    <Container>&copy; BoardgameSesh 2023</Container>
+  </footer>
+);
+
 PageLayout.Header = PageHeader;
 PageLayout.Main = PageMain;
+PageLayout.Footer = PageFooter;

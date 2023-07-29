@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button, Container, List, Logo } from "~honeycomb";
 
 export const WorkflowHeader = () => (
-  <header className={styles.base}>
+  <div className={styles.base}>
     <Link href="/">
       <Logo />
     </Link>
@@ -14,5 +14,5 @@ export const WorkflowHeader = () => (
         </li>
       </List>
     </nav>
-  </header>
+  </div>
 );

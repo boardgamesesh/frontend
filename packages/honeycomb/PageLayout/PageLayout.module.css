@@ -3,7 +3,18 @@
     display: flex;
     flex-direction: column;
   }
+
+  .header {
+    padding: var(--space-8);
+  }
+
   .main {
     padding: var(--size-16);
+  }
+
+  .footer {
+    /* match header height to balance centering body */
+    min-height: 44px;
+    padding: var(--size-8);
   }
 }

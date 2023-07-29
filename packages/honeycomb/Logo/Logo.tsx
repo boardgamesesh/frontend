@@ -8,6 +8,7 @@ export const Logo = () => (
     width={28}
     height={28}
     style={{
+      display: "block",
       maxWidth: "100%",
       height: "auto",
     }}

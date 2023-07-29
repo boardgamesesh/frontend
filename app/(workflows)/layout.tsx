@@ -8,13 +8,14 @@ import { WorkflowHeader } from "~components";
 
 export default function WorkflowLayout({ children }: { children: ReactNode }) {
   return (
-    <PageLayout>
+    <PageLayout classNameExtend={styles.container}>
       <PageLayout.Header>
         <WorkflowHeader />
       </PageLayout.Header>
-      <PageLayout.Main classNameExtend={styles.container}>
+      <PageLayout.Main classNameExtend={styles.main}>
         {children}
       </PageLayout.Main>
+      <PageLayout.Footer />
     </PageLayout>
   );
 }
