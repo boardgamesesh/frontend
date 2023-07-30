@@ -1,6 +1,6 @@
 import styles from "./WorkflowHeader.module.css";
 import Link from "next/link";
-import { Button, Container, List, Logo } from "~honeycomb";
+import { List, Logo } from "~honeycomb";
 
 export const WorkflowHeader = () => (
   <div className={styles.base}>

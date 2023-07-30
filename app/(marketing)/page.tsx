@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./landing-page.module.css";
-import { Hero } from "~components/Hero";
+import { Hero } from "~components";
 
 export const metadata: Metadata = {
   title: "BoardgameSesh",

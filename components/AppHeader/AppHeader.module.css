@@ -1,5 +1,7 @@
 @layer components {
   .base {
-    border-bottom: 1px solid var(--slate-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
