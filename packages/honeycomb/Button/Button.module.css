@@ -32,6 +32,10 @@
     color: red;
   }
 
+  .negative:hover {
+    background-color: red;
+  }
+
   /* Sizes */
 
   .small {
