@@ -1,0 +1,5 @@
+@layer layout {
+  .header {
+    border-bottom: 1px solid var(--slate-200);
+  }
+}
