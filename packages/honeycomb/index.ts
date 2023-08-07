@@ -6,6 +6,7 @@ export * from "./Card";
 export * from "./Container";
 export * from "./PageLayout";
 export * from "./Heading";
+export * from "./Icon";
 export * from "./List";
 export * from "./Logo";
 export * from "./Text";

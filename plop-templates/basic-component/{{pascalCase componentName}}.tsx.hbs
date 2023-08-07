@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import styles from "./{{pascalCase componentName}}.module.css"
 
-export type {{pascalCase componentName}}Props = { classNameExtend: string }
+export type {{pascalCase componentName}}Props = { classNameExtend?: string }
 
 export const {{pascalCase componentName}} = ({ classNameExtend, ...restProps }:
 {{pascalCase componentName}}Props): JSX.Element => {

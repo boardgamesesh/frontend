@@ -25,6 +25,13 @@
     color: var(--white);
   }
 
+  /* Mood */
+
+  .negative {
+    border-color: red;
+    color: red;
+  }
+
   /* Sizes */
 
   .small {

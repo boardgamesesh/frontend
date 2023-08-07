@@ -6,22 +6,40 @@ import { createElement } from "react";
 type HeadingProps = {
   children: ReactNode;
   className?: string;
-  level?: "1" | "2" | "3";
-  element?: "h1" | "h2" | "h3";
+  level?: "1" | "2" | "3" | "4" | "5" | "6";
+  element?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 };
 
 export const Heading = ({
   children,
   className,
   element,
-  level = "1",
+  level,
 }: HeadingProps) => {
+  const determineLevel = (
+    element: HeadingProps["element"],
+    level: HeadingProps["level"]
+  ): HeadingProps["level"] => {
+    if (level) return level;
+
+    switch (element) {
+      case "h1":
+        return "1";
+      case "h2":
+        return "2";
+      case "h3":
+        return "3";
+      case "h4":
+        return "4";
+      case "h5":
+        return "5";
+      case "h6":
+        return "6";
+    }
+  };
+
   const headingStyle = clsx(
-    {
-      [styles["level-1"]]: level === "1",
-      [styles["level-2"]]: level === "2",
-      [styles["level-3"]]: level === "3",
-    },
+    styles[`level-${determineLevel(element, level)}`],
     className
   );
 
