@@ -6,7 +6,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 // import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { DateField } from "@mui/x-date-pickers/DateField";
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
                 <label className={styles.label} htmlFor="date">
                   Date
                 </label>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
                   <DatePicker className={styles.datePicker}/>
                 </LocalizationProvider>
               </div>
