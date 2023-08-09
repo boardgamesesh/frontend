@@ -1,11 +1,8 @@
 "use client";
 
-import Link from "next/link";
-
 import styles from "./dashboard.module.css";
 
-import { Actions, Button, Card, Heading, List, Text, Icon } from "~honeycomb";
-import { formatDistanceToNow } from "date-fns";
+import { Actions, Button, Card, Heading, List } from "~honeycomb";
 import { NextSeshCard } from "components/NextSeshCard";
 
 export default function Page() {

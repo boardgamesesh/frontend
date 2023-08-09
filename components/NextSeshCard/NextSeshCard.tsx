@@ -3,7 +3,7 @@ import styles from "./NextSeshCard.module.css";
 import { format, formatDistanceToNow } from "date-fns";
 import { FaDirections } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
-import { Card, Heading, List, Icon, Text } from "~honeycomb";
+import { Card, Heading, List, Text } from "~honeycomb";
 
 export type NextSeshCardProps = { date: Date };
 
