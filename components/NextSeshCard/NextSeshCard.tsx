@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import styles from "./NextSeshCard.module.css";
 import { format, formatDistanceToNow } from "date-fns";
 import { FaDirections } from "react-icons/fa";
