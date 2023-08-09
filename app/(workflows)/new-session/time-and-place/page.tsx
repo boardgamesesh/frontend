@@ -2,13 +2,14 @@
 
 import React, { startTransition, useState } from "react";
 import styles from "./time-and-place.module.css";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DateField } from "@mui/x-date-pickers/DateField";
 
 export default function Page() {
-  const [startDate, setDate] = useState(new Date());
-
   return (
     <>
       <div className={styles.container}>
@@ -20,35 +21,15 @@ export default function Page() {
                 <label className={styles.label} htmlFor="date">
                   Date
                 </label>
-                <DatePicker
-                  className={styles.datePicker}
-                  calendarClassName="rasta-stripes"
-                  showPopperArrow={false}
-                  selected={startDate}
-                  dateFormat="MMMM d, yyyy"
-                  onChange={(date: any) => setDate(date)}
-                  id="date"
-                />
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker className={styles.datePicker}/>
+                </LocalizationProvider>
               </div>
 
               <div className={styles.gameTime}>
                 <label className={styles.label} htmlFor="time">
                   Time
                 </label>
-                <DatePicker
-                  className={styles.datePicker}
-                  calendarClassName={styles.time}
-                  selected={startDate}
-                  onChange={(date: any) => setDate(date)}
-                  showTimeSelect
-                  showTimeSelectOnly
-                  timeIntervals={15}
-                  timeCaption="Time"
-                  placeholderText="Select a time"
-                  showPopperArrow={false}
-                  dateFormat="h:mm aa"
-                  id="time"
-                />
               </div>
             </fieldset>
             <fieldset className={styles.fieldset}>
