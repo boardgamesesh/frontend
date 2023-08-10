@@ -6,14 +6,16 @@
     "automerge": true,
     "automergeType": "pr",
     "platformAutomerge": true,
-    "autoApprove": true,
+    "autoApprove": true
   },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "automergeType": "branch",
+      "platformAutomerge": true,
       "autoApprove": true,
+      "platformCommit": true
     }
   ]
 }
