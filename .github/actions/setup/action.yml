@@ -14,7 +14,6 @@ runs:
         version: 7
         run_install: false
 
-    # setup node
     - uses: actions/setup-node@v3
       with:
         node-version-file: .nvmrc
@@ -26,15 +25,16 @@ runs:
       run: |
         echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-    - uses: actions/cache@v3
-      name: Setup pnpm cache
+    - name: Setup pnpm cache
+      uses: actions/cache@v3
       with:
         path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
         key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
-    
+
     - name: Install dependencies
-        run: CI=true pnpm install --no-frozen-lockfile
-    # setup turborepo cache
+      uses: actions/cache@v3
+      run: CI=true pnpm install --no-frozen-lockfile
+
     - uses: dtinth/setup-github-actions-caching-for-turbo@v1
