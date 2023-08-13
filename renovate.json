@@ -8,10 +8,7 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
-      "automergeType": "branch",
-      "platformAutomerge": true,
-      "autoApprove": true,
-      "platformCommit": true
+      "automergeType": "branch"
     }
   ]
 }
