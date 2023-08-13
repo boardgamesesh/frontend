@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { ReactNode } from "react";
 import styles from "./List.module.css";
 
-type ListProps = {
+export type ListProps = {
   children: ReactNode;
   classNameExtend?: string;
   dividers?: boolean;

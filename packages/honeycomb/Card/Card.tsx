@@ -5,11 +5,11 @@ import clsx from "clsx";
 export const Card = ({
   children,
   variant,
-  className,
+  classNameExtend,
 }: {
   children: ReactNode;
   variant?: "highlight" | "section";
-  className?: string;
+  classNameExtend?: string;
 }) => (
   <div
     className={clsx(
@@ -18,7 +18,7 @@ export const Card = ({
         [styles.highlight]: variant === "highlight",
         [styles.section]: variant === "section",
       },
-      className
+      classNameExtend
     )}
   >
     {children}
