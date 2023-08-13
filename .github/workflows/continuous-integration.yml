@@ -1,9 +1,6 @@
 name: Continuous Integration
 
-on:
-  push:
-  branch_protection_rule:
-    types: [created]
+on: [push]
 
 jobs:
   lint:
