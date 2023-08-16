@@ -2,7 +2,7 @@
 
 import React, { startTransition, useState } from "react";
 import styles from "./time-and-place.module.css";
-// import { Button } from "~honeycomb";
+import { Button } from "~honeycomb";
 
 import { DatePicker, TimePicker, TimeClock } from "@mui/x-date-pickers";
 
@@ -63,16 +63,8 @@ export default function Page() {
               </div>
             </fieldset>
 
-            <button
-              type="submit"
-              id="setup-session"
-              className={styles.setupBtn}
-              onClick={(e) => e.preventDefault()}
-            >
-              Setup session
-            </button>
+            <Button onClick={() => { }} type="submit"> Submit </Button>
 
-            {/* <Button onClick={() => { }} type="submit"> Submit </Button> */}
           </form>
         </div>
       </div>
