@@ -11,14 +11,14 @@ export interface ButtonProps
 }
 
 export const Button = ({className, ...props}: ButtonProps) => (
-  <button
-    {...props}
+  <button 
     className={clsx(styles.base, {
       [styles.secondary]: props.intent === "secondary",
       [styles.negative]: props.mood === "negative",
       [styles.small]: props.size === "small",
       [styles.large]: props.size === "large",
     })}
+    {...props}
   >
     {props.children}
   </button>
