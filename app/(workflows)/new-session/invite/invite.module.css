@@ -42,19 +42,6 @@
   outline: none;
 }
 
-/* Used this as a guide https://discourse.webflow.com/t/styling-a-button-to-sit-inside-an-input-field/220047 */
-.addButton {
-  padding: 0.8rem;
-  font-weight: 600;
-  border-radius: 5px;
-  border: transparent;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  cursor: pointer;
-  background-color: #2fa3e3;
-  color: var(--white);
-}
-
 .addedEmails {
   display: flex;
   flex-wrap: wrap;
@@ -101,13 +88,6 @@
   margin-top: 1rem;
 }
 
-.inviteButton,
-.copyButton {
-  padding: 0.8rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .skipStep {
   cursor: pointer;
   padding: 0.8rem;
@@ -115,44 +95,13 @@
   color: #000;
 }
 
-.inviteButton {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  border: transparent;
-  background-color: #2fa3e3;
-  color: var(--white);
-}
-
-.copyButton {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  border: transparent;
-  background-color: var(--slate-100);
-}
-
 .skipStep {
   background-color: transparent;
   border: transparent;
 }
 
-.addButton:hover,
-.inviteButton:hover,
-.copyButton:hover {
-  background-color: var(--sky-500);
-}
-
-.copyButton:hover {
-  color: white;
-}
-
 .skipStep:hover {
   text-decoration: underline 2px var(--sky-300);
-}
-
-.addButton:active,
-.inviteButton:active,
-.copyButton:active {
-  transform: scale(95%);
 }
 
 @media (max-width: 40rem) {

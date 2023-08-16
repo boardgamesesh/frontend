@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./invite.module.css";
 import Link from "next/link";
 import clsx from "clsx";
+import { Button } from "~honeycomb";
 
 export default function Page() {
   const [email, setEmail] = useState<string>("");
@@ -25,16 +26,17 @@ export default function Page() {
       }
     }
   };
-  
-  return (
-    <form onKeyDown={(e: { key: string; preventDefault: () => void; }) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        addEmail();
-      }
-    }}>
-      <h1 className={styles.title}>Who&apos;s invited?</h1>
 
+  return (
+    <form
+      onKeyDown={(e: { key: string; preventDefault: () => void }) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          addEmail();
+        }
+      }}
+    >
+      <h1 className={styles.title}>Who&apos;s invited?</h1>
       {/* Text/Header component*/}
       <div className={styles.invitesContainer}>
         <label htmlFor="email" className={styles.emailLabel}>
@@ -59,12 +61,10 @@ export default function Page() {
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
           />
-          <div aria-live="assertive" role="alert">
-            {" "}
-          </div>
-          <button
+          <div aria-live="assertive" role="alert"></div>
+
+          <Button
             id="add"
-            className={styles.addButton}
             type="button"
             onClick={() => {
               addEmail();
@@ -74,10 +74,9 @@ export default function Page() {
             onBlur={() => setFocus(false)}
           >
             Add
-          </button>
+          </Button>
         </div>
       </div>
-
       {/* only render when there are emails */}
       {emails.length > 0 && (
         <ul className={styles.addedEmails}>
@@ -100,19 +99,19 @@ export default function Page() {
           ))}
         </ul>
       )}
-
       <div className={styles.actionButtons}>
         {/* Text component maybe */}
-        <button className={styles.inviteButton} type="submit">
+        <Button onClick={() => {}} type="submit">
           Invite friends
-        </button>
-        <button className={styles.copyButton} type="button">
+        </Button>
+        <Button onClick={() => {}} type="button">
           Copy invite link
-        </button>
+        </Button>
+
         <Link href="/dashboard" className={styles.skipStep}>
           Skip this step
         </Link>
-      </div>
+      </div>{" "}
     </form>
   );
 }
