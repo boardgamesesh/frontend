@@ -10,7 +10,7 @@ export interface ButtonProps
   mood?: string;
 }
 
-export const Button = (props: ButtonProps) => (
+export const Button = ({className, ...props}: ButtonProps) => (
   <button
     {...props}
     className={clsx(styles.base, {
