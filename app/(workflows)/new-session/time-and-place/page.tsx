@@ -2,12 +2,12 @@
 
 import React, { startTransition, useState } from "react";
 import styles from "./time-and-place.module.css";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { Button, Label } from "~honeycomb";
 
-// import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { DatePicker, TimePicker, TimeClock } from "@mui/x-date-pickers";
+
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { DateField } from "@mui/x-date-pickers/DateField";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 export default function Page() {
   return (
@@ -18,18 +18,33 @@ export default function Page() {
           <form className={styles.timeAndDateForm}>
             <fieldset className={styles.fieldset}>
               <div className={styles.gameDate}>
-                <label className={styles.label} htmlFor="date">
-                  Date
-                </label>
+                <label className={styles.label}>Date</label>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DatePicker className={styles.datePicker}/>
+                  <DatePicker
+                    className={styles.inputDT}
+                    label="Select a date"
+                    slotProps={{
+                      textField: {
+                        helperText: "MM/DD/YYYY",
+                      },
+                    }}
+                  />
                 </LocalizationProvider>
               </div>
 
               <div className={styles.gameTime}>
-                <label className={styles.label} htmlFor="time">
-                  Time
-                </label>
+                <label className={styles.label}>Time</label>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <TimePicker
+                    className={styles.inputDT}
+                    label="Select a time"
+                    slotProps={{
+                      textField: {
+                        helperText: "HH:MM AM/PM",
+                      },
+                    }}
+                  />
+                </LocalizationProvider>
               </div>
             </fieldset>
             <fieldset className={styles.fieldset}>
@@ -37,7 +52,6 @@ export default function Page() {
                 <label htmlFor="location" className={styles.label}>
                   Location
                 </label>
-
                 <input
                   type="text"
                   id="location"
@@ -57,6 +71,8 @@ export default function Page() {
             >
               Setup session
             </button>
+
+            {/* <Button onClick={() => { }} type="submit"> Submit </Button> */}
           </form>
         </div>
       </div>
