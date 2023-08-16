@@ -1,32 +1,25 @@
-import { ReactNode } from "react";
 import clsx from "clsx";
 import styles from "./Button.module.css";
 
-export const Button = ({
-  children,
-  intent,
-  size,
-  mood,
-  onClick,
-  type
-}: {
-  children: ReactNode;
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
   onClick: () => void;
   intent?: string;
   size?: string;
   mood?: string;
-  type?: "submit" | "button" | "reset"
-}) => (
+}
+
+export const Button = (props: ButtonProps) => (
   <button
-    onClick={onClick}
+    {...props}
     className={clsx(styles.base, {
-      [styles.secondary]: intent === "secondary",
-      [styles.negative]: mood === "negative",
-      [styles.small]: size === "small",
-      [styles.large]: size === "large",
+      [styles.secondary]: props.intent === "secondary",
+      [styles.negative]: props.mood === "negative",
+      [styles.small]: props.size === "small",
+      [styles.large]: props.size === "large",
     })}
-    type={type}
   >
-    {children}
+    {props.children}
   </button>
 );
