@@ -15,6 +15,9 @@ export const AppHeader = () => (
           </Button>
         </li>
         <li>
+          <Link href="/dashboard">Dashboard</Link>
+        </li>
+        <li>
           <Link href="/">Invites</Link>
         </li>
         <li>

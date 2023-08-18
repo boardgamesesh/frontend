@@ -1,149 +1,128 @@
 "use client";
 
-import { Card } from "~honeycomb";
+import { Button, Card, Heading, List } from "~honeycomb";
 import Link from "next/link";
-import { FaDirections } from "react-icons/fa";
+import { FaArrowLeft, FaChevronLeft, FaDirections } from "react-icons/fa";
 import { MdCall, MdOutlineWarningAmber, MdOutlineAdd } from "react-icons/md";
 import Image from "next/image";
+import { useState } from "react";
+
+type Player = {
+  displayName: string;
+  username: string;
+};
+
+const PlayerDisplay = ({ displayName, username }: Player) => (
+  <>
+    <span style={{ textTransform: "capitalize" }}>{displayName}</span> (
+    {username})
+  </>
+);
 
 export default function Page() {
+  const [firstPlayer, setFirstPlayer] = useState<number | undefined>(undefined);
+
+  const players = [
+    {
+      displayName: "geoff",
+      username: "@gyfchong",
+    },
+    {
+      displayName: "drew",
+      username: "@119",
+    },
+    {
+      displayName: "simon",
+      username: "@nizmox",
+    },
+    {
+      displayName: "dayne",
+      username: "@dayne",
+    },
+    {
+      displayName: "simon",
+      username: "@mercury",
+    },
+  ];
+
   return (
-    <>
-      <h1 className="text-3xl font-bold text-slate-700">Session</h1>
-      <div className="flex flex-col gap-6">
-        <section className="flex flex-col gap-3">
-          <div className="grid grid-cols-[1fr_3fr] gap-3">
-            <div className="p-3 rounded bg-slate-100">
-              <div className="flex flex-col">
-                <h2 className="font-bold">When</h2>
-                <span>Sat, 01 Sep</span>
-                <span>9:00 &mdash; 17:00 (8hrs)</span>
-              </div>
-            </div>
-            <div className="p-3 rounded bg-slate-100">
-              <div className="grid grid-cols-[3fr_1fr_1fr] gap-3 min-h-full">
-                <div className="flex flex-col gap-1">
-                  <h2 className="font-bold">Getting there</h2>
-                  <div className="h-card flex gap-[0.25rem]">
-                    <span className="p-street-address">1 Fleming Dr,</span>
-                    <span className="p-locality">Campbelltown</span>
-                    <span className="p-region" title="New South Wales">
-                      NSW
-                    </span>
-                    <span className="p-postal-code">2560</span>
-                  </div>
-                </div>
-                <a
-                  href="tel:0411757997"
-                  className="flex flex-col items-center justify-center gap-2 text-white bg-sky-500 p-3 rounded w-full hover:drop-shadow hover:bg-sky-600"
-                  target="_blank"
-                  rel="noreferrer"
+    <div className="flex flex-col gap-32">
+      <header>
+        <h1>Play session</h1>
+      </header>
+      <section className="flex flex-col gap-20">
+        <Heading element="h2">What game are you playing?</Heading>
+        <div>
+          <select>
+            <option>Rising Sun</option>
+            <option>Teraforming Mars</option>
+          </select>
+        </div>
+      </section>
+      <section className="flex flex-col gap-20">
+        <header className="flex gap-8">
+          <Heading element="h2">Pick your first player</Heading>
+          <Button
+            onClick={() => {
+              const randomPlayerIndex = Math.floor(
+                Math.random() * (players.length - 0) + 0
+              );
+              if (firstPlayer !== randomPlayerIndex) {
+                setFirstPlayer(randomPlayerIndex);
+              }
+            }}
+          >
+            Randomise
+          </Button>
+        </header>
+        <List horizontal classNameExtend="flex-wrap">
+          {players.map((player, index) => (
+            <li key={player.username}>
+              <label htmlFor={player.username}>
+                <Card
+                  variant={firstPlayer === index ? "highlight" : "section"}
+                  classNameExtend="flex align-center gap-8"
                 >
-                  <MdCall />
-                  Contact
-                </a>
-                <a
-                  href="https://www.google.com/maps/dir//1+Fleming+Dr,+Campbelltown+NSW+2560/@-34.0658335,150.78311,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x6b12ee335124753d:0x9ac89184e66355f0!2m2!1d150.7852987!2d-34.0658335!3e0"
-                  className="flex flex-col items-center justify-center gap-2 text-white bg-sky-500 p-3 rounded w-full hover:drop-shadow hover:bg-sky-600"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaDirections />
-                  Directions
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="p-3 rounded bg-slate-100">
-            <div className="flex gap-3">
-              <h2 className="font-bold">Attending (5 people):</h2>
-              Yourself, nizmox, Dayne, mercury, 119
-            </div>
-          </div>
-        </section>
-        <section className="flex flex-col gap-3">
-          <h2 className="text-2xl font-bold text-slate-700">Boardgames</h2>
-          <ul className="flex gap-3">
-            <li>Estimated play time: 4hrs,</li>
-            <li className="flex gap-2">
-              Historical play time:{" "}
-              <span className="text-orange-500">7hrs</span>
-              <span className="flex items-center gap-1 px-2 rounded-full bg-orange-200 text-orange-900">
-                <MdOutlineWarningAmber />{" "}
-                <span className="text-xs">
-                  Approaching max play time, please eat.
-                </span>
-              </span>
+                  <input
+                    type="radio"
+                    name="players"
+                    id={player.username}
+                    onChange={() => {
+                      setFirstPlayer(index);
+                    }}
+                    checked={firstPlayer === index}
+                  />
+                  <PlayerDisplay {...player} />
+                </Card>
+              </label>
             </li>
-          </ul>
-          <div className="flex flex-col gap-3">
-            <div className="p-3 rounded bg-slate-100">
-              <div className="flex gap-3">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-lg font-bold text-slate-700">
-                    Pick &#x23;1: Rising Sun (90 &#45;120 Min)
-                  </h3>
-                  <div className="flex gap-3">
-                    <Image
-                      src="https://cf.geekdo-images.com/iwevA6XmiNLHn1QnGUucqw__imagepagezoom/img/Pjl5062rAod_8ypRjpDZMJxaDY4=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic3880340.jpg"
-                      alt="Rising Sun boardgame box art"
-                      className="max-w-[80px] max-h-[80px]"
-                    />
-                    <div className="flex flex-col gap-2">
-                      <p>
-                        Lead your clan to victory through negotiation, combat,
-                        monsters and favors from Kami.
-                      </p>
-                      <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
-                        <Link href="/game/1234567?session=1234">
-                          Start playing
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="p-3 rounded bg-slate-100">
-              <div className="flex gap-3">
-                <div className="flex flex-col gap-5">
-                  <div className="flex flex-col gap-3">
-                    <h3 className="text-lg font-bold text-slate-700">
-                      Pick &#x23;2: Terraforming mars (120min)
-                    </h3>
-                    <div className="flex gap-3">
-                      <Image
-                        src="https://cf.geekdo-images.com/wg9oOLcsKvDesSUdZQ4rxw__imagepage/img/FS1RE8Ue6nk1pNbPI3l-OSapQGc=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3536616.jpg"
-                        alt="Terraforming mars boardgame box art"
-                        className="max-w-[80px] max-h-[80px]"
-                      />
-                      <div className="flex flex-col gap-2">
-                        <p>
-                          Compete with rival CEOs to make Mars habitable and
-                          build your corporate empire.
-                        </p>
-                        <div className="border border-violet-700 px-2 py-1 max-w-fit text-violet-700 rounded hover:bg-violet-700 hover:text-white">
-                          <Link href="/game/1234567?session=1234">
-                            Start playing
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Link href="/session/pick-boardgame">
-              <Card classNameExtend="border-violet-800 bg-violet-700 hover:bg-gradient-to-br from-violet-700 to-violet-900 text-white hover:drop-shadow-lg w-full max-h-[150px]">
-                <span className="text-2xl grow">Pick boardgame</span>
-                <span className="text-7xl self-end text-violet-600">
-                  <MdOutlineAdd />
-                </span>
-              </Card>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </>
+          ))}
+        </List>
+      </section>
+      <section className="flex flex-col gap-20">
+        <table>
+          <thead>
+            <th>Player</th>
+            <th>Score</th>
+          </thead>
+          <tbody>
+            {players.map((player) => (
+              <tr key={player.username}>
+                <td>
+                  <PlayerDisplay {...player} />
+                </td>
+                <td>
+                  <input type="text" name="scores" id={player.username} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+      {/* 
+          - Record game stats
+          - Turn timers
+        */}
+    </div>
   );
 }
