@@ -72,6 +72,7 @@ export default function Page() {
             }}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
+            size="small"
           >
             Add
           </Button>
@@ -104,7 +105,7 @@ export default function Page() {
         <Button onClick={() => {}} type="submit">
           Invite friends
         </Button>
-        <Button onClick={() => {}} type="button">
+        <Button onClick={() => {}} type="button" intent="secondary">
           Copy invite link
         </Button>
 
