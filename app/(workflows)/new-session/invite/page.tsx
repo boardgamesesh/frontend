@@ -4,16 +4,39 @@ import { useState } from "react";
 import styles from "./invite.module.css";
 import Link from "next/link";
 import clsx from "clsx";
+import { Button } from "~honeycomb";
 
 export default function Page() {
   const [email, setEmail] = useState<string>("");
   const [emails, setEmails] = useState<string[]>([]);
-  const [focus, setFocus] = useState<any>(false);
+  const [focus, setFocus] = useState<boolean>(false);
+
+  const addEmail = () => {
+    // Validation can be improved or replaced with a library such as joi.dev
+    const regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    if (!email || !regExp.test(email)) {
+      alert("Please enter a valid email");
+    } else {
+      if (emails.includes(email)) {
+        alert("Email already added");
+      } else {
+        setEmail("");
+        setEmails([...emails, email]);
+      }
+    }
+  };
 
   return (
-    <form>
+    <form
+      onKeyDown={(e: { key: string; preventDefault: () => void }) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          addEmail();
+        }
+      }}
+    >
       <h1 className={styles.title}>Who&apos;s invited?</h1>
-
       {/* Text/Header component*/}
       <div className={styles.invitesContainer}>
         <label htmlFor="email" className={styles.emailLabel}>
@@ -38,57 +61,58 @@ export default function Page() {
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
           />
-          <button
+          <div aria-live="assertive" role="alert"></div>
+
+          <Button
             id="add"
-            className={styles.addButton}
             type="button"
             onClick={() => {
-              // Validation can be improved or replaced with a library..
-              let regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
-              if (!email || !regExp.test(email)) {
-                alert("Please enter a valid email");
-              } else {
-                setEmail("");
-                setEmails([...emails, email]);
-              }
+              addEmail();
+              setFocus(true);
             }}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            size="small"
           >
             Add
-          </button>
+          </Button>
         </div>
       </div>
-      <div className={styles.addedEmails}>
-        {/* Text component maybe */}
-        {emails.map((email, index) => (
-          <div className={styles.emailAdded} key={index}>
-            {email}
-            <button
-              className={styles.deleteEmail}
-              aria-label="remove"
-              type="button"
-              onClick={() => {
-                setEmails(emails.filter((em) => em !== email));
-              }}
-            >
-              &times;
-            </button>
-          </div>
-        ))}
-      </div>
-
+      {/* only render when there are emails */}
+      {emails.length > 0 && (
+        <ul className={styles.addedEmails}>
+          {/* Text component maybe */}
+          {emails.map((email) => (
+            <li className={styles.emailAdded} key={email}>
+              {email}
+              <button
+                className={styles.deleteEmail}
+                aria-label="remove"
+                type="button"
+                onClick={() => {
+                  setEmails(emails.filter((em) => em !== email));
+                }}
+                onFocus={() => setFocus(true)}
+              >
+                &times;
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
       <div className={styles.actionButtons}>
         {/* Text component maybe */}
-        <button className={styles.inviteButton} type="button">
+        <Button onClick={() => {}} type="submit">
           Invite friends
-        </button>
-        <button className={styles.copyButton} type="button">
+        </Button>
+        <Button onClick={() => {}} type="button" intent="secondary">
           Copy invite link
-        </button>
+        </Button>
+
         <Link href="/dashboard" className={styles.skipStep}>
           Skip this step
         </Link>
-      </div>
+      </div>{" "}
     </form>
   );
 }
