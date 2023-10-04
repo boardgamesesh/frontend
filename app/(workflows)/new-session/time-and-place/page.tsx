@@ -2,7 +2,7 @@
 
 import React, { startTransition, useState } from "react";
 import styles from "./time-and-place.module.css";
-import { Button } from "~honeycomb";
+import { Button, TextField } from "~honeycomb";
 
 import { DatePicker, TimePicker, TimeClock } from "@mui/x-date-pickers";
 
@@ -63,9 +63,18 @@ export default function Page() {
               </div>
             </fieldset>
 
-            <Button onClick={() => { }} type="submit"> Submit </Button>
-
+            <Button onClick={() => {}} type="submit">
+              Submit
+            </Button>
           </form>
+
+          <p>Testing the TextField component</p>
+          <TextField
+            label="Enter location"
+            type="text"
+            name="loc"
+            onChange={() => {}}
+          ></TextField>
         </div>
       </div>
     </>
