@@ -1,6 +1,7 @@
+import Link from "next/link";
 import styles from "./NextSeshCard.module.css";
 import { format, formatDistanceToNow } from "date-fns";
-import { FaDirections } from "react-icons/fa";
+import { FaDirections, FaPlay } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import { Card, Heading, List, Text } from "~honeycomb";
 
@@ -74,6 +75,12 @@ export const NextSeshCard = ({
               <FaDirections />
               Directions
             </a>
+          </li>
+          <li>
+            <Link href="/session/1">
+              <FaPlay />
+              Play
+            </Link>
           </li>
         </List>
       </div>
