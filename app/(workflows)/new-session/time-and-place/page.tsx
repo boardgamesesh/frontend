@@ -68,13 +68,16 @@ export default function Page() {
             </Button>
           </form>
 
-          <p>Testing the TextField component</p>
+          {/* <p>Testing the TextField component</p>
           <TextField
             label="Enter location"
             type="text"
             name="loc"
             onChange={() => {}}
-          ></TextField>
+            title="locationLabel"
+            field="locationInput"
+            placeholder="Enter a location"
+          ></TextField> */}
         </div>
       </div>
     </>
