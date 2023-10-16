@@ -8,11 +8,12 @@ import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { renderTimeViewClock } from "@mui/x-date-pickers/timeViewRenderers";
 import { format } from "date-fns";
 
 export default function Page() {
   const [value, setValue] = useState<Date | string | null>(new Date());
-  
+
   return (
     <>
       <div className={styles.container}>
@@ -41,6 +42,11 @@ export default function Page() {
                       className={styles.inputDT}
                       value={value}
                       onChange={(newValue) => setValue(newValue)}
+                      viewRenderers={{
+                        hours: renderTimeViewClock,
+                        minutes: renderTimeViewClock,
+                        seconds: renderTimeViewClock,
+                      }}
                     />
                   </LocalizationProvider>
                 </label>
