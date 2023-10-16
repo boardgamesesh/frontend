@@ -6,20 +6,34 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: "text" | "email";
   name?: string;
   label: string;
+  title?: string;
+  field?: string;
   onChange: () => void;
 }
 
-export const TextField = ({ name, type, label, ...props }: TextFieldProps) => (
-  <>
-    <label htmlFor={name} className={clsx(styles.base)}>
+export const TextField = ({
+  name,
+  type,
+  label,
+  title,
+  field,
+  ...props
+}: TextFieldProps) => (
+  <fieldset className={clsx(styles.base)}>
+    <label
+      htmlFor={name}
+      className={clsx(styles.base, { [styles.locationLabel]: title === "locationLabel" })}
+    >
       {label}
     </label>
     <input
+      className={clsx(styles.base, {
+        [styles.locationInput]: field === "locationInput",
+      })}
       type={type}
       id={name}
       name={name}
-      className={clsx(styles.base)}
       {...props}
     />
-  </>
+  </fieldset>
 );

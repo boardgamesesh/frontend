@@ -1,0 +1,35 @@
+@layer component {
+  .base {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0;
+    border: none;
+  }
+
+  .locationLabel {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .locationInput {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--slate-300);
+    font-size: var(--size-20);
+  }
+
+  .locationInput::placeholder {
+    color: var(--slate-400);
+    font-size: var(--size-16);
+  }
+
+  .locationInput:focus {
+    outline: 1px solid var(--sky-950);
+  }
+}
