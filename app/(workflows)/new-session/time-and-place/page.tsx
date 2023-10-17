@@ -47,37 +47,18 @@ export default function Page() {
                 </LocalizationProvider>
               </div>
             </fieldset>
-            <fieldset className={styles.fieldset}>
-              <div className={styles.location}>
-                <label htmlFor="location" className={styles.label}>
-                  Location
-                </label>
-                <input
-                  type="text"
-                  id="location"
-                  name="location"
-                  className={styles.locationInput}
-                  placeholder="Enter a location"
-                />
-                <div aria-live="polite"> </div>
-              </div>
-            </fieldset>
-
+            <TextField
+              label="Location"
+              type="text"
+              id="loc"
+              name="loc"
+              onChange={() => {}}
+              placeholder="Enter a location"
+            ></TextField>
             <Button onClick={() => {}} type="submit">
               Submit
             </Button>
           </form>
-
-          {/* <p>Testing the TextField component</p>
-          <TextField
-            label="Enter location"
-            type="text"
-            name="loc"
-            onChange={() => {}}
-            title="locationLabel"
-            field="locationInput"
-            placeholder="Enter a location"
-          ></TextField> */}
         </div>
       </div>
     </>
