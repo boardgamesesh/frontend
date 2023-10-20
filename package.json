@@ -9,7 +9,9 @@
     "lint": "next lint",
     "test": "vitest --watch",
     "ci:test": "vitest --run --passWithNoTests",
-    "create:component": "plop"
+    "create:component": "plop",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@apollo/client": "^3.8.1",
@@ -22,10 +24,8 @@
     "@mui/x-date-pickers": "^6.10.2",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
-  
     "graphql": "^16.7.1",
     "modern-normalize": "^2.0.0",
-
     "next": "^13.4.13",
     "postcss": "^8.4.27",
     "react": "^18.2.0",
@@ -35,6 +35,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
+    "@storybook/addon-essentials": "^7.5.1",
+    "@storybook/addon-interactions": "^7.5.1",
+    "@storybook/addon-links": "^7.5.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.1",
+    "@storybook/nextjs": "^7.5.1",
+    "@storybook/react": "^7.5.1",
+    "@storybook/testing-library": "^0.2.2",
     "@testing-library/dom": "^9.3.1",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
@@ -46,9 +54,11 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.47.0",
     "eslint-config-next": "^13.4.13",
+    "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-testing-library": "^6.0.0",
     "plop": "^3.1.2",
     "postcss-nesting": "^12.0.1",
+    "storybook": "^7.5.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
     "vitest": "^0.34.1"
