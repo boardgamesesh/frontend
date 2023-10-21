@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.ARTIFACT_NAME }}
-          path: "./storybook/public"
+          path: "./.storybook/public"
           retention-days: 1
 
   storybook-tests:
