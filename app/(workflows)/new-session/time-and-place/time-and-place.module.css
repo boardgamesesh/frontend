@@ -60,7 +60,7 @@
 }
 
 .locationInput:focus {
-  outline: 1px solid var(--sky-600);
+  outline: 2px solid var(--sky-600);
 }
 
 .setupBtn {
