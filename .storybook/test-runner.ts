@@ -1,5 +1,10 @@
 import { getStoryContext, TestHook } from "@storybook/test-runner";
 import { configureAxe, getAxeResults, injectAxe } from "axe-playwright";
+import { toHaveNoViolations } from "jest-axe";
+
+export const setup: () => void = () => {
+  expect.extend(toHaveNoViolations);
+};
 
 export const preRender: TestHook = async (page) => {
   await injectAxe(page);
@@ -27,6 +32,5 @@ export const postRender: TestHook = async (page, context) => {
     parameters?.a11y?.element ?? "#storybook-root",
     parameters?.a11y?.options
   );
-
   expect(a11yResults).toHaveNoViolations();
 };
