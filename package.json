@@ -11,7 +11,7 @@
     "ci:test": "vitest --run --passWithNoTests",
     "create:component": "plop",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook:build": "storybook build",
     "test:storybook": "test-storybook"
   },
   "dependencies": {
