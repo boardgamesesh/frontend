@@ -41,7 +41,7 @@ jobs:
           path: "./storybook/public"
           retention-days: 1
 
-  storybook-tests-1:
+  storybook-tests:
     name: "test-storybook"
     needs: build-storybook
     runs-on: ubuntu-latest
@@ -55,39 +55,7 @@ jobs:
         with:
           artifactName: ${{ env.ARTIFACT_NAME }}
       - name: Storybook tests (1/3)
-        run: yarn test:storybook --shard 1/3
-
-  storybook-tests-2:
-    name: "test-storybook"
-    needs: build-storybook
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/setup
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-      - uses: ./.github/actions/run-storybook
-        with:
-          artifactName: ${{ env.ARTIFACT_NAME }}
-      - name: Storybook tests (2/3)
-        run: yarn test:storybook --shard 2/3
-
-  storybook-tests-3:
-    name: "test-storybook"
-    needs: build-storybook
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/setup
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-      - uses: ./.github/actions/run-storybook
-        with:
-          artifactName: ${{ env.ARTIFACT_NAME }}
-      - name: Storybook tests (3/3)
-        run: yarn test:storybook --shard 3/3
+        run: yarn test:storybook
 
   chromatic:
     needs: build-storybook
