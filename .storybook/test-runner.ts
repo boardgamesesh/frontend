@@ -1,10 +1,5 @@
 import { getStoryContext, TestHook } from "@storybook/test-runner";
 import { configureAxe, getAxeResults, injectAxe } from "axe-playwright";
-import { toHaveNoViolations } from "jest-axe";
-
-export const setup: () => void = () => {
-  expect.extend(toHaveNoViolations);
-};
 
 export const preRender: TestHook = async (page) => {
   await injectAxe(page);
