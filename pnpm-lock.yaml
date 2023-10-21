@@ -109,6 +109,9 @@ devDependencies:
   '@types/jest':
     specifier: ^29.5.3
     version: 29.5.4
+  '@types/jest-axe':
+    specifier: ^3.5.7
+    version: 3.5.7
   '@types/node':
     specifier: 20.5.9
     version: 20.5.9
@@ -121,6 +124,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.15(postcss@8.4.29)
+  axe-playwright:
+    specifier: ^1.2.3
+    version: 1.2.3(playwright@1.39.0)
   eslint:
     specifier: ^8.47.0
     version: 8.48.0
@@ -133,6 +139,9 @@ devDependencies:
   eslint-plugin-testing-library:
     specifier: ^6.0.0
     version: 6.0.1(eslint@8.48.0)(typescript@5.2.2)
+  jest-axe:
+    specifier: ^8.0.0
+    version: 8.0.0
   plop:
     specifier: ^3.1.2
     version: 3.1.2
@@ -150,7 +159,7 @@ devDependencies:
     version: 4.4.9(@types/node@20.5.9)
   vitest:
     specifier: ^0.34.1
-    version: 0.34.3
+    version: 0.34.3(playwright@1.39.0)
 
 packages:
 
@@ -4921,7 +4930,7 @@ packages:
       jest: 28.1.3(@types/node@20.5.9)
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 0.34.3
+      vitest: 0.34.3(playwright@1.39.0)
     dev: true
 
   /@testing-library/react@14.0.0(react-dom@18.2.0)(react@18.2.0):
@@ -5112,6 +5121,13 @@ packages:
     resolution: {integrity: sha512-c3mAZEuK0lvBp8tmuL74XRKn1+y2dcwOUpH7x4WrF6gk1GIgiluDRgMYQtw2OFcBvAJWlt6ASU3tSqxp0Uu0Aw==}
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
+    dev: true
+
+  /@types/jest-axe@3.5.7:
+    resolution: {integrity: sha512-eFIaZbh4t7Odys8dSQBJLMbM3cubzaJLl+g5yZwBMF6nqOpXQCvwPQPDHk0tfVepeDodcLy87bopvHb5bWrNAQ==}
+    dependencies:
+      '@types/jest': 29.5.4
+      axe-core: 3.5.6
     dev: true
 
   /@types/jest@29.5.4:
@@ -5975,9 +5991,36 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /axe-core@3.5.6:
+    resolution: {integrity: sha512-LEUDjgmdJoA3LqklSTwKYqkjcZ4HKc4ddIYGSAiSkr46NTjzg2L9RNB+lekO9P7Dlpa87+hBtzc2Fzn/+GUWMQ==}
+    engines: {node: '>=4'}
+    dev: true
+
   /axe-core@4.7.2:
     resolution: {integrity: sha512-zIURGIS1E1Q4pcrMjp+nnEh+16G56eG/MUllJH8yEvw7asDo7Ac9uhC9KIH5jzpITueEZolfYglnCGIuSBz39g==}
     engines: {node: '>=4'}
+    dev: true
+
+  /axe-html-reporter@2.2.3(axe-core@4.7.2):
+    resolution: {integrity: sha512-io8aCEt4fJvv43W+33n3zEa8rdplH5Ti2v5fOnth3GBKLhLHarNs7jj46xGfpnGnpaNrz23/tXPHC3HbwTzwwA==}
+    engines: {node: '>=8.9.0'}
+    peerDependencies:
+      axe-core: '>=3'
+    dependencies:
+      axe-core: 4.7.2
+      mustache: 4.2.0
+      rimraf: 3.0.2
+    dev: true
+
+  /axe-playwright@1.2.3(playwright@1.39.0):
+    resolution: {integrity: sha512-bTxCTNp3kx6sQRMjmuLv8pG3+v+kOCvFXATim1+XUXzW6ykulbbuJdQfgB+vQPNAF9uvYbW2qrv9pg81ZSFV/A==}
+    peerDependencies:
+      playwright: '>1.0.0'
+    dependencies:
+      axe-core: 4.7.2
+      axe-html-reporter: 2.2.3(axe-core@4.7.2)
+      picocolors: 1.0.0
+      playwright: 1.39.0
     dev: true
 
   /axios@0.21.4:
@@ -9650,6 +9693,16 @@ packages:
       minimatch: 3.1.2
     dev: true
 
+  /jest-axe@8.0.0:
+    resolution: {integrity: sha512-4kNcNn7J0jPO4jANEYZOHeQ/tSBvkXS+MxTbX1CKbXGd0+ZbRGDn/v/8IYWI/MmYX15iLVyYRnRev9X3ksePWA==}
+    engines: {node: '>= 14.0.0'}
+    dependencies:
+      axe-core: 4.7.2
+      chalk: 4.1.2
+      jest-matcher-utils: 29.2.2
+      lodash.merge: 4.6.2
+    dev: true
+
   /jest-changed-files@28.1.3:
     resolution: {integrity: sha512-esaOfUWJXk2nfZt9SPyC8gA1kNfdKLkQWyzsMlqq8msYSlNKfmZxfRgZn4Cd4MGVUF+7v6dBs0d5TOAKa7iIiA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
@@ -9876,6 +9929,16 @@ packages:
       jest-diff: 28.1.3
       jest-get-type: 28.0.2
       pretty-format: 28.1.3
+    dev: true
+
+  /jest-matcher-utils@29.2.2:
+    resolution: {integrity: sha512-4DkJ1sDPT+UX2MR7Y3od6KtvRi9Im1ZGLGgdLFLm4lPexbTaCgJW5NN3IOXlQHF7NSHY/VHhflQ+WoKtD/vyCw==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      chalk: 4.1.2
+      jest-diff: 29.5.0
+      jest-get-type: 29.6.3
+      pretty-format: 29.7.0
     dev: true
 
   /jest-matcher-utils@29.5.0:
@@ -10868,6 +10931,11 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+    dev: true
+
+  /mustache@4.2.0:
+    resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
+    hasBin: true
     dev: true
 
   /mute-stream@0.0.8:
@@ -13912,7 +13980,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@0.34.3:
+  /vitest@0.34.3(playwright@1.39.0):
     resolution: {integrity: sha512-7+VA5Iw4S3USYk+qwPxHl8plCMhA5rtfwMjgoQXMT7rO5ldWcdsdo3U1QD289JgglGK4WeOzgoLTsGFu6VISyQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -13960,6 +14028,7 @@ packages:
       magic-string: 0.30.3
       pathe: 1.1.1
       picocolors: 1.0.0
+      playwright: 1.39.0
       std-env: 3.4.3
       strip-literal: 1.0.1
       tinybench: 2.5.0
