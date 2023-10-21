@@ -28,6 +28,7 @@ export default function Page() {
                     <DatePicker
                       className={styles.inputDT}
                       value={value}
+                      inputRef={Date}
                       onChange={(newValue) => setValue(newValue)}
                     />
                   </LocalizationProvider>
@@ -68,10 +69,7 @@ export default function Page() {
               </div>
             </fieldset>
 
-            <Button onClick={() => {}} type="submit">
-              {" "}
-              Submit{" "}
-            </Button>
+            <Button onClick={() => {}} type="submit">Submit</Button>
           </form>
         </div>
       </div>
