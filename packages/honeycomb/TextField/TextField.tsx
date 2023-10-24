@@ -1,20 +1,34 @@
-import React, { InputHTMLAttributes, LabelHTMLAttributes } from "react";
-import { useId } from "react";
+import React, { InputHTMLAttributes } from "react";
+import { useId, ChangeEvent, FC } from "react";
 import clsx from "clsx";
 import styles from "./TextField.module.css";
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  type?: "text" | "email";
-  name?: string;
+  type: "text" | "email";
   label: string;
-  onChange: () => void;
+  value: string | number;
+  name: string;
+  placeholder?: string;
+  error?: boolean;
+  disabled?: boolean;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const TextField = ({ name, type, label, ...props }: TextFieldProps) => {
+export const TextField: FC<TextFieldProps> = ({
+  type,
+  label,
+  value,
+  name,
+  placeholder,
+  error,
+  disabled,
+  onChange,
+  ...props
+}: TextFieldProps) => {
   const id = useId();
 
   return (
-    <div className={clsx(styles.base)}>
+    <div className={clsx(styles.inputWrapper)}>
       <label htmlFor={id} className={clsx(styles.label)}>
         {label}
       </label>
@@ -24,8 +38,10 @@ export const TextField = ({ name, type, label, ...props }: TextFieldProps) => {
         aria-describedby={id}
         id={id}
         name={name}
+        onChange={onChange}
         {...props}
       />
+      {/* {error && <p className={styles.error}>Input field can't be empty!</p>} */}
     </div>
   );
 };
