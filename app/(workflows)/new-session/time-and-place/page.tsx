@@ -50,10 +50,10 @@ export default function Page() {
             <TextField
               label="Location"
               type="text"
-              id="loc"
-              name="loc"
+              name="location"
               onChange={() => {}}
               placeholder="Enter a location"
+              value=""
             ></TextField>
             <Button onClick={() => {}} type="submit">
               Submit
