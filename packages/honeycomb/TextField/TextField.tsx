@@ -5,7 +5,7 @@ import styles from "./TextField.module.css";
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   type: "text" | "email";
-  label: string;
+  label?: string;
   value: string;
   name: string;
   error?: boolean;
