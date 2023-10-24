@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./invite.module.css";
 import Link from "next/link";
 import clsx from "clsx";
-import { Button } from "~honeycomb";
+import { Button, TextField } from "~honeycomb";
 
 export default function Page() {
   const [email, setEmail] = useState<string>("");
@@ -47,8 +47,7 @@ export default function Page() {
             [styles.darkborder]: focus,
           })}
         >
-          {/* Could be an Input component since the app will contain more than one*/}
-          <input
+          <TextField
             type="email"
             id="email"
             name="email"
@@ -60,8 +59,23 @@ export default function Page() {
             value={email}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
-          />
-          <div aria-live="assertive" role="alert"></div>
+          ></TextField>
+          
+          {/* Could be an Input component since the app will contain more than one*/}
+          {/* <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="mary.poppins@email.com"
+            className={styles.emailInput}
+            onChange={(e) => {
+              setEmail(e.currentTarget.value);
+            }}
+            value={email}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+          /> */}
+          {/* <div aria-live="assertive" role="alert"></div> */}
 
           <Button
             id="add"
