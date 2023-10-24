@@ -6,9 +6,8 @@ import styles from "./TextField.module.css";
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   type: "text" | "email";
   label: string;
-  value: string | number;
+  value: string;
   name: string;
-  placeholder?: string;
   error?: boolean;
   disabled?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -19,7 +18,6 @@ export const TextField: FC<TextFieldProps> = ({
   label,
   value,
   name,
-  placeholder,
   error,
   disabled,
   onChange,
@@ -38,6 +36,7 @@ export const TextField: FC<TextFieldProps> = ({
         aria-describedby={id}
         id={id}
         name={name}
+        value={value}
         onChange={onChange}
         {...props}
       />
