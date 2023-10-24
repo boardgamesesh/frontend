@@ -3,12 +3,7 @@
     box-sizing: border-box;
     background: #ffffff;
     border-radius: 6px;
-    position: absolute;
     border: 1px solid #367ba2;
     box-shadow: 0px 0px 0px 2px #a9c8d9;
-    width: 492px;
-    height: 47px;
-    left: 510px;
-    top: 413px;
   }
 }
