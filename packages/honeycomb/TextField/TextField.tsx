@@ -4,14 +4,14 @@ import clsx from "clsx";
 import styles from "./TextField.module.css";
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  type: "text" | "email";
+  type?: "text" | "email" | "password";
   label?: string;
-  value: string;
-  name: string;
+  value?: string;
+  name?: string;
   error?: boolean;
-  disabled?: boolean;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
+export type { TextFieldProps };
 
 export const TextField: FC<TextFieldProps> = ({
   type,
@@ -19,7 +19,6 @@ export const TextField: FC<TextFieldProps> = ({
   value,
   name,
   error,
-  disabled,
   onChange,
   ...props
 }: TextFieldProps) => {
@@ -40,7 +39,7 @@ export const TextField: FC<TextFieldProps> = ({
         onChange={onChange}
         {...props}
       />
-      {/* {error && <p className={styles.error}>Input field can't be empty!</p>} */}
+      {error && <p className={styles.error}>Input field can't be empty!</p>}
     </div>
   );
 };
