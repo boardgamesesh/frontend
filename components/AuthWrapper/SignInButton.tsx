@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Button } from '~honeycomb';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
-const SignInButton: FC = () => {
+const SignInButton = (): JSX.Element => {
   const { data: session } = useSession();
 
   if (session?.user) {

@@ -10,7 +10,7 @@ interface AppWrapperProps {
   };
 }
 
-const AppWrapper: FC<AppWrapperProps> = ({ Component, pageProps: { session, ...restProps } }) => (
+const AppWrapper = ({ Component, pageProps: { session, ...restProps } }: AppWrapperProps): JSX.Element => (
   <SessionProvider session={session}>
     <Component {...restProps} />
   </SessionProvider>
