@@ -9,7 +9,7 @@ AWS.config.update({
   region: "ap-southeast-2",
 });
 
-export default NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({
   // Configure one or more authentication providers
   providers: [
     EmailProvider({

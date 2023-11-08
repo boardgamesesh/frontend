@@ -1,20 +1,25 @@
 "use client";
 
+import { auth } from '~auth';
 import { ReactNode } from "react";
 import { AppHeader } from "~components";
 import { PageLayout } from "~honeycomb";
 import styles from "./app-layout.module.css";
-import { AuthWrapper } from "~components";
+import { SessionProvider } from 'next-auth/react';
 
 export default function AppLayout({ children }: { children: ReactNode }) {
+  const session = auth();
+
   return (
-    <AuthWrapper>
-      <PageLayout>
-        <PageLayout.Header classNameExtend={styles.header}>
-          <AppHeader />
-        </PageLayout.Header>
-        <PageLayout.Main>{children}</PageLayout.Main>
-      </PageLayout>
-    </AuthWrapper>
+    <>
+      <SessionProvider session={session}>
+        <PageLayout>
+          <PageLayout.Header classNameExtend={styles.header}>
+            <AppHeader />
+          </PageLayout.Header>
+          <PageLayout.Main>{children}</PageLayout.Main>
+        </PageLayout>
+      </SessionProvider>
+    </>
   );
 }
