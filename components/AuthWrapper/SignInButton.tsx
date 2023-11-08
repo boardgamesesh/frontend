@@ -1,8 +1,7 @@
-import { FC } from 'react';
 import { Button } from '~honeycomb';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
-const SignInButton = (): JSX.Element => {
+export const SignInButton = () => {
   const { data: session } = useSession();
 
   if (session?.user) {
@@ -21,5 +20,3 @@ const SignInButton = (): JSX.Element => {
     </>
   );
 };
-
-export default SignInButton;
