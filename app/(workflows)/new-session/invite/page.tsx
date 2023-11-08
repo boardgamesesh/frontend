@@ -9,7 +9,6 @@ import { Button, TextField } from "~honeycomb";
 export default function Page() {
   const [email, setEmail] = useState<string>("");
   const [emails, setEmails] = useState<string[]>([]);
-  const [focus, setFocus] = useState<boolean>(false);
 
   const addEmail = () => {
     // Validation can be improved or replaced with a library such as joi.dev
@@ -75,7 +74,6 @@ export default function Page() {
                 onClick={() => {
                   setEmails(emails.filter((em) => em !== email));
                 }}
-                onFocus={() => setFocus(true)}
               >
                 &times;
               </button>
