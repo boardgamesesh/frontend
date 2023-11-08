@@ -2,7 +2,7 @@ import { Container } from "~honeycomb";
 import { ReactNode } from "react";
 import styles from "./PageLayout.module.css";
 import clsx from "clsx";
-import { SignInButton } from "~components/AuthWrapper/SignInButton";
+import { SignInButton } from "~components";
 
 export const PageLayout = ({
   children,

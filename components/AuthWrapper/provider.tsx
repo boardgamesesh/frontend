@@ -9,7 +9,7 @@ type AppWrapperProps = {
   };
 }
 
-export const AppWrapper = ({ Component, pageProps: { session, ...restProps } }: AppWrapperProps) => (
+export const AuthWrapper = ({ Component, pageProps: { session, ...restProps } }: AppWrapperProps) => (
   <SessionProvider session={session}>
     <Component {...restProps} />
   </SessionProvider>
