@@ -37,65 +37,34 @@ export default function Page() {
       }}
     >
       <h1 className={styles.title}>Who&apos;s invited?</h1>
-      {/* Text/Header component*/}
       <div className={styles.invitesContainer}>
-        <label htmlFor="email" className={styles.emailLabel}>
-          Enter your friend&apos;s email address bellow
-        </label>
-        <div
-          className={clsx(styles.enterEmail, {
-            [styles.darkborder]: focus,
-          })}
-        >
-          <TextField
-            type="email"
-            id="email"
-            name="email"
-            placeholder="mary.poppins@email.com"
-            className={styles.emailInput}
-            onChange={(e) => {
-              setEmail(e.currentTarget.value);
-            }}
-            value={email}
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
-          ></TextField>
-          
-          {/* Could be an Input component since the app will contain more than one*/}
-          {/* <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="mary.poppins@email.com"
-            className={styles.emailInput}
-            onChange={(e) => {
-              setEmail(e.currentTarget.value);
-            }}
-            value={email}
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
-          /> */}
-          {/* <div aria-live="assertive" role="alert"></div> */}
+        <TextField
+          type="email"
+          id="email"
+          name="email"
+          label="Enter your friend's email address bellow"
+          placeholder="mary.poppins@email.com"
+          onChange={(e) => {
+            setEmail(e.currentTarget.value);
+          }}
+          value={email}
+        ></TextField>
 
-          <Button
-            id="add"
-            type="button"
-            onClick={() => {
-              addEmail();
-              setFocus(true);
-            }}
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
-            size="small"
-          >
-            Add
-          </Button>
-        </div>
+        <Button
+          id="add"
+          type="button"
+          onClick={() => {
+            addEmail();
+          }}
+          size="small"
+        >
+          Add
+        </Button>
       </div>
+
       {/* only render when there are emails */}
       {emails.length > 0 && (
         <ul className={styles.addedEmails}>
-          {/* Text component maybe */}
           {emails.map((email) => (
             <li className={styles.emailAdded} key={email}>
               {email}
@@ -115,7 +84,6 @@ export default function Page() {
         </ul>
       )}
       <div className={styles.actionButtons}>
-        {/* Text component maybe */}
         <Button onClick={() => {}} type="submit">
           Invite friends
         </Button>
@@ -126,7 +94,7 @@ export default function Page() {
         <Link href="/dashboard" className={styles.skipStep}>
           Skip this step
         </Link>
-      </div>{" "}
+      </div>
     </form>
   );
 }

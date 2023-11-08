@@ -3,45 +3,6 @@
   width: 100%;
 }
 
-.emailLabel {
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 0.5rem;
-}
-
-.enterEmail {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  border: 1px solid #367ba2;
-  height: 3.5rem;
-  border-radius: 5px;
-  padding: 0.3rem;
-}
-
-.enterEmail.darkborder {
-  border: 2px solid var(--sky-500);
-}
-
-.emailInput {
-  height: 100%;
-  font-size: 1.2rem;
-  padding-left: 0.5rem;
-  border-radius: 5px;
-  border: none;
-  width: 90%;
-}
-
-.enterEmail:focus {
-  outline: 1px solid #2fa3e3;
-}
-.emailInput {
-  outline: none;
-}
-
 .addedEmails {
   display: flex;
   flex-wrap: wrap;
