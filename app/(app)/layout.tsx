@@ -1,5 +1,3 @@
-"use client";
-
 import { auth } from '~auth';
 import { ReactNode } from "react";
 import { AppHeader } from "~components";
