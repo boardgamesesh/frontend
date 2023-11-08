@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes } from "react";
-import { useId, ChangeEvent, FC } from "react";
+import { useId, ChangeEvent} from "react";
 import clsx from "clsx";
 import styles from "./TextField.module.css";
 
@@ -13,7 +13,7 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 export type { TextFieldProps };
 
-export const TextField: FC<TextFieldProps> = ({
+export const TextField = ({
   type,
   label,
   value,
