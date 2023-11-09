@@ -12,7 +12,8 @@ import { renderTimeViewClock } from "@mui/x-date-pickers/timeViewRenderers";
 import { format } from "date-fns";
 
 export default function Page() {
-  const [value, setValue] = useState<Date | string | null>(new Date());
+  const [dateTime, setDateTime] = useState<Date | string | null>(new Date());
+  const [location, setLocation] = useState<string>("");
 
   return (
     <>
@@ -27,9 +28,9 @@ export default function Page() {
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
                       className={styles.inputDT}
-                      value={value}
+                      value={dateTime}
                       inputRef={Date}
-                      onChange={(newValue) => setValue(newValue)}
+                      onChange={(newValue) => setDateTime(newValue)}
                     />
                   </LocalizationProvider>
                 </label>
@@ -41,8 +42,8 @@ export default function Page() {
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <TimePicker
                       className={styles.inputDT}
-                      value={value}
-                      onChange={(newValue) => setValue(newValue)}
+                      value={dateTime}
+                      onChange={(newValue) => setDateTime(newValue)}
                       viewRenderers={{
                         hours: renderTimeViewClock,
                         minutes: renderTimeViewClock,
@@ -57,9 +58,11 @@ export default function Page() {
               label="Location"
               type="text"
               name="location"
-              onChange={() => {}}
+              onChange={(e) => {
+                setLocation(e.target.value);
+              }}
               placeholder="Enter a location"
-              value=""
+              value={location}
             ></TextField>
             <Button onClick={() => {}} type="submit">
               Submit
