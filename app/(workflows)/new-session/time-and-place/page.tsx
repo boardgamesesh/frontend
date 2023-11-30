@@ -61,7 +61,6 @@ export default function Page() {
               onChange={(e) => {
                 setLocation(e.target.value);
               }}
-              placeholder="Enter a location"
               value={location}
             ></TextField>
             <Button onClick={() => {}} type="submit">

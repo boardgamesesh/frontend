@@ -11,7 +11,7 @@ export default function Page() {
   const [emails, setEmails] = useState<string[]>([]);
 
   const addEmail = () => {
-    // Validation can be improved or replaced with a library such as joi.dev
+ 
     const regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (!email || !regExp.test(email)) {
@@ -42,7 +42,6 @@ export default function Page() {
           id="email"
           name="email"
           label="Enter your friend's email address bellow"
-          placeholder="mary.poppins@email.com"
           onChange={(e) => {
             setEmail(e.currentTarget.value);
           }}
