@@ -1,7 +1,8 @@
 import React, { InputHTMLAttributes } from "react";
-import { useId, ChangeEvent} from "react";
+import { useId, ChangeEvent } from "react";
 import clsx from "clsx";
 import styles from "./TextField.module.css";
+
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: "text" | "email" | "password";
@@ -9,6 +10,7 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   value?: string;
   name?: string;
   error?: boolean;
+  errorText?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 export type { TextFieldProps };
@@ -20,6 +22,7 @@ export const TextField = ({
   name,
   error,
   onChange,
+  errorText,
   ...props
 }: TextFieldProps) => {
   const id = useId();
@@ -39,7 +42,7 @@ export const TextField = ({
         onChange={onChange}
         {...props}
       />
-      {error && <p className={styles.error}>Input field can't be empty!</p>}
+      {error && <p className={styles.error}>{errorText}</p>}
     </div>
   );
 };
