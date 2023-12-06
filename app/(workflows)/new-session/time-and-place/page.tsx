@@ -2,7 +2,7 @@
 
 import React, { startTransition, useState } from "react";
 import styles from "./time-and-place.module.css";
-import { Button } from "~honeycomb";
+import { Button, TextField } from "~honeycomb";
 
 import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 
@@ -12,7 +12,8 @@ import { renderTimeViewClock } from "@mui/x-date-pickers/timeViewRenderers";
 import { format } from "date-fns";
 
 export default function Page() {
-  const [value, setValue] = useState<Date | string | null>(new Date());
+  const [dateTime, setDateTime] = useState<Date | string | null>(new Date());
+  const [location, setLocation] = useState<string>("");
 
   return (
     <>
@@ -27,9 +28,9 @@ export default function Page() {
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
                       className={styles.inputDT}
-                      value={value}
+                      value={dateTime}
                       inputRef={Date}
-                      onChange={(newValue) => setValue(newValue)}
+                      onChange={(newValue) => setDateTime(newValue)}
                     />
                   </LocalizationProvider>
                 </label>
@@ -41,8 +42,8 @@ export default function Page() {
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <TimePicker
                       className={styles.inputDT}
-                      value={value}
-                      onChange={(newValue) => setValue(newValue)}
+                      value={dateTime}
+                      onChange={(newValue) => setDateTime(newValue)}
                       viewRenderers={{
                         hours: renderTimeViewClock,
                         minutes: renderTimeViewClock,
@@ -53,23 +54,18 @@ export default function Page() {
                 </label>
               </div>
             </fieldset>
-            <fieldset className={styles.fieldset}>
-              <div className={styles.location}>
-                <label htmlFor="location" className={styles.label}>
-                  Location
-                </label>
-                <input
-                  type="text"
-                  id="location"
-                  name="location"
-                  className={styles.locationInput}
-                  placeholder="Enter a location"
-                />
-                <div aria-live="polite"> </div>
-              </div>
-            </fieldset>
-
-            <Button onClick={() => {}} type="submit">Submit</Button>
+            <TextField
+              label="Location"
+              type="text"
+              name="location"
+              onChange={(e) => {
+                setLocation(e.target.value);
+              }}
+              value={location}
+            ></TextField>
+            <Button onClick={() => {}} type="submit">
+              Submit
+            </Button>
           </form>
         </div>
       </div>
