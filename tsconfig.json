@@ -21,6 +21,7 @@
       }
     ],
     "paths": {
+      "~auth": ["./auth"],
       "~styles/*": ["./styles/*"],
       "~honeycomb": ["./packages/honeycomb"],
       "~components": ["./components/index.ts"],

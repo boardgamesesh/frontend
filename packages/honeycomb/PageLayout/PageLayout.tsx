@@ -2,6 +2,7 @@ import { Container } from "~honeycomb";
 import { ReactNode } from "react";
 import styles from "./PageLayout.module.css";
 import clsx from "clsx";
+import { SignInButton } from "~components";
 
 export const PageLayout = ({
   children,
@@ -19,6 +20,7 @@ export const PageHeader = ({
   classNameExtend?: string;
 }) => (
   <header className={clsx([styles.header, classNameExtend])}>
+    <SignInButton />
     <Container>{children}</Container>
   </header>
 );
