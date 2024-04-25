@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Link from "next/link";
+// import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
@@ -249,7 +249,7 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
-        <div className="bg-slate-100 rounded p-4 space-y-2">
+        {/* <div className="bg-slate-100 rounded p-4 space-y-2">
           <h2 className="text-lg font-bold text-slate-600 flex gap-1 items-center">
             <Sparkles className="h-5 w-5" /> Going "Pro" for $5/mo
           </h2>
@@ -261,7 +261,7 @@ export default function Home() {
           <Link href="/pro" className="underline block">
             Find out more...
           </Link>
-        </div>
+        </div> */}
       </div>
     </main>
   );
