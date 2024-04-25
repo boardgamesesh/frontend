@@ -1,0 +1,247 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { ChevronRight, Info, Menu, Plus, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+export default function Home() {
+  const [players, setPlayers] = useState<string[]>([]);
+  const [picker, setPicker] = useState<string | null>();
+  const [seshNo, setSeshNo] = useState<number>(1);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const players = localStorage.getItem("players");
+      if (players) {
+        setPlayers(players.split(","));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const picker = localStorage.getItem("picker");
+      if (picker) {
+        setPicker(picker);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const seshNo = localStorage.getItem("seshNo");
+
+      if (seshNo) {
+        setSeshNo(parseInt(seshNo, 10));
+      } else {
+        localStorage.setItem("seshNo", "1");
+      }
+    }
+  }, []);
+
+  const getRandomNumber = (min: number, max: number) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  const randomisePicker = () => {
+    const picker = players[getRandomNumber(0, players.length - 1)];
+    localStorage.setItem("picker", picker);
+    setPicker(picker);
+  };
+
+  const removePlayer = (players: string[], playerName: string) => {
+    const index = players.indexOf(playerName);
+
+    if (index > -1) {
+      players.splice(index, 1);
+    }
+
+    localStorage.setItem("players", players.toString());
+
+    return players;
+  };
+
+  const formSchema = z.object({
+    playerName: z.string(),
+  });
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      playerName: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+    form.resetField("playerName");
+
+    setPlayers((prevState) => {
+      const newPlayerArray = [...prevState, values.playerName];
+      localStorage.setItem("players", newPlayerArray.toString());
+      return newPlayerArray;
+    });
+  }
+
+  const handleRemovePlayer = (playerName: string) => {
+    const newPlayers = removePlayer(players, playerName);
+    setPlayers([...newPlayers]);
+
+    if (playerName === picker) {
+      setPicker(null);
+    }
+  };
+
+  const handleNewSesh = () => {
+    const newSeshNo = seshNo + 1;
+
+    setSeshNo(newSeshNo);
+    localStorage.setItem("seshNo", newSeshNo.toString());
+    setPicker(null);
+    localStorage.removeItem("picker");
+  };
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between py-8">
+      <div className="container max-w-md">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between gap-4 space-y-0">
+            <CardTitle>Sesh #{seshNo}</CardTitle>
+            <Button
+              onClick={() => handleNewSesh()}
+              variant="outline"
+              className="gap-1"
+            >
+              Next sesh <ChevronRight className="h-4 w-4" />
+            </Button>
+          </CardHeader>
+          <CardContent className="border-t border-b py-6">
+            <Tabs
+              defaultValue={players.length === 0 ? "group" : "picker"}
+              className="w-full"
+            >
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="group">
+                  Players ({players.length})
+                </TabsTrigger>
+                <TabsTrigger value="picker">Game picker</TabsTrigger>
+              </TabsList>
+              <TabsContent value="group">
+                <>
+                  <div className="space-y-3">
+                    <div className="space-y-2 py-3 mb-3">
+                      <h2 className="text-lg font-medium">Players</h2>
+                      <p className="text-sm">
+                        Add who's going to play in this session.
+                      </p>
+                    </div>
+                    <Form {...form}>
+                      <form
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="w-full"
+                      >
+                        <FormField
+                          control={form.control}
+                          name="playerName"
+                          render={({ field }) => (
+                            <FormItem className="relative space-y-0">
+                              <FormLabel className="absolute border-r p-2 mt-[5px] font-bold">
+                                Name
+                              </FormLabel>
+                              <div className="flex gap-4">
+                                <FormControl>
+                                  <Input
+                                    type="text"
+                                    className="pl-[4rem]"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <Button
+                                  type="submit"
+                                  className="gap-2 h-[40px]"
+                                >
+                                  <Plus className="h-4 w-4" /> Add
+                                </Button>
+                              </div>
+                            </FormItem>
+                          )}
+                        />
+                      </form>
+                    </Form>
+                    {players.length > 0 && (
+                      <ul className="grid gap-4 border-t pt-3">
+                        {players.map((player) => (
+                          <li
+                            key={player}
+                            className="flex justify-between items-center"
+                          >
+                            {player}
+                            <Button
+                              type="button"
+                              size="icon"
+                              variant="secondary"
+                              className="text-xs h-8 w-8"
+                              onClick={() => handleRemovePlayer(player)}
+                            >
+                              <X className="h-4 w-4" />
+                              <span className="sr-only">Remove</span>
+                            </Button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </>
+              </TabsContent>
+              <TabsContent value="picker">
+                <div className="py-3 mb-3 space-y-2 border-b">
+                  <h2 className="text-lg font-medium">Game picker</h2>
+                  <p className="text-sm">
+                    Determine who gets to choose the game for the sesh!
+                  </p>
+                </div>
+                {players.length > 0 ? (
+                  <>
+                    <div className="flex items-center justify-between mb-6">
+                      {picker ? (
+                        <p>{picker}</p>
+                      ) : (
+                        <Button size="sm" onClick={() => randomisePicker()}>
+                          Randomise player
+                        </Button>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <p className="text-sm bg-blue-100 p-2 rounded text-blue-700 flex gap-1 items-center font-medium">
+                    <Info className="h-4 w-4" />
+                    Add some players to get started!
+                  </p>
+                )}
+              </TabsContent>
+            </Tabs>
+          </CardContent>
+        </Card>
+      </div>
+    </main>
+  );
+}
