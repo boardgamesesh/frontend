@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import Link from "next/link";
+import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
