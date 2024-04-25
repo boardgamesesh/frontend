@@ -249,7 +249,7 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
-        {/* <div className="bg-slate-100 rounded p-4 space-y-2">
+        <div className="bg-slate-100 rounded p-4 space-y-2">
           <h2 className="text-lg font-bold text-slate-600 flex gap-1 items-center">
             <Sparkles className="h-5 w-5" /> Going "Pro" for $5/mo
           </h2>
@@ -261,7 +261,7 @@ export default function Home() {
           <Link href="/pro" className="underline block">
             Find out more...
           </Link>
-        </div> */}
+        </div>
       </div>
     </main>
   );
