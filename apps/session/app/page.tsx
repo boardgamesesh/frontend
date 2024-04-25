@@ -265,7 +265,7 @@ export default function Session() {
           <li>Cross-device sync</li>
           <li>Automations</li>
         </ul>
-        <Link href="/going-pro" className="underline block">
+        <Link href="/power-mode" className="underline block">
           Find out more...
         </Link>
       </div>
