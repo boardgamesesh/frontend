@@ -110,7 +110,6 @@ export default function Home() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     form.resetField("playerName");
 
     setPlayers((prevState) => {
