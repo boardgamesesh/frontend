@@ -17,28 +17,14 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  AlertOctagon,
-  BadgeInfo,
-  ChevronRight,
-  DicesIcon,
-  Info,
-  Loader2,
-  Plus,
-  Sparkles,
-  Terminal,
-  X,
-} from "lucide-react";
+import { DicesIcon, Loader2, Plus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
-import { Toggle } from "@/components/ui/toggle";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import {
@@ -52,8 +38,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const [players, setPlayers] = useState<string[]>([]);
@@ -323,42 +307,6 @@ export default function Home() {
             )}
           </div>
         </Card>
-        {/* {players.length >= 2 && (
-          <Card>
-            <CardHeader>
-              <CardTitle id="game-picker">Who's picking the game?</CardTitle>
-              <CardDescription>
-                Determine who gets to choose the game for the sesh!
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                size="sm"
-                className="flex gap-1"
-                onClick={() => randomisePicker()}
-                disabled={isLoading}
-                variant="outline"
-              >
-                {isLoading ? (
-                  <>
-                    <Loader2 className="animate-spin" /> Randomising...
-                  </>
-                ) : (
-                  <>
-                    <DicesIcon /> Randomise game picker
-                  </>
-                )}
-              </Button>
-              <div aria-live="assertive" aria-relevant="text additions">
-                {picker && !isLoading && (
-                  <p className="mt-4">
-                    <strong>{picker}</strong> will pick the game!
-                  </p>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        )} */}
       </div>
     </main>
   );
