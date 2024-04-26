@@ -40,6 +40,7 @@ import {
 } from "@/components/ui/alert-dialog";
 
 export default function Home() {
+  const [seshNo, setSeshNo] = useState<number>(1);
   const [players, setPlayers] = useState<string[]>([]);
   const [picker, setPicker] = useState<string | null>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -58,6 +59,10 @@ export default function Home() {
 
       if (picker) {
         setPicker(picker);
+      }
+
+      if (seshNo) {
+        setSeshNo(parseInt(seshNo, 10));
       }
     }
   }, []);
@@ -80,10 +85,9 @@ export default function Home() {
 
     setTimeout(() => {
       setIsLoading(false);
+      localStorage.setItem("picker", picker);
+      setPicker(picker);
     }, 1200);
-
-    localStorage.setItem("picker", picker);
-    setPicker(picker);
   };
 
   const removePlayer = (players: string[], playerName: string) => {
@@ -136,6 +140,9 @@ export default function Home() {
       setPlayers([]);
       localStorage.removeItem("players");
     }
+
+    const newSeshNo = seshNo + 1;
+    localStorage.setItem("seshNo", newSeshNo.toString());
   };
 
   return (
@@ -190,51 +197,53 @@ export default function Home() {
         </header>
         <Card className="relative">
           <CardHeader>
-            <CardTitle>Players ({players.length})</CardTitle>
+            <CardTitle>Sesh #{seshNo}</CardTitle>
             <CardDescription>
-              Add at least 2 players to this session.
+              Organise this session by adding players and a game picker
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-3">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-                <FormField
-                  control={form.control}
-                  name="playerName"
-                  render={({ field }) => (
-                    <FormItem className="relative space-y-0">
-                      <FormLabel className="absolute border-r p-2 mt-[5px] font-bold">
-                        Name
-                      </FormLabel>
-                      <div className="flex gap-4">
-                        <FormControl>
-                          <Input
-                            type="text"
-                            className="pl-[4rem]"
-                            minLength={1}
-                            required
-                            tabIndex={1}
-                            {...field}
-                          />
-                        </FormControl>
-                        <Button
-                          type="submit"
-                          className="gap-2 h-[40px]"
-                          tabIndex={2}
-                        >
-                          <Plus className="h-4 w-4" />
-                          <span className="sr-only md:not-sr-only">Add</span>
-                          <span className="sr-only">
-                            {field.value} to players
-                          </span>
-                        </Button>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-              </form>
-            </Form>
-
+          <CardContent className="space-y-3 border-t pt-3">
+            <h3 className="font-semibold">Players ({players.length})</h3>
+            {!picker && (
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+                  <FormField
+                    control={form.control}
+                    name="playerName"
+                    render={({ field }) => (
+                      <FormItem className="relative space-y-0">
+                        <FormLabel className="absolute border-r p-2 mt-[5px] font-bold">
+                          Name
+                        </FormLabel>
+                        <div className="flex gap-4">
+                          <FormControl>
+                            <Input
+                              type="text"
+                              className="pl-[4rem]"
+                              minLength={1}
+                              required
+                              tabIndex={1}
+                              {...field}
+                            />
+                          </FormControl>
+                          <Button
+                            type="submit"
+                            className="gap-2 h-[40px]"
+                            tabIndex={2}
+                          >
+                            <Plus className="h-4 w-4" />
+                            <span className="sr-only md:not-sr-only">Add</span>
+                            <span className="sr-only">
+                              {field.value} to players
+                            </span>
+                          </Button>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
+                </form>
+              </Form>
+            )}
             {players.length > 0 && (
               <div className="mt-3">
                 <Separator className="my-3" />
@@ -248,19 +257,21 @@ export default function Home() {
                         {player}
                         <span className="sr-only">Added</span>
                       </span>
-                      <Button
-                        type="button"
-                        size="icon"
-                        variant="secondary"
-                        className="text-xs h-8 w-8"
-                        onClick={() => handleRemovePlayer(player)}
-                        tabIndex={4}
-                      >
-                        <X className="h-4 w-4" />
-                        <span className="sr-only" aria-atomic>
-                          Remove {player}
-                        </span>
-                      </Button>
+                      {!picker && (
+                        <Button
+                          type="button"
+                          size="icon"
+                          variant="secondary"
+                          className="text-xs h-8 w-8"
+                          onClick={() => handleRemovePlayer(player)}
+                          tabIndex={4}
+                        >
+                          <X className="h-4 w-4" />
+                          <span className="sr-only" aria-atomic>
+                            Remove {player}
+                          </span>
+                        </Button>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -270,38 +281,40 @@ export default function Home() {
           <div aria-live="polite" aria-relevant="additions text">
             {players.length >= 2 && (
               <CardFooter className="sticky bottom-0 py-3 border-t bg-white rounded-b flex-col space-y-3">
-                {picker && !isLoading && (
-                  <p>
-                    <strong>{picker}</strong> will pick the game!
-                  </p>
-                )}
-                <div className="relative">
-                  <Button
-                    size="sm"
-                    className="flex gap-1 w-full"
-                    onClick={() => randomisePicker()}
-                    disabled={isLoading}
-                    variant="outline"
-                    tabIndex={3}
-                  >
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="animate-spin" />
-                      </>
-                    ) : (
-                      <>
-                        <DicesIcon />
-                      </>
-                    )}
-                    Randomise game picker
-                  </Button>
-                  {!picker && (
-                    <span className="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
-                    </span>
+                <>
+                  {picker && !isLoading && (
+                    <p>
+                      <strong>{picker}</strong> will pick the game(s)!
+                    </p>
                   )}
-                </div>
+                  {!picker && (
+                    <div className="relative">
+                      <Button
+                        size="sm"
+                        className="flex gap-1 w-full"
+                        onClick={() => randomisePicker()}
+                        disabled={isLoading}
+                        variant="outline"
+                        tabIndex={3}
+                      >
+                        {isLoading ? (
+                          <>
+                            <Loader2 className="animate-spin" />
+                          </>
+                        ) : (
+                          <>
+                            <DicesIcon />
+                          </>
+                        )}
+                        Randomly choose a game picker
+                      </Button>
+                      <span className="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                      </span>
+                    </div>
+                  )}
+                </>
               </CardFooter>
             )}
           </div>
